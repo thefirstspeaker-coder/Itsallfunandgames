@@ -21,16 +21,17 @@ const normaliseNullishString = (value: unknown): string | null => {
 };
 
 // Recursive function to trim all string values in an object or array
+// Update the function signature and reduce accumulator
 const trimStrings = (obj: any): any => {
   if (Array.isArray(obj)) {
     return obj.map(trimStrings);
   }
   if (obj !== null && typeof obj === 'object') {
-    return Object.keys(obj).reduce((acc, key) => {
-      const value = obj[key];
+    return Object.keys(obj).reduce((acc: AnyObject, key: string) => {
+      const value = (obj as AnyObject)[key];
       acc[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
       return acc;
-    }, {} as { [key: string]: any });
+    }, {});
   }
   return obj;
 };
