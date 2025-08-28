@@ -41,7 +41,7 @@ export const loadGames = () => {
   // Read raw data at build time
   const filePath = path.join(process.cwd(), 'public', 'games.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
-  const rawData: any[] = JSON.parse(fileContents);
+  const rawData: unknown[] = JSON.parse(fileContents);
 
   const normalisedGames: Game[] = [];
   const seenIds = new Set<string>();
