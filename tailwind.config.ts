@@ -1,15 +1,13 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss';
 
-const config = {
-  darkMode: "class",
+const config: Config = {
+  darkMode: 'class',
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/globals.css', // This line is the crucial fix
   ],
-  prefix: '',
   theme: {
     container: {
       center: true,
@@ -19,10 +17,9 @@ const config = {
       },
     },
     extend: {
-      // ... extend your theme if needed
+        // ... any theme extensions
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config;
-
+};
 export default config;
