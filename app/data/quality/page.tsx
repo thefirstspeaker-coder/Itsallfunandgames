@@ -17,7 +17,7 @@ export default function DataQualityPage() {
   const issues: Issue[] = [];
   let validCount = 0;
 
-  rawGames.forEach((game, index) => {
+  rawGames.forEach((game: { [key: string]: unknown }) => {
     const result = GameSchema.safeParse(game);
     const identifier = game.id || game.name || `Row ${index + 1}`;
     
