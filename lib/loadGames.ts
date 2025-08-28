@@ -16,22 +16,23 @@ const slugify = (str: string) =>
 const normaliseNullishString = (value: unknown): string | null => {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
-  return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null : trimmed;
+  return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null: trimmed;
 };
 
-// Recursive function to trim all string values in an object or array
-const trimStrings = (obj: unknown): unknown => {
+// Add this type definition at the top of the file
+type AnyObject = { [key: string]: any };
+
+// This is the function with explicit types
+const trimStrings = (obj: any): any => {
   if (Array.isArray(obj)) {
     return obj.map(trimStrings);
   }
   if (obj !== null && typeof obj === 'object') {
-    const input = obj as Record<string, unknown>;
-    const output: Record<string, unknown> = {};
-    for (const key of Object.keys(input)) {
-      const value = input[key];
-      output[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
-    }
-    return output;
+    return Object.keys(obj).reduce((acc: AnyObject, key) => {
+      const value = (obj as AnyObject)[key];
+      acc[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
+      return acc;
+    }, {});
   }
   return obj;
 };
