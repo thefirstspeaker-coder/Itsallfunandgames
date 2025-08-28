@@ -2,7 +2,6 @@
 import fs from 'fs';
 import path from 'path';
 import { Game, GameSchema } from './types';
-import { z } from 'zod';
 
 // Utility to slugify strings for IDs
 const slugify = (str: string) =>
@@ -21,69 +20,102 @@ const normaliseNullishString = (value: unknown): string | null => {
 };
 
 // Recursive function to trim all string values in an object or array
-const trimStrings = (obj: any): any => {
+const trimStrings = (obj: unknown): unknown => {
   if (Array.isArray(obj)) {
     return obj.map(trimStrings);
   }
   if (obj !== null && typeof obj === 'object') {
-    return Object.keys(obj).reduce((acc, key) => {
-      const value = obj[key];
-      acc[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
-      return acc;
-    }, {} as { [key: string]: any });
+    const input = obj as Record<string, unknown>;
+    const output: Record<string, unknown> = {};
+    for (const key of Object.keys(input)) {
+      const value = input[key];
+      output[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
+    }
+    return output;
   }
   return obj;
 };
+
+type UnknownRecord = Record<string, unknown>;
 
 // Main function to load, validate, and normalise games
 export const loadGames = () => {
   // Read raw data at build time
   const filePath = path.join(process.cwd(), 'public', 'games.json');
   const fileContents = fs.readFileSync(filePath, 'utf8');
-  const rawData: any[] = JSON.parse(fileContents);
+
+  let rawData: unknown[];
+  try {
+    rawData = JSON.parse(fileContents) as unknown[];
+  } catch (err) {
+    throw new Error(`Invalid JSON in games.json: ${(err as Error).message}`);
+  }
 
   const normalisedGames: Game[] = [];
   const seenIds = new Set<string>();
 
   for (const rawGame of rawData) {
-    const trimmedGame = trimStrings(rawGame);
+    const trimmedGame = trimStrings(rawGame) as UnknownRecord;
 
-    let id = trimmedGame.id || '';
-    if (!id && trimmedGame.name) {
-      id = slugify(trimmedGame.name);
-    }
+    // Safe reads
+    const name = typeof trimmedGame.name === 'string' ? trimmedGame.name : undefined;
+    let id =
+      typeof trimmedGame.id === 'string'
+        ? trimmedGame.id
+        : name
+        ? slugify(name)
+        : '';
 
-    if (!id || seenIds.has(id)) {
-      // Skip duplicates or items without an identifier
-      continue;
-    }
+    // Skip if no ID or duplicate
+    if (!id || seenIds.has(id)) continue;
     seenIds.add(id);
 
+    // Pull possibly-numeric fields with guards
+    const ageMinRaw = typeof trimmedGame.ageMin === 'number' ? trimmedGame.ageMin : undefined;
+    const ageMaxRaw = typeof trimmedGame.ageMax === 'number' ? trimmedGame.ageMax : undefined;
+    const playersMinRaw =
+      typeof trimmedGame.playersMin === 'number' ? trimmedGame.playersMin : undefined;
+    const playersMaxRaw =
+      typeof trimmedGame.playersMax === 'number' ? trimmedGame.playersMax : undefined;
+
+    // Guard ranges (swap if reversed)
+    let ageMin = ageMinRaw;
+    let ageMax = ageMaxRaw;
+    if (typeof ageMin === 'number' && typeof ageMax === 'number' && ageMin > ageMax) {
+      [ageMin, ageMax] = [ageMax, ageMin];
+    }
+
+    let playersMin = playersMinRaw;
+    let playersMax = playersMaxRaw;
+    if (
+      typeof playersMin === 'number' &&
+      typeof playersMax === 'number' &&
+      playersMin > playersMax
+    ) {
+      [playersMin, playersMax] = [playersMax, playersMin];
+    }
+
+    // String-likes
+    const descriptionStr =
+      typeof trimmedGame.description === 'string' ? trimmedGame.description : null;
+    const categoryStr =
+      typeof trimmedGame.category === 'string' ? trimmedGame.category : null;
+    const prepLevelStr =
+      typeof trimmedGame.prepLevel === 'string' ? trimmedGame.prepLevel : null;
+
     // Apply normalisation rules
-    const gameToNormalise = {
+    const gameToNormalise: UnknownRecord = {
       ...trimmedGame,
       id,
-      name: normaliseNullishString(trimmedGame.name) || '',
-      description: normaliseNullishString(trimmedGame.description),
-      category: normaliseNullishString(trimmedGame.category),
-      prepLevel: normaliseNullishString(trimmedGame.prepLevel),
+      name: normaliseNullishString(name) || '',
+      description: normaliseNullishString(descriptionStr),
+      category: normaliseNullishString(categoryStr),
+      prepLevel: normaliseNullishString(prepLevelStr),
+      ageMin,
+      ageMax,
+      playersMin,
+      playersMax,
     };
-
-    // Guard ranges
-    if (
-      typeof gameToNormalise.ageMin === 'number' &&
-      typeof gameToNormalise.ageMax === 'number' &&
-      gameToNormalise.ageMin > gameToNormalise.ageMax
-    ) {
-      [gameToNormalise.ageMin, gameToNormalise.ageMax] = [gameToNormalise.ageMax, gameToNormalise.ageMin];
-    }
-    if (
-      typeof gameToNormalise.playersMin === 'number' &&
-      typeof gameToNormalise.playersMax === 'number' &&
-      gameToNormalise.playersMin > gameToNormalise.playersMax
-    ) {
-      [gameToNormalise.playersMin, gameToNormalise.playersMax] = [gameToNormalise.playersMax, gameToNormalise.playersMin];
-    }
 
     // Validate with Zod
     const validationResult = GameSchema.safeParse(gameToNormalise);
