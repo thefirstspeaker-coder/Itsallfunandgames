@@ -4,7 +4,6 @@ import { GameSchema } from '@/lib/types';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { get } from 'lodash';
 
 interface Issue {
   id: string | number;
@@ -13,6 +12,17 @@ interface Issue {
   issue: string;
   value: unknown;
 }
+
+/**
+ * Safely retrieves a nested value from an object using a path array.
+ * @param obj The object to retrieve the value from.
+ * @param path An array of keys representing the path to the value.
+ * @returns The nested value, or undefined if the path does not exist.
+ */
+const getValueFromPath = (obj: { [key: string]: unknown }, path: (string | number)[]): unknown => {
+  // Use reduce with optional chaining to safely traverse the object path.
+  return path.reduce((current: any, key) => current?.[key], obj);
+};
 
 export default function DataQualityPage() {
   const issues: Issue[] = [];
@@ -34,8 +44,8 @@ export default function DataQualityPage() {
           name: (game.name as string) || 'N/A',
           field: fieldPath,
           issue: issue.message,
-          // Use lodash.get for safely accessing nested properties.
-          value: get(game, issue.path),
+          // Use the new helper function to get the value that caused the issue.
+          value: getValueFromPath(game, issue.path),
         });
       });
     }
