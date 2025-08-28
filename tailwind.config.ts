@@ -6,7 +6,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/globals.css', // This line is the crucial fix
+    './app/globals.css',
   ],
   theme: {
     container: {
