@@ -11,7 +11,7 @@ export default function DataQualityHoldingPage() {
           </CardHeader>
           <CardContent>
             <p className="text-lg text-gray-600">
-              We're currently working on our Data Quality Diagnostics page. 
+              We&apos;re currently working on our Data Quality Diagnostics page. 
               Please check back soon for an in-depth analysis of our game data.
             </p>
           </CardContent>
