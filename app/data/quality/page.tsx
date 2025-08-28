@@ -20,8 +20,8 @@ interface Issue {
  * @returns The nested value, or undefined if the path does not exist.
  */
 const getValueFromPath = (obj: { [key: string]: unknown }, path: (string | number)[]): unknown => {
-  // Use reduce with optional chaining to safely traverse the object path.
-  return path.reduce((current: any, key) => current?.[key], obj);
+  // Use reduce with a type assertion to safely traverse the object path.
+  return path.reduce((current: unknown, key) => (current as { [key: string]: unknown })?.[key], obj);
 };
 
 export default function DataQualityPage() {
