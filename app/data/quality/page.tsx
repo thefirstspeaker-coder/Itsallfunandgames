@@ -2,15 +2,16 @@
 import { rawGames } from '@/lib/loadGames';
 import { GameSchema } from '@/lib/types';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { get } from 'lodash';
 
 interface Issue {
   id: string | number;
   name: string;
   field: string;
   issue: string;
-  value: any;
+  value: unknown;
 }
 
 export default function DataQualityPage() {
@@ -19,18 +20,22 @@ export default function DataQualityPage() {
 
   rawGames.forEach((game: { [key: string]: unknown }, index: number) => {
     const result = GameSchema.safeParse(game);
-    const identifier = game.id || game.name || `Row ${index + 1}`;
+    // Prioritise the game's unique 'id' for a consistent identifier.
+    const identifier = game.id || `Row ${index + 1}`;
     
     if (result.success) {
       validCount++;
     } else {
-      result.error.issues.forEach(issue => {
+      result.error.issues.forEach((issue, issueIndex) => {
+        const fieldPath = issue.path.join('.');
         issues.push({
-          id: identifier,
-          name: game.name || 'N/A',
-          field: issue.path.join('.'),
+          // Use a composite key for better stability in dynamic lists.
+          id: `${identifier}-${issueIndex}`,
+          name: (game.name as string) || 'N/A',
+          field: fieldPath,
           issue: issue.message,
-          value: game[issue.path[0] as keyof typeof game],
+          // Use lodash.get for safely accessing nested properties.
+          value: get(game, issue.path),
         });
       });
     }
@@ -66,12 +71,18 @@ export default function DataQualityPage() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {issues.map((issue, index) => (
-              <TableRow key={index}>
+            {issues.map((issue) => (
+              // Use the stable composite key.
+              <TableRow key={issue.id}>
                 <TableCell>
-                  <Link href={`/game/${issue.id}`} className="text-sky-500 hover:underline">
-                    {issue.name} ({issue.id})
-                  </Link>
+                  {/* Ensure the link is only active if a valid game id exists. */}
+                  {typeof issue.id === 'string' && issue.id.startsWith('Row') ? (
+                    `${issue.name} (${issue.id})`
+                  ) : (
+                    <Link href={`/game/${issue.id}`} className="text-sky-500 hover:underline">
+                      {issue.name} ({issue.id})
+                    </Link>
+                  )}
                 </TableCell>
                 <TableCell><code>{issue.field}</code></TableCell>
                 <TableCell>{issue.issue}</TableCell>
