@@ -16,23 +16,24 @@ const slugify = (str: string) =>
 const normaliseNullishString = (value: unknown): string | null => {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
-  return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null: trimmed;
+  return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null : trimmed;
 };
 
-// Add this type definition at the top of the file
-type AnyObject = { [key: string]: any };
-
-// This is the function with explicit types
-const trimStrings = (obj: any): any => {
+// This function uses generics to provide type safety, avoiding `any`.
+const trimStrings = <T>(obj: T): T => {
   if (Array.isArray(obj)) {
-    return obj.map(trimStrings);
+    // We can safely cast here as we are preserving the array structure.
+    return obj.map(trimStrings) as T;
   }
   if (obj !== null && typeof obj === 'object') {
-    return Object.keys(obj).reduce((acc: AnyObject, key) => {
-      const value = (obj as AnyObject)[key];
-      acc[key] = typeof value === 'string' ? value.trim() : trimStrings(value);
+    // The initial value `{}` is cast to T, and we use Record<string, unknown>
+    // for safe property access within the reducer.
+    return Object.keys(obj).reduce((acc, key) => {
+      const value = (obj as Record<string, unknown>)[key];
+      (acc as Record<string, unknown>)[key] =
+        typeof value === 'string' ? value.trim() : trimStrings(value);
       return acc;
-    }, {});
+    }, {} as T);
   }
   return obj;
 };
@@ -60,7 +61,9 @@ export const loadGames = () => {
 
     // Safe reads
     const name = typeof trimmedGame.name === 'string' ? trimmedGame.name : undefined;
-    let id =
+    
+    // Changed 'let' to 'const' as 'id' is not reassigned.
+    const id =
       typeof trimmedGame.id === 'string'
         ? trimmedGame.id
         : name
@@ -133,4 +136,3 @@ export const loadGames = () => {
 };
 
 export const { raw: rawGames, normalised: games } = loadGames();
-
