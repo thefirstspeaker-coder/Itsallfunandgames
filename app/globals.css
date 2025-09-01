@@ -36,6 +36,12 @@
 
   body {
     @apply bg-[var(--background)] text-[var(--foreground)] font-sans text-[16px] leading-[26px];
+    background-image: url('/light-bg.png');
+    background-repeat: repeat;
+  }
+
+  .dark body {
+    background-image: none;
   }
 
   h1 {
