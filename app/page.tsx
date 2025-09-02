@@ -3,6 +3,7 @@ import { games } from '@/lib/loadGames';
 import { GameClient } from './game-client';
 import { Game } from '@/lib/types';
 import { Suspense } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 // Helper to get unique facet values
 const getUniqueValues = (games: Game[], key: keyof Game) => {
@@ -29,7 +30,7 @@ export default function HomePage() {
   };
 
   return (
-    <section className="space-y-10">
+    <section className="space-y-12">
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-primary">Find Your Next Favourite Game</h1>
         <p className="mt-4 text-lg text-muted-foreground">
@@ -37,7 +38,13 @@ export default function HomePage() {
         </p>
       </div>
       <Suspense
-        fallback={<div className="text-center text-muted-foreground">Loading games...</div>}
+        fallback={
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-40 rounded-lg" />
+            ))}
+          </div>
+        }
       >
         <GameClient allGames={games} facets={facets} />
       </Suspense>
