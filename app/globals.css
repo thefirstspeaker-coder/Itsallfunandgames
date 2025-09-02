@@ -21,7 +21,10 @@
 
     --background: var(--color-neutral-50);
     --foreground: var(--color-neutral-900);
+    --spacing-base: 8px;
     --radius: 16px;
+    --shadow-subtle: 0 1px 2px rgb(0 0 0 / 0.05);
+    --border-width: 1px;
     --focus-ring: oklch(0.7 0.2 150);
   }
 
@@ -32,6 +35,7 @@
 
   * {
     border-color: var(--color-neutral-200);
+    border-width: var(--border-width);
   }
 
   body {
