@@ -60,8 +60,17 @@ export function GameClient({ allGames, facets }: { allGames: Game[]; facets: Rec
       if (filters.tags && !(game.tags || []).includes(filters.tags)) return false;
       if (filters.traditionality && game.traditionality !== filters.traditionality) return false;
       if (filters.prepLevel && game.prepLevel !== filters.prepLevel) return false;
-      if (filters.skillsDeveloped && !(game.skillsDeveloped || []).includes(filters.skillsDeveloped)) return false;
-      if (filters.regionalPopularity && game.regionalPopularity !== filters.regionalPopularity) return false;
+      if (
+        filters.skillsDeveloped &&
+        !(game.skillsDeveloped || []).includes(filters.skillsDeveloped)
+      )
+        return false;
+      if (
+        filters.regionalPopularity &&
+        !(game.regionalPopularity || []).includes(filters.regionalPopularity)
+      )
+        return false;
+
       return true;
     });
 
