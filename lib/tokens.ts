@@ -20,7 +20,14 @@ export const tokens = {
     heading: 'Outfit',
     body: 'Inter',
   },
+  spacing: '8px',
   radius: '16px',
+  shadow: '0 1px 2px rgb(0 0 0 / 0.05)',
+  borderWidth: '1px',
+  motion: {
+    duration: '150ms',
+    easing: 'ease-in-out',
+  },
   focus: 'oklch(0.7 0.2 150)',
 };
 

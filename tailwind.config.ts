@@ -47,10 +47,14 @@ const config = {
         sm: 'calc(var(--radius) - 8px)',
       },
       boxShadow: {
-        subtle: '0 1px 2px rgb(0 0 0 / 0.05)',
+        subtle: 'var(--shadow-subtle)',
+      },
+      borderWidth: {
+        DEFAULT: 'var(--border-width)',
       },
       transitionDuration: {
         DEFAULT: '150ms',
+        200: '200ms',
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
