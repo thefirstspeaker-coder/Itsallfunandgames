@@ -29,20 +29,18 @@ export default function HomePage() {
   };
 
   return (
-    <section>
-      <div className="text-center">
-        <h1 className="text-4xl font-extrabold tracking-tighter lg:text-5xl">
-          Find Your Next Favourite Game
-        </h1>
-        <p className="mx-auto mt-4 max-w-[700px] text-lg text-muted-foreground">
+    <section className="space-y-10">
+      <div className="mx-auto max-w-2xl text-center">
+        <h1 className="text-primary">Find Your Next Favourite Game</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Find the perfect game for any group, age, and space.
         </p>
       </div>
-      <div className="mt-8">
-        <Suspense fallback={<div>Loading filters...</div>}>
-            <GameClient allGames={games} facets={facets} />
-        </Suspense>
-      </div>
+      <Suspense
+        fallback={<div className="text-center text-muted-foreground">Loading games...</div>}
+      >
+        <GameClient allGames={games} facets={facets} />
+      </Suspense>
     </section>
   );
 }
