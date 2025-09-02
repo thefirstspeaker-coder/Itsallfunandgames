@@ -1,5 +1,6 @@
+/* app/globals.css */
 @tailwind base;
-@plugin "tailwindcss-animate";
+/* REMOVE this line (plugin already in config):  @plugin "tailwindcss-animate"; */
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +9,7 @@
     --color-primary: #2E7D32;
     --color-secondary: #1976D2;
     --color-accent: #FFB300;
+
     --color-neutral-50: #F8FAFC;
     --color-neutral-100: #E5E9EC;
     --color-neutral-200: #CBD2D9;
@@ -21,6 +23,7 @@
 
     --background: var(--color-neutral-50);
     --foreground: var(--color-neutral-900);
+
     --spacing-base: 8px;
     --radius: 16px;
     --shadow-subtle: 0 1px 2px rgb(0 0 0 / 0.05);
@@ -33,23 +36,33 @@
     --foreground: var(--color-neutral-50);
   }
 
-  * {
-    border-color: var(--color-neutral-200);
-    border-width: var(--border-width);
-  }
+  /* Avoid putting borders on EVERYTHING */
+  /* Move borders to components, not the universal selector */
+  /* * { border-color: var(--color-neutral-200); border-width: var(--border-width); } */
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans text-[16px] leading-[26px];
-    background-image: url('/bg_light.png');
+    /* Use raw CSS for vars inside @apply-sensitive utilities */
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 26px;
+
+    /* Background image */
+    background-image: url('/bg_light.png'); /* file should be in /public */
     background-repeat: repeat;
   }
 
-  .dark body {
+  /* Dark mode override: remove the light texture */
+  html.dark body {
     background-image: none;
   }
 
   h1 {
-    @apply font-heading text-[40px] leading-[44px] font-bold;
+    font-family: var(--font-outfit), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    font-size: 40px;
+    line-height: 44px;
+    font-weight: 700;
   }
 
   *:focus-visible {
