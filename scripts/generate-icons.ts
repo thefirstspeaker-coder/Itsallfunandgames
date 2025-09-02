@@ -16,7 +16,13 @@ const svg = `
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="100" fill="url(#grad)"/>
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="300" dy=".1em">🏃</text>
+  <image 
+    x="102" 
+    y="102" 
+    width="308" 
+    height="308" 
+    href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48dGV4dCB5PSIuOWVtIiBmb250LXNpemU9IjkwIj7in5Q8L3RleHQ+PC9zdmc+"
+  />
 </svg>`;
 
 const svgBuffer = Buffer.from(svg);
