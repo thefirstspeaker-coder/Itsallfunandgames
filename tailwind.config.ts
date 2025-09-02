@@ -1,23 +1,20 @@
 // tailwind.config.ts
-import type { Config } from 'tailwindcss';
-import tailwindcssAnimate from 'tailwindcss-animate';
+import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
 
-const config = {
-  darkMode: "class",
+export default {
+  darkMode: 'class',
   content: [
+    './app/**/*.{ts,tsx}',
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: '',
   theme: {
     container: {
       center: true,
       padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
+      screens: { '2xl': '1400px' },
     },
     extend: {
       colors: {
@@ -53,15 +50,16 @@ const config = {
         DEFAULT: 'var(--border-width)',
       },
       transitionDuration: {
-        DEFAULT: '150ms',
         200: '200ms',
       },
       transitionTimingFunction: {
         DEFAULT: 'ease-in-out',
       },
+      // Optional: let you use `bg-paper` instead of raw CSS
+      backgroundImage: {
+        paper: "url('/bg_light.png')",
+      },
     },
   },
   plugins: [tailwindcssAnimate],
-} satisfies Config;
-
-export default config;
+} satisfies Config
