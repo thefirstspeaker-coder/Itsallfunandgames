@@ -70,6 +70,7 @@ export function GameClient({ allGames, facets }: { allGames: Game[]; facets: Rec
         !(game.regionalPopularity || []).includes(filters.regionalPopularity)
       )
         return false;
+
       return true;
     });
 
