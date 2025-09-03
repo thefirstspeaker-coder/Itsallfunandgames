@@ -17,14 +17,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -132,25 +125,28 @@ export function GameClient({
     });
   };
 
+  // Playful palettes for card frames/buttons
+  const palettes = [
+    { frame: "from-amber-400 to-yellow-300", accent: "bg-amber-500 hover:bg-amber-600", subtle: "bg-amber-50" },
+    { frame: "from-rose-400 to-red-300", accent: "bg-rose-500 hover:bg-rose-600", subtle: "bg-rose-50" },
+    { frame: "from-teal-400 to-emerald-300", accent: "bg-teal-500 hover:bg-teal-600", subtle: "bg-teal-50" },
+    { frame: "from-sky-400 to-blue-300", accent: "bg-sky-500 hover:bg-sky-600", subtle: "bg-sky-50" },
+    { frame: "from-violet-400 to-fuchsia-300", accent: "bg-violet-500 hover:bg-violet-600", subtle: "bg-violet-50" },
+    { frame: "from-lime-400 to-green-300", accent: "bg-lime-500 hover:bg-lime-600", subtle: "bg-lime-50" },
+  ];
+  const getPalette = (id?: string) => palettes[Math.abs(id?.length || 0) % palettes.length];
+
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col gap-4 md:flex-row md:flex-wrap">
-        <Input
-          aria-label="Search games"
-          placeholder="Search by name..."
-          value={filters.query}
-          onChange={(e) =>
-            setFilters((f) => ({ ...f, query: e.target.value, page: 1 }))
-          }
-          className="md:w-64"
-        />
+    <div className="space-y-8">
+      {/* Filter tabs styled as links */}
+      <div className="flex flex-wrap items-center gap-3 md:gap-6">
         <Select
           value={filters.category}
           onValueChange={(value) =>
             setFilters((f) => ({ ...f, category: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Group">
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Group">
             <SelectValue placeholder="Group" />
           </SelectTrigger>
           <SelectContent>
@@ -167,7 +163,7 @@ export function GameClient({
             setFilters((f) => ({ ...f, tags: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Type">
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Type">
             <SelectValue placeholder="Type" />
           </SelectTrigger>
           <SelectContent>
@@ -184,7 +180,7 @@ export function GameClient({
             setFilters((f) => ({ ...f, traditionality: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Traditionality">
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Traditionality">
             <SelectValue placeholder="Traditionality" />
           </SelectTrigger>
           <SelectContent>
@@ -201,8 +197,8 @@ export function GameClient({
             setFilters((f) => ({ ...f, prepLevel: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Prep level">
-            <SelectValue placeholder="Prep level" />
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Prep Level">
+            <SelectValue placeholder="Prep Level" />
           </SelectTrigger>
           <SelectContent>
             {facets.prepLevel.map((level) => (
@@ -218,7 +214,7 @@ export function GameClient({
             setFilters((f) => ({ ...f, skillsDeveloped: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Skill">
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Skill">
             <SelectValue placeholder="Skill" />
           </SelectTrigger>
           <SelectContent>
@@ -235,7 +231,7 @@ export function GameClient({
             setFilters((f) => ({ ...f, regionalPopularity: value, page: 1 }))
           }
         >
-          <SelectTrigger className="w-40" aria-label="Region">
+          <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Region">
             <SelectValue placeholder="Region" />
           </SelectTrigger>
           <SelectContent>
@@ -246,60 +242,88 @@ export function GameClient({
             ))}
           </SelectContent>
         </Select>
+        <Button
+          variant="secondary"
+          className="ml-auto rounded-full bg-rose-500 px-4 py-1.5 text-white hover:bg-rose-600"
+          onClick={resetFilters}
+        >
+          Clear Filter
+        </Button>
+      </div>
+
+      {/* Centered search */}
+      <div className="mx-auto flex max-w-2xl items-center gap-2 rounded-full bg-white/80 p-2 shadow-subtle ring-1 ring-black/5">
+        <Input
+          aria-label="Search games"
+          placeholder="Search"
+          value={filters.query}
+          onChange={(e) =>
+            setFilters((f) => ({ ...f, query: e.target.value, page: 1 }))
+          }
+          className="h-10 border-none bg-transparent shadow-none focus-visible:ring-0"
+        />
+        <Button className="h-10 rounded-full bg-rose-500 px-5 text-white hover:bg-rose-600">
+          Go
+        </Button>
       </div>
 
       {paginatedGames.length > 0 ? (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {paginatedGames.map((game) => (
-            <Card
-              key={game.id}
-              className="transition-transform hover:-translate-y-1 hover:shadow-subtle"
-            >
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl">
-                  <Link href={`/game/${game.id}`} className="hover:underline">
-                    {game.name}
-                  </Link>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-sm text-muted-foreground line-clamp-3">
-                  {game.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {typeof game.ageMin === "number" && (
-                    <Badge variant="secondary">
-                      Ages {game.ageMin}
-                      {typeof game.ageMax === "number" ? `–${game.ageMax}` : "+"}
-                    </Badge>
-                  )}
-                  {typeof game.playersMin === "number" && (
-                    <Badge variant="secondary">
-                      {game.playersMin}
-                      {typeof game.playersMax === "number"
-                        ? `–${game.playersMax}`
-                        : "+"} players
-                    </Badge>
-                  )}
-                  {game.prepLevel && (
-                    <Badge variant="secondary">{game.prepLevel}</Badge>
-                  )}
-                  {game.traditionality && (
-                    <Badge variant="secondary">{game.traditionality}</Badge>
-                  )}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {paginatedGames.map((game) => {
+            const p = getPalette(game.id);
+            return (
+              <div key={game.id} className={`rounded-2xl p-1 bg-gradient-to-br ${p.frame}`}>
+                <div className="rounded-[18px] bg-white/80 p-1">
+                  <Card className="border-none bg-white/90 shadow transition-transform hover:-translate-y-1">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-2xl font-black tracking-tight">
+                        <Link href={`/game/${game.id}`} className="hover:underline">
+                          {game.name}
+                        </Link>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className={`rounded-lg p-4 text-sm text-muted-foreground ${p.subtle}`}>
+                        <p className="line-clamp-3">{game.description}</p>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {typeof game.ageMin === "number" && (
+                            <Badge variant="secondary">
+                              Ages {game.ageMin}
+                              {typeof game.ageMax === "number" ? `–${game.ageMax}` : "+"}
+                            </Badge>
+                          )}
+                          {typeof game.playersMin === "number" && (
+                            <Badge variant="secondary">
+                              {game.playersMin}
+                              {typeof game.playersMax === "number" ? `–${game.playersMax}` : "+"} players
+                            </Badge>
+                          )}
+                          {game.prepLevel && <Badge variant="secondary">{game.prepLevel}</Badge>}
+                          {game.traditionality && <Badge variant="secondary">{game.traditionality}</Badge>}
+                        </div>
+                      </div>
+                      {game.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {game.tags.slice(0, 3).map((tag) => (
+                            <Badge key={tag} variant="outline">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
+                      <div className="pt-2">
+                        <Link href={`/game/${game.id}`}>
+                          <Button className={`w-full rounded-full text-white ${p.accent}`}>
+                            More Details
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-                {game.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {game.tags.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="outline">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-20 text-center">
@@ -318,44 +342,41 @@ export function GameClient({
       )}
 
       {totalPages > 1 && (
-        <Pagination className="pt-4">
-          <PaginationContent>
-            <PaginationItem>
-              <PaginationPrevious
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handlePageChange(Math.max(1, currentPage - 1));
-                }}
-              />
-            </PaginationItem>
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <PaginationItem key={i}>
-                <PaginationLink
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handlePageChange(i + 1);
-                  }}
-                  isActive={currentPage === i + 1}
-                >
-                  {i + 1}
-                </PaginationLink>
-              </PaginationItem>
-            ))}
-            <PaginationItem>
-              <PaginationNext
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handlePageChange(Math.min(totalPages, currentPage + 1));
-                }}
-              />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        <div className="pt-4">
+          <Pagination>
+            <PaginationContent>
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <PaginationItem key={i}>
+                  <PaginationLink
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handlePageChange(i + 1);
+                    }}
+                    isActive={currentPage === i + 1}
+                  >
+                    {i + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+            </PaginationContent>
+          </Pagination>
+          <div className="mt-4 flex items-center justify-center gap-3">
+            <Button
+              className="rounded-full bg-emerald-500 px-5 text-white hover:bg-emerald-600"
+              onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+            >
+              Next
+            </Button>
+            <Button
+              className="rounded-full bg-rose-500 px-5 text-white hover:bg-rose-600"
+              onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+            >
+              Previous
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   );
 }
-
