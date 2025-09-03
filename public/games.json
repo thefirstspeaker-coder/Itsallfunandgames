@@ -3,24 +3,15 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "and",
-      "as",
       "balance",
-      "fun",
-      "name",
-      "need",
-      "patience",
-      "suggests",
-      "the",
-      "though",
-      "you"
+      "patience"
     ],
     "ageMax": 12,
     "generalRules": [
-      "Get four players to lie on their backs in a small circle with their legs raised so their feet meet in the middle and form a table.",
-      "Place a bucket of water or other objects on the players’ feet.",
-      "Each player, one at a time, carefully removes their shoes while keeping the bucket balanced.",
-      "If the bucket tips or falls, reset and try again."
+      "Get four players to lie on their backs in a small circle with their legs raised so their feet meet in the middle and form a table",
+      "Place a bucket of water or other objects on the players feet",
+      "Each player, one at a time, carefully removes their shoes while keeping the bucket balanced",
+      "If the bucket tips or falls, reset and try again"
     ],
     "description": "A team balance challenge where four players form a table with their feet and try to remove their shoes without tipping a bucket on top.",
     "equipment": "Plastic bucket filled with water or lightweight objects for balancing",
@@ -43,7 +34,7 @@
       "Fill the bucket with objects instead of water and race multiple teams to see who can remove shoes first"
     ],
     "historicalNotes": "",
-    "name": "Balance & Patience...",
+    "name": "Balance & Patience",
     "playersMin": 4,
     "links": [],
     "category": "Wide",
@@ -62,15 +53,12 @@
     "traditionality": "Traditional",
     "notes": "Remove hazards first.",
     "keywords": [
-      "a",
       "area",
       "blind",
       "blindfolded",
       "buff",
       "clear",
-      "in",
       "man",
-      "s",
       "safe",
       "tag"
     ],
@@ -78,18 +66,18 @@
       "UK-wide"
     ],
     "generalRules": [
-      "Choose a spacious area and pick one player as “it”.",
-      "Blindfold the “it” player and spin them around a few times to disorient them.",
-      "Other players scatter and tease the blindfolded player while avoiding being tagged.",
-      "When the blindfolded player tags someone, that person becomes the new “it” and play continues."
+      "Choose a spacious area and pick one player as “it”",
+      "Blindfold the “it” player and spin them around a few times to disorient them",
+      "Other players scatter and tease the blindfolded player while avoiding being tagged",
+      "When the blindfolded player tags someone, that person becomes the new “it” and play continues"
     ],
     "skillsDeveloped": [
-      "Spatial awareness",
+      "Spatial Awareness",
       "Confidence",
       "Agility"
     ],
     "variations": [
-      "In a variant, the blindfolded player must correctly identify the person they catch before swapping roles."
+      "In a variant, the blindfolded player must correctly identify the person they catch before swapping roles"
     ],
     "historicalNotes": "The game dates back more than two millennia; it was played in Ancient Greece and has variants across Europe with names like “blind cow” and “blind hen”.",
     "description": "Blindfolded tag in a safe, clear area.",
@@ -99,7 +87,8 @@
     "tags": [
       "tag"
     ],
-    "id": "blind-man-s-buff"
+    "id": "blind-man-s-buff",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -115,14 +104,14 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 For this game players divide into teams of two One partner in each team is blindfolded.",
-      "You will need to MAKE SURE that no one can peek or it would ruin the game.",
-      "You will also need to make sure that you have plenty of space and nothing breakable in the playing area.",
-      "2 All the teams start on one side of the playing area.",
-      "After the partners are blindfolded reveal the prize.",
-      "This can be a prize, a bar of chocolate or something that will get players excited.",
-      "3 Now the players that are not blindfolded must remain where they stand and lead their partners to the prize using only their words (no touching).",
-      "The goal is to be the first to grab the prize, but the hilarity of watching the players try and get there will be laughed about for ages."
+      "1 for this game players divide into teams of two one partner in each team is blindfolded",
+      "You will need to make sure that no one can peek or it would ruin the game",
+      "You will also need to make sure that you have plenty of space and nothing breakable in the playing area",
+      "2 all the teams start on one side of the playing area",
+      "After the partners are blindfolded reveal the prize",
+      "This can be a prize, a bar of chocolate or something that will get players excited",
+      "3 now the players that are not blindfolded must remain where they stand and lead their partners to the prize using only their words (no touching)",
+      "The goal is to be the first to grab the prize, but the hilarity of watching the players try and get there will be laughed about for ages"
     ],
     "description": "Funny Communication Mild Action Game",
     "equipment": "Little",
@@ -161,13 +150,13 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 You need an even amount of people if you have an odd one out use a leader or get them to take it in turns to help you judge 2 Get everyone to team up in two's 3 One stands in a circle and the other stands next to their partner outside of the circle 4 When the music starts, the inner circle walk clockwise and the outer circle walk anti-clockwise.",
-      "When the music stops the leader yells out two body parts e.g… a.",
-      "Foot to ear!\" b.",
-      "Nose to the inside of the elbow!\" c.",
-      "Top of the head to the back of the knee!\" d.",
-      "Elbow to Elbow\" e.",
-      "“Don't yell \"chest to head!\" 5 Partners scramble to get to each other and put those designated body parts together"
+      "1 you need an even amount of people if you have an odd one out use a leader or get them to take it in turns to help you judge 2 get everyone to team up in two's 3 one stands in a circle and the other stands next to their partner outside of the circle 4 when the music starts, the inner circle walk clockwise and the outer circle walk anti-clockwise",
+      "When the music stops the leader yells out two body parts e.g… a",
+      "Foot to ear!\" b",
+      "Nose to the inside of the elbow!\" c",
+      "Top of the head to the back of the knee!\" d",
+      "Elbow to elbow\" e",
+      "“don't yell \"chest to head!\" 5 partners scramble to get to each other and put those designated body parts together"
     ],
     "description": "Funny Coordination Game",
     "equipment": "None",
@@ -198,7 +187,6 @@
     "recommendedPlayersText": "5+",
     "notes": "Use a coloured counter for safety.",
     "keywords": [
-      "a",
       "button",
       "circle",
       "deception",
@@ -207,14 +195,12 @@
       "hidden",
       "s",
       "small",
-      "the",
       "token",
-      "who",
-      "with"
+      "who"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Players cup hands; leader feigns dropping the token around, leaving it once; after the chant, guess who holds it; correct guesser becomes leader."
+      "Players cup hands; leader feigns dropping the token around, leaving it once; after the chant, guess who holds it; correct guesser becomes leader"
     ],
     "description": "Deception circle game with a hidden small token.",
     "equipment": "Small token (button/coin)",
@@ -247,7 +233,8 @@
     "playersMin": 5,
     "links": [],
     "category": "Party",
-    "id": "button-button-who-s-got-the-button"
+    "id": "button-button-who-s-got-the-button",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -260,15 +247,15 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Separate your entire group into three teams and assign a 'child leader' to each group Ask each group to all count from 1 to 40.",
-      "But when they reach a multiple of 5 e.g.",
-      "5, 10 15 etc.",
-      "they must say the word “Buzz” Also when they reach multiples of 7 e.g.",
-      "7, 14, 21 etc.",
-      "they must say the word “Fizz” At this stage each leader has to keep an eye on what the children are saying.",
-      "If anyone in the group messes up the entire group have to start from number 1 again Once each group achieve the task i.e.",
-      "to get to number 40 ask them to sit on the floor The first group to sit on the floor is the winner.",
-      "Note: If this is taking too long you can put a time limit on it or just use 5´s"
+      "Separate your entire group into three teams and assign a 'child leader' to each group ask each group to all count from 1 to 40",
+      "But when they reach a multiple of 5 e.g",
+      "5, 10 15 etc",
+      "They must say the word “buzz” also when they reach multiples of 7 e.g",
+      "7, 14, 21 etc",
+      "They must say the word “fizz” at this stage each leader has to keep an eye on what the children are saying",
+      "If anyone in the group messes up the entire group have to start from number 1 again once each group achieve the task i.e",
+      "To get to number 40 ask them to sit on the floor the first group to sit on the floor is the winner",
+      "Note: if this is taking too long you can put a time limit on it or just use 5´s"
     ],
     "description": "Concentration Game",
     "equipment": "None",
@@ -301,51 +288,36 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "brainteaser",
       "can",
       "end",
       "follow",
-      "for",
       "instruction",
       "little",
-      "meeting",
-      "of",
-      "the",
-      "you",
-      "your"
+      "meeting"
     ],
     "ageMax": 12,
     "generalRules": [
-      "Find a pen and paper.",
-      "Write your name at the top of the paper.",
-      "Write the numbers 1 to 5, one per line.",
-      "Draw five small circles beside #1.",
-      "Put an \"X\" in the second and fourth circles next to #1.",
-      "Write the word 'encyclopedia' beside #3.",
-      "On the back of the paper multiply 7 x 9.",
-      "Put an X in the lower right-hand corner of the paper.",
-      "Draw a circle around the X you just made.",
-      "10.",
-      "Underline your name.",
-      "11.",
-      "Say your name out loud.",
-      "12.",
-      "Draw a circle around #4.",
-      "13.",
-      "Count the number of words in this sentence and write the answer beside #2 on your paper.",
-      "14.",
-      "Put a square around #1 and #5.",
-      "15.",
-      "Put 3 small dots anywhere in the paper 16.",
-      "Write your first name beside #4.",
-      "17.",
-      "Write today's date beside #5 on your paper.",
-      "18.",
-      "Circle every letter 'E' you have written.",
-      "19.",
-      "Stand up and say 'I HAVE FINISHED' out loud, then sit down 20.",
-      "Now that you read all of the instructions, skip all of them except the first two! If you have followed the instructions correctly, you should only have your name on the paper! keep quite until sombodys says your done."
+      "Find a pen and paper",
+      "Write your name at the top of the paper",
+      "Write the numbers 1 to 5, one per line",
+      "Draw five small circles beside #1",
+      "Put an \"x\" in the second and fourth circles next to #1",
+      "Write the word 'encyclopedia' beside #3",
+      "On the back of the paper multiply 7 x 9",
+      "Put an x in the lower right-hand corner of the paper",
+      "Draw a circle around the x you just made",
+      "Underline your name",
+      "Say your name out loud",
+      "Draw a circle around #4",
+      "Count the number of words in this sentence and write the answer beside #2 on your paper",
+      "Put a square around #1 and #5",
+      "Put 3 small dots anywhere in the paper 16",
+      "Write your first name beside #4",
+      "Write today's date beside #5 on your paper",
+      "Circle every letter 'e' you have written",
+      "Stand up and say 'i have finished' out loud, then sit down",
+      "Now that you read all of the instructions, skip all of them except the first two! if you have followed the instructions correctly, you should only have your name on the paper! keep quite until sombodys says your done"
     ],
     "description": "A little brainteaser for the end of your meeting",
     "equipment": "Print out this text for each child",
@@ -376,11 +348,11 @@
     "recommendedPlayersText": "10+ (2 teams)",
     "ageMax": 11,
     "generalRules": [
-      "Divide the group into two teams and mark clear boundaries on a large playing field.",
-      "Each team places a flag in a designated zone on their side.",
-      "Players cross into the opponent’s territory to try to capture the flag and return to their own side without being tagged.",
-      "Tagged players go to a holding zone on the opponent’s side until freed by a teammate who crosses the centre line and tags them.",
-      "Defenders must stay at least two feet away from the flag and holding zone boundaries."
+      "Divide the group into two teams and mark clear boundaries on a large playing field",
+      "Each team places a flag in a designated zone on their side",
+      "Players cross into the opponent’s territory to try to capture the flag and return to their own side without being tagged",
+      "Tagged players go to a holding zone on the opponent’s side until freed by a teammate who crosses the centre line and tags them",
+      "Defenders must stay at least two feet away from the flag and holding zone boundaries"
     ],
     "description": "Two teams each try to steal the opposing team’s flag and return it to their base without being tagged.",
     "equipment": "Two flags or markers",
@@ -398,13 +370,11 @@
     "traditionality": "Traditional",
     "notes": "Add jails and safe zones for variety.",
     "keywords": [
-      "and",
       "base",
       "being",
       "capture",
       "each",
       "flag",
-      "it",
       "opposing",
       "return",
       "s",
@@ -412,9 +382,6 @@
       "tagged",
       "team",
       "teams",
-      "the",
-      "their",
-      "to",
       "try",
       "two",
       "without"
@@ -423,11 +390,11 @@
       "UK-wide"
     ],
     "variations": [
-      "Limit the number of players allowed in the flag zone at one time.",
-      "Allow a player in the flag zone to throw the flag to a teammate, who must still carry it across the centre line.",
-      "Let tagged players in the holding zone join hands to make it easier to be freed.",
-      "Free all players in the holding zone when a single player is rescued.",
-      "In extended games, allow teams to hide their flags in plain sight in a designated area."
+      "Limit the number of players allowed in the flag zone at one time",
+      "Allow a player in the flag zone to throw the flag to a teammate, who must still carry it across the centre line",
+      "Let tagged players in the holding zone join hands to make it easier to be freed",
+      "Free all players in the holding zone when a single player is rescued",
+      "In extended games, allow teams to hide their flags in plain sight in a designated area"
     ],
     "historicalNotes": "",
     "regionalNames": [],
@@ -437,7 +404,8 @@
       "tag",
       "wide-area"
     ],
-    "id": "capture-the-flag"
+    "id": "capture-the-flag",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -449,13 +417,11 @@
       "gets",
       "quite",
       "tag",
-      "the",
-      "this",
       "towards"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Choose an 'It' person that person tags another and when they do they have to join hands 2 Now they both with hands joined tag another person who also has to join hands with them and so on creating a chain"
+      "1 choose an 'it' person that person tags another and when they do they have to join hands 2 now they both with hands joined tag another person who also has to join hands with them and so on creating a chain"
     ],
     "description": "This gets quite funny towards the end",
     "equipment": "None",
@@ -487,7 +453,6 @@
     "notes": "You can add challenge by having riders keep their arms crossed in front of them and not grabbing the tarp",
     "keywords": [
       "chariot",
-      "fun",
       "much",
       "needed",
       "race",
@@ -495,10 +460,10 @@
     ],
     "ageMax": 12,
     "generalRules": [
-      "Divide participants into teams of at least three players.",
-      "Give each team a blanket or tarp. One player sits on it while two teammates grab the front corners.",
-      "On the signal, teams race by dragging the blanket around a course and back to the start line.",
-      "Play three rounds so that each team member has a turn riding the “chariot”."
+      "Divide participants into teams of at least three players",
+      "Give each team a blanket or tarp. one player sits on it while two teammates grab the front corners",
+      "On the signal, teams race by dragging the blanket around a course and back to the start line",
+      "Play three rounds so that each team member has a turn riding the “chariot”"
     ],
     "description": "Strength Needed Much Fun",
     "equipment": "An old blanket or tarp for each team",
@@ -517,7 +482,7 @@
       "Agility"
     ],
     "variations": [
-      "Have riders keep their arms crossed and avoid grabbing the tarp for an added challenge."
+      "Have riders keep their arms crossed and avoid grabbing the tarp for an added challenge"
     ],
     "historicalNotes": "This safe version of a chariot race echoes ancient Roman races; here blankets replace chariots.",
     "name": "Chariot Race",
@@ -548,24 +513,21 @@
     "traditionality": "Traditional",
     "notes": "Often called 'Telephone'.",
     "keywords": [
-      "a",
-      "and",
       "chinese",
       "circle",
       "compare",
       "final",
       "message",
       "round",
-      "the",
       "version",
       "whisper",
       "whispers"
     ],
     "generalRules": [
-      "Players form a line or circle.",
-      "The first player whispers a message to the next player.",
-      "Each player whispers the message along the line until the last player is reached.",
-      "The last player announces the message aloud and everyone compares it with the original."
+      "Players form a line or circle",
+      "The first player whispers a message to the next player",
+      "Each player whispers the message along the line until the last player is reached",
+      "The last player announces the message aloud and everyone compares it with the original"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -575,7 +537,8 @@
     "tags": [
       "circle"
     ],
-    "id": "chinese-whispers"
+    "id": "chinese-whispers",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -584,17 +547,16 @@
       "calming",
       "colours",
       "down",
-      "for",
       "game",
       "good",
       "thinking"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 The leader sits in the middle of the circle, points to a player and calls \"red\" the player has to name an object that is red (tomato, fire engine etc…) before the leader can count to 10 out loud 2 The same object cannot be repeated.",
-      "If a player fails to think of an object before the leader has counted to ten, the two switch places 3 Now that child points to a player and calls out a colour Notes: a Use 5 Seconds forolder kids to make it harder b If you have a large group split it into two and use a leader in each circle c You can also make it harder for the older ones by choosing different categories.",
-      "For example, Countries or Cites.",
-      "So you would point to someone and say Country beginning with C"
+      "1 the leader sits in the middle of the circle, points to a player and calls \"red\" the player has to name an object that is red (tomato, fire engine etc…) before the leader can count to 10 out loud 2 the same object cannot be repeated",
+      "If a player fails to think of an object before the leader has counted to ten, the two switch places 3 now that child points to a player and calls out a colour notes: a use 5 seconds forolder kids to make it harder b if you have a large group split it into two and use a leader in each circle c you can also make it harder for the older ones by choosing different categories",
+      "For example, countries or cites",
+      "So you would point to someone and say country beginning with c"
     ],
     "description": "Thinking Game Good For Calming Down",
     "equipment": "None",
@@ -626,22 +588,18 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "action",
-      "be",
       "bit",
       "can",
       "concentration",
       "copycat",
       "funny",
-      "game",
-      "of",
-      "with"
+      "game"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Ask everyone to stand in a circle facing inwards and pick one person to send out of the room Whilst the person is out of the room appoint a leader This person is the one who (in a minute) will lead the room in various movements (e.g.",
-      "stamping feet, spinning, standing on one foot, dancing, singing, etc.) Everyone else in the circle must mimic the leader, without giving away who the leader is Bring the person back into the room, and start the game Once the person who was out of the room guesses who the leader is that leader then leaves the room and you can play again (depending on your time constraints)"
+      "Ask everyone to stand in a circle facing inwards and pick one person to send out of the room whilst the person is out of the room appoint a leader this person is the one who (in a minute) will lead the room in various movements (e.g",
+      "Stamping feet, spinning, standing on one foot, dancing, singing, etc.) everyone else in the circle must mimic the leader, without giving away who the leader is bring the person back into the room, and start the game once the person who was out of the room guesses who the leader is that leader then leaves the room and you can play again (depending on your time constraints)"
     ],
     "description": "Can Be A Funny Action Game With A Bit Of Concentration",
     "equipment": "None",
@@ -671,7 +629,7 @@
     "id": "copycat"
   },
   {
-    "recommendedPlayersText": "6–14",
+    "recommendedPlayersText": "6-14",
     "ageMax": 11,
     "equipment": "None",
     "playersMax": 14,
@@ -687,30 +645,24 @@
     "traditionality": "Traditional",
     "notes": "Good warm-up.",
     "keywords": [
-      "a",
-      "and",
       "call",
       "chases",
       "cranes",
       "crows",
       "flees",
-      "in",
       "line",
-      "on",
       "one",
       "other",
       "pairs",
       "row",
       "rows",
-      "the",
-      "to",
       "two"
     ],
     "regionalPopularity": [
       "UK-wide"
     ],
     "generalRules": [
-      "Line up in pairs; leader calls a side; that side flees while the other chases to tag before the safety line."
+      "Line up in pairs; leader calls a side; that side flees while the other chases to tag before the safety line"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -720,14 +672,13 @@
     "tags": [
       "tag"
     ],
-    "id": "crows-and-cranes"
+    "id": "crows-and-cranes",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "6+",
     "notes": "Head‑shot rule and safety first.",
     "keywords": [
-      "a",
-      "and",
       "balls",
       "catches",
       "dodgeball",
@@ -746,7 +697,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Start behind lines; on go, collect balls; throw under shoulder; hits out; catches eliminate thrower and revive one teammate; last team with players wins."
+      "Start behind lines; on go, collect balls; throw under shoulder; hits out; catches eliminate thrower and revive one teammate; last team with players wins"
     ],
     "description": "Two teams throw soft balls from opposite sides; hits eliminate; catches revive a teammate and eliminate thrower.",
     "equipment": "Several soft dodgeballs",
@@ -779,7 +730,8 @@
     "playersMin": 6,
     "links": [],
     "category": "Group",
-    "id": "dodgeball"
+    "id": "dodgeball",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "6+",
@@ -798,7 +750,6 @@
     "traditionality": "Traditional",
     "notes": "Short, lively rounds.",
     "keywords": [
-      "a",
       "chase",
       "chases",
       "choosing",
@@ -808,16 +759,15 @@
       "heads",
       "tap",
       "tapper",
-      "the",
       "until",
       "who"
     ],
     "generalRules": [
-      "Tapper circles; on 'goose' chase begins; if tapper reaches spot first, goose becomes next tapper; if caught, tapper remains it."
+      "Tapper circles; on 'goose' chase begins; if tapper reaches spot first, goose becomes next tapper; if caught, tapper remains it"
     ],
     "skillsDeveloped": [
       "Agility",
-      "Turn‑taking"
+      "Turn‑Taking"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -827,13 +777,13 @@
       "circle",
       "tag"
     ],
-    "id": "duck-duck-goose"
+    "id": "duck-duck-goose",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "4+",
     "notes": "Use foam items in schools.",
     "keywords": [
-      "a",
       "before",
       "being",
       "chase",
@@ -841,19 +791,17 @@
       "game",
       "knock",
       "off",
-      "on",
       "retrieve",
       "rock",
       "stone",
       "tagged",
-      "the",
       "then",
       "throwing",
       "yours"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Set a duck stone on a stump; one guards; throwers behind a line try to knock it; when down, all retrieve their stones while guard replaces duck and tries to tag returners; first tagged becomes guard."
+      "Set a duck stone on a stump; one guards; throwers behind a line try to knock it; when down, all retrieve their stones while guard replaces duck and tries to tag returners; first tagged becomes guard"
     ],
     "description": "Throwing/chase game: knock the duck stone off, then retrieve yours before being tagged.",
     "equipment": "Several small throwables + one larger 'duck'",
@@ -873,8 +821,8 @@
       "UK-wide"
     ],
     "skillsDeveloped": [
-      "Throwing accuracy",
-      "Quick decisions"
+      "Throwing Accuracy",
+      "Quick Decisions"
     ],
     "variations": [
       "Two guards",
@@ -885,7 +833,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Wide",
-    "id": "duck-on-a-rock"
+    "id": "duck-on-a-rock",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -896,12 +845,11 @@
       "elephants",
       "game",
       "kids",
-      "love",
-      "this"
+      "love"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Ask all the children to stand at the end of your hall 2 The leaders stand at the sides of the hall 3 When a leader shouts ELEPHANTS the children must run from one end of the hall to the other 4 The leaders throw 2 soft balls at the children’s legs while they are running 5 If the ball hits any of the children below the knee then they are out and must sit away from the game 6 Continue this until one child is left 7 The last child must run again and try not to get hit if he doesn't he's declared the winner 8 Any children that are out can throw the balls along with the leader and to make it harder you can introduce more balls."
+      "1 ask all the children to stand at the end of your hall 2 the leaders stand at the sides of the hall 3 when a leader shouts elephants the children must run from one end of the hall to the other 4 the leaders throw 2 soft balls at the children’s legs while they are running 5 if the ball hits any of the children below the knee then they are out and must sit away from the game 6 continue this until one child is left 7 the last child must run again and try not to get hit if he doesn't he's declared the winner 8 any children that are out can throw the balls along with the leader and to make it harder you can introduce more balls"
     ],
     "description": "All kids love this action game",
     "equipment": "Little",
@@ -934,19 +882,16 @@
     "keywords": [
       "activity",
       "eye",
-      "fun",
       "game",
-      "is",
       "oservation",
       "really",
       "techniques",
-      "that",
       "witness"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Towards the end of your meeting two of your leader/helpers must go out of the room and dress up using their disguises without any of the children knowing what they are up to.",
-      "2 Once they are dressed they rush in and demand from a leader that is in the room that they give them their wallet 3 The leader hands it over, and they run out of the room 4 Now explain to the children that in order to catch the thieves you want each group to come up with a detailed description of them and that there will be a reward for the group that is most helpful 5 Give them 5-10 minutes to create their list 6 Once the lists are turned in the leader goes outside to bring the thieves in 7 They then read through the lists to determine which team gave the best description"
+      "1 towards the end of your meeting two of your leader/helpers must go out of the room and dress up using their disguises without any of the children knowing what they are up to",
+      "2 once they are dressed they rush in and demand from a leader that is in the room that they give them their wallet 3 the leader hands it over, and they run out of the room 4 now explain to the children that in order to catch the thieves you want each group to come up with a detailed description of them and that there will be a reward for the group that is most helpful 5 give them 5-10 minutes to create their list 6 once the lists are turned in the leader goes outside to bring the thieves in 7 they then read through the lists to determine which team gave the best description"
     ],
     "description": "Oservation Techniques Game That Is Really Fun",
     "equipment": "3 Leaders/Helpers, 1 Wallet, Paper and pencil per group of six, Disguises for two leader/helpers: for example, hat, sunglasses, gloves, fake beard, fake moustache, coloured clothes'",
@@ -978,23 +923,21 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "easy",
       "fabulous",
       "five",
       "maths",
       "puzzle",
-      "shock",
-      "with"
+      "shock"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Read the following to the group… a.",
-      "I want you to choose a number from 1 to 10 b.",
-      "Now double that number c.",
-      "Now add 10 to your new number d.",
-      "Now, divide the total by 2 e.",
-      "Finally, subtract your original number that you started with f.",
+      "1 ask the group to form a circle and sit down 2 read the following to the group… a",
+      "I want you to choose a number from 1 to 10 b",
+      "Now double that number c",
+      "Now add 10 to your new number d",
+      "Now, divide the total by 2 e",
+      "Finally, subtract your original number that you started with f",
       "What is your answer (everyone should say 5)"
     ],
     "description": "Easy Maths Puzzle With A Shock",
@@ -1027,34 +970,28 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
-      "and",
       "but",
       "can",
       "exercise",
       "find",
-      "for",
       "great",
-      "have",
       "kids",
       "leader",
       "little",
       "needs",
       "prep",
       "rest",
-      "the",
-      "ths",
-      "your"
+      "ths"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Before the leader hides he gives each group of 6-8 a sealed envelope with directions how to find him/her 2 Each envelope contains the description of a different route, each about the same length.",
-      "These directions contain references to the compass and to nature study, such as trees and flowers.",
-      "A sample direction is as follows: \"From the southeast corner of the lodge, proceed east 50 paces.",
-      "From here go 120 paces northeast.",
-      "From the nearest beech tree go south 30 paces and search for a mullein plant over three feet tall.",
-      "From there go southeast 100 paces and find a white oak stump.",
-      "I will be 47 paces south of this point.\" 3 The group finding the Leader first is the winner."
+      "1 before the leader hides he gives each group of 6-8 a sealed envelope with directions how to find him/her 2 each envelope contains the description of a different route, each about the same length",
+      "These directions contain references to the compass and to nature study, such as trees and flowers",
+      "A sample direction is as follows: \"from the southeast corner of the lodge, proceed east 50 paces",
+      "From here go 120 paces northeast",
+      "From the nearest beech tree go south 30 paces and search for a mullein plant over three feet tall",
+      "From there go southeast 100 paces and find a white oak stump",
+      "I will be 47 paces south of this point.\" 3 the group finding the leader first is the winner"
     ],
     "description": "Ths needs a little prep but a great exercise for the kids. And the leader can have a rest!",
     "equipment": "Little",
@@ -1085,25 +1022,20 @@
     "recommendedPlayersText": "4+",
     "notes": "Tape lines indoors if needed.",
     "keywords": [
-      "a",
       "advance",
       "ball",
-      "by",
       "eliminating",
       "four",
       "game",
       "grid",
       "king",
-      "on",
       "others",
       "players",
-      "square",
-      "the",
-      "to"
+      "square"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Chalk a 2×2 grid; number squares; serve from king square; under‑arm hit to another square; faults/misses rotate players down/out; queue feeds back into square 1."
+      "Chalk a 2×2 grid; number squares; serve from king square; under‑arm hit to another square; faults/misses rotate players down/out; queue feeds back into square 1"
     ],
     "description": "Ball game on a 2×2 grid; players advance to the king square by eliminating others.",
     "equipment": "Bouncy ball; chalk",
@@ -1127,7 +1059,7 @@
     "skillsDeveloped": [
       "Coordination",
       "Anticipation",
-      "Fair play"
+      "Fair Play"
     ],
     "variations": [
       "Two balls",
@@ -1138,7 +1070,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Group",
-    "id": "four-square"
+    "id": "four-square",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -1146,23 +1079,20 @@
     "keywords": [
       "action",
       "dress",
-      "fun",
       "funny",
       "kids",
       "love",
       "one",
       "relay",
-      "the",
       "think",
-      "this",
       "up",
       "will"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Split your group into teams of three-six.",
-      "Get them to stand at one end of your room spaced out equally 2 Put the clothes at the other end of the room parallel to each team 3 The first child races to their clothing and puts them all on over his own clothing then races back to team to undress 4 The next teammate dresses at the front of the line; races to the sack, undresses and fills the sack.",
-      "Races back and tags the third child who then has to go to bag to dress and so on 5 The first team to have all children dressed is the winner"
+      "1 split your group into teams of three-six",
+      "Get them to stand at one end of your room spaced out equally 2 put the clothes at the other end of the room parallel to each team 3 the first child races to their clothing and puts them all on over his own clothing then races back to team to undress 4 the next teammate dresses at the front of the line; races to the sack, undresses and fills the sack",
+      "Races back and tags the third child who then has to go to bag to dress and so on 5 the first team to have all children dressed is the winner"
     ],
     "description": "Think the kids will love this one - Fun Action",
     "equipment": "A bunch of funny clothes for each team put in a sack. The selection should be simillar for each team",
@@ -1193,7 +1123,6 @@
     "recommendedPlayersText": "5+",
     "notes": "Cones/benches can create a pit.",
     "keywords": [
-      "a",
       "ball",
       "below",
       "dodgeball",
@@ -1201,20 +1130,17 @@
       "fast",
       "gaga",
       "hits",
-      "in",
       "knee",
       "knock",
       "low",
       "out",
       "pit",
       "style",
-      "the",
-      "walled",
-      "you"
+      "walled"
     ],
     "ageMax": 11,
     "generalRules": [
-      "All start touching wall; bounce serve 'Ga‑ga‑go'; strike with hands only; hit below knee = out; clean catch eliminates striker; last in wins."
+      "All start touching wall; bounce serve 'ga‑ga‑go'; strike with hands only; hit below knee = out; clean catch eliminates striker; last in wins"
     ],
     "description": "Fast dodgeball‑style elimination in a low‑walled pit; hits below the knee knock you out.",
     "equipment": "Soft foam ball; gaga pit/benches",
@@ -1249,31 +1175,27 @@
     "playersMin": 5,
     "links": [],
     "category": "Group",
-    "id": "gaga-ball"
+    "id": "gaga-ball",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "4+",
     "notes": "Use torches and clear boundaries at dusk.",
     "keywords": [
-      "a",
-      "and",
       "base",
       "ghost",
       "graveyard",
       "hide",
-      "in",
       "night",
       "race",
       "seek",
       "single",
-      "the",
       "time",
-      "variant",
-      "with"
+      "variant"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Choose a base; one hides as ghost while others count; searchers spread; on sighting, caller shouts the phrase and all race to base while ghost tries to tag; tagged becomes ghost."
+      "Choose a base; one hides as ghost while others count; searchers spread; on sighting, caller shouts the phrase and all race to base while ghost tries to tag; tagged becomes ghost"
     ],
     "description": "Night‑time hide‑and‑seek variant with a single ghost and a base race.",
     "equipment": "None",
@@ -1307,7 +1229,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Wide",
-    "id": "ghost-in-the-graveyard"
+    "id": "ghost-in-the-graveyard",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "Any (2 teams)",
@@ -1315,7 +1238,7 @@
     "equipment": "None",
     "ageMin": 8,
     "skillsDeveloped": [
-      "Quick thinking",
+      "Quick Thinking",
       "Coordination"
     ],
     "name": "Giants, Wizards, Elves",
@@ -1327,7 +1250,6 @@
     "links": [],
     "notes": "Theme reskins work well.",
     "keywords": [
-      "a",
       "chase",
       "chases",
       "elves",
@@ -1340,11 +1262,10 @@
       "scale",
       "scissors",
       "winning",
-      "with",
       "wizards"
     ],
     "generalRules": [
-      "Teams secretly choose Giant, Wizard or Elf; reveal; winning role chases and tags. Tagged players switch teams."
+      "Teams secretly choose giant, wizard or elf; reveal; winning role chases and tags. tagged players switch teams"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -1357,7 +1278,8 @@
       "paper-craft",
       "tag"
     ],
-    "id": "giants-wizards-elves"
+    "id": "giants-wizards-elves",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -1368,14 +1290,13 @@
       "game",
       "group",
       "hug",
-      "in",
       "motion"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Ask the group to link up with their arms around each other’s shoulders to make a complete circle Now tell them you are going to give them a command and the entire group has to carry this out while they are linked together For example, say \"Left\" and the entire group will move left until you call another direction Directions can be: Right, left, forward, backward, slow motion, double time, etc.",
-      "Don't go so far backwards or forwards to cause the group to break apart.",
-      "Do this until it just doesn't work anymore To make it harder for the older ones you can call out the commands quicker"
+      "Ask the group to link up with their arms around each other’s shoulders to make a complete circle now tell them you are going to give them a command and the entire group has to carry this out while they are linked together for example, say \"left\" and the entire group will move left until you call another direction directions can be: right, left, forward, backward, slow motion, double time, etc",
+      "Don't go so far backwards or forwards to cause the group to break apart",
+      "Do this until it just doesn't work anymore to make it harder for the older ones you can call out the commands quicker"
     ],
     "description": "Funny Action Game",
     "equipment": "None",
@@ -1418,28 +1339,24 @@
     "traditionality": "Traditional",
     "notes": "Non‑elimination is gentler.",
     "keywords": [
-      "a",
       "circle",
       "holder",
       "hot",
-      "is",
       "music",
       "object",
-      "on",
       "out",
       "pass",
       "potato",
       "round",
       "soft",
-      "stop",
-      "to"
+      "stop"
     ],
     "generalRules": [
-      "Form a circle; pass quickly while music plays; on stop, holder is out; continue to a winner or play non‑elimination scoring."
+      "Form a circle; pass quickly while music plays; on stop, holder is out; continue to a winner or play non‑elimination scoring"
     ],
     "skillsDeveloped": [
       "Reaction",
-      "Motor coordination"
+      "Motor Coordination"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -1451,15 +1368,13 @@
       "circle",
       "music"
     ],
-    "id": "hot-potato"
+    "id": "hot-potato",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "2+",
     "notes": "Avoid fragile display areas.",
     "keywords": [
-      "a",
-      "and",
-      "by",
       "cold",
       "cues",
       "find",
@@ -1467,17 +1382,15 @@
       "hide",
       "hot",
       "hunt",
-      "it",
       "object",
       "only",
       "seekers",
-      "the",
       "thimble",
       "tiny"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Hider conceals object; seekers return; hider gives proximity cues (cold→boiling); finder becomes next hider."
+      "Hider conceals object; seekers return; hider gives proximity cues (cold→boiling); finder becomes next hider"
     ],
     "description": "Hide a tiny object; seekers find it guided only by hot/cold cues.",
     "equipment": "Small object (thimble/coin/toy)",
@@ -1498,7 +1411,7 @@
       "UK-wide"
     ],
     "skillsDeveloped": [
-      "Spatial search",
+      "Spatial Search",
       "Inference"
     ],
     "variations": [
@@ -1510,7 +1423,8 @@
     "playersMin": 2,
     "links": [],
     "category": "Party",
-    "id": "hunt-the-thimble-hot-and-cold"
+    "id": "hunt-the-thimble-hot-and-cold",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "2+",
@@ -1519,17 +1433,15 @@
       "clues",
       "colour",
       "game",
-      "i",
       "initial",
       "letter",
       "observation",
-      "or",
       "spy",
       "using"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Chooser picks a visible object and gives a letter/colour clue; others guess; correct guesser becomes chooser."
+      "Chooser picks a visible object and gives a letter/colour clue; others guess; correct guesser becomes chooser"
     ],
     "description": "Observation game using initial letter or colour clues.",
     "equipment": "None",
@@ -1560,7 +1472,8 @@
     "playersMin": 2,
     "links": [],
     "category": "Party",
-    "id": "i-spy"
+    "id": "i-spy",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -1569,17 +1482,15 @@
       "action",
       "communication",
       "game",
-      "have",
-      "i",
       "mild",
       "sure"
     ],
     "ageMax": 14,
     "generalRules": [
-      "1 Ask your group to form a circle 2 A leader stands in the middle of the circle 3 Explain that you are going to shout out something and if this statement is true of them they have to run to the middle and tag the leader, for this, each child gains 1 point 4 Also the first person to tag the leader must briefly explain the experience they had 5 One of the other leaders should record the points on a piece of paper or flipchart Here's an idea of some things you can shout out… I have...",
-      "been lost in a shopping centre I have… been to Russia I have...",
-      "been skiing I have… been on a ship I have… seen the Queen I have...",
-      "nearly drowned I have… been to a concert I have… 3 brothers I have… 2 sisters I have… been to Buckingham Palace I have… I have… done my homework I have… tidied my bedroom I have… eaten cherries"
+      "1 ask your group to form a circle 2 a leader stands in the middle of the circle 3 explain that you are going to shout out something and if this statement is true of them they have to run to the middle and tag the leader, for this, each child gains 1 point 4 also the first person to tag the leader must briefly explain the experience they had 5 one of the other leaders should record the points on a piece of paper or flipchart here's an idea of some things you can shout out… i have",
+      "Been lost in a shopping centre i have… been to russia i have",
+      "Been skiing i have… been on a ship i have… seen the queen i have",
+      "Nearly drowned i have… been to a concert i have… 3 brothers i have… 2 sisters i have… been to buckingham palace i have… i have… done my homework i have… tidied my bedroom i have… eaten cherries"
     ],
     "description": "Communication Mild Action Game",
     "equipment": "None",
@@ -1615,16 +1526,14 @@
       "could",
       "funny",
       "get",
-      "have",
       "if",
       "impersonator",
       "quite",
-      "some",
-      "you"
+      "some"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Each child has to think of someone to impersonate and writes the name down on a piece of paper 2 One by one they stand up and do their impersonation 3 Who ever guess it correct gets the piece of paper with the name on it 4 The child with the most pieces of paper at the end is the winner Note: If you have a large group it could get a bit boring waiting fro your turn so it would be better to split your group into two and assign a leader to each one"
+      "1 each child has to think of someone to impersonate and writes the name down on a piece of paper 2 one by one they stand up and do their impersonation 3 who ever guess it correct gets the piece of paper with the name on it 4 the child with the most pieces of paper at the end is the winner note: if you have a large group it could get a bit boring waiting fro your turn so it would be better to split your group into two and assign a leader to each one"
     ],
     "description": "Could get quite funny if you have some budding actors",
     "equipment": "Little",
@@ -1655,24 +1564,19 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "easy",
-      "is",
       "maths",
       "number",
       "puzzle",
-      "shock",
-      "this",
-      "with",
-      "your"
+      "shock"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Read the following to the group… a I am going to think of a number and write it on a small sheet of paper.",
-      "Fold it up and place it in my pocket.",
-      "(Remember this number) b I want everyone to think of a number but don't tell me what it is c Tell them to double the number they chose d Now this is where your number on the paper comes in.",
-      "In your head, double the number you wrote.",
-      "Now tell the group to add that number to their number e Then tell them to divide their number by 2 f Then tell them to subtract the number they started with away from the number they currently have g Now pull out the piece of paper in your pocket and show it to the group.",
+      "1 ask the group to form a circle and sit down 2 read the following to the group… a i am going to think of a number and write it on a small sheet of paper",
+      "Fold it up and place it in my pocket",
+      "(remember this number) b i want everyone to think of a number but don't tell me what it is c tell them to double the number they chose d now this is where your number on the paper comes in",
+      "In your head, double the number you wrote",
+      "Now tell the group to add that number to their number e then tell them to divide their number by 2 f then tell them to subtract the number they started with away from the number they currently have g now pull out the piece of paper in your pocket and show it to the group",
       "They will be amazed because the number on the paper will be their number!"
     ],
     "description": "Easy Maths Puzzle With A Shock",
@@ -1702,7 +1606,7 @@
     "id": "is-this-your-number"
   },
   {
-    "recommendedPlayersText": "6–12",
+    "recommendedPlayersText": "6-12",
     "ageMax": 11,
     "playersMax": 12,
     "ageMin": 8,
@@ -1720,8 +1624,6 @@
     "traditionality": "Traditional",
     "notes": "Works well in parks.",
     "keywords": [
-      "a",
-      "and",
       "designated",
       "frees",
       "game",
@@ -1729,11 +1631,10 @@
       "jailbreak",
       "rescue",
       "tag",
-      "team",
-      "with"
+      "team"
     ],
     "generalRules": [
-      "One or two guards tag runners to jail; teammates can free jailed players by a touch; round ends when all caught or time up."
+      "One or two guards tag runners to jail; teammates can free jailed players by a touch; round ends when all caught or time up"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -1746,7 +1647,8 @@
       "tag",
       "teamwork"
     ],
-    "id": "jailbreak"
+    "id": "jailbreak",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "3+",
@@ -1754,28 +1656,24 @@
     "keywords": [
       "away",
       "centre",
-      "in",
       "intercept",
       "interceptor",
       "into",
       "keep",
       "middle",
       "monkey",
-      "on",
       "outside",
       "pass",
       "player",
       "players",
       "success",
       "swaps",
-      "the",
-      "to",
       "tries",
       "while"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Form triangle/circle; pass around the monkey; interceptions swap roles; limit area to keep the pace brisk; use sport‑specific passes for PE."
+      "Form triangle/circle; pass around the monkey; interceptions swap roles; limit area to keep the pace brisk; use sport‑specific passes for pe"
     ],
     "description": "Outside players pass while the centre player tries to intercept; interceptor swaps into the outside on success.",
     "equipment": "Ball",
@@ -1809,15 +1707,14 @@
     "playersMin": 3,
     "links": [],
     "category": "Group",
-    "id": "keep-away-monkey-in-the-middle"
+    "id": "keep-away-monkey-in-the-middle",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "4+",
     "notes": "Use plastic for quieter play.",
     "keywords": [
-      "a",
       "all",
-      "and",
       "can",
       "frees",
       "guarded",
@@ -1825,17 +1722,13 @@
       "hybrid",
       "kick",
       "kicked",
-      "of",
       "seek",
       "tag",
-      "that",
-      "the",
-      "when",
-      "with"
+      "when"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Place a can near jail; guard counts as others hide; guard seeks and tags to jail; any free player can kick the can to free all; first caught becomes new guard."
+      "Place a can near jail; guard counts as others hide; guard seeks and tags to jail; any free player can kick the can to free all; first caught becomes new guard"
     ],
     "description": "Hybrid of tag and hide‑and‑seek with a guarded can that frees all when kicked.",
     "equipment": "One can or plastic bottle",
@@ -1856,8 +1749,8 @@
     ],
     "skillsDeveloped": [
       "Stealth",
-      "Decision‑making",
-      "Sprint timing"
+      "Decision‑Making",
+      "Sprint Timing"
     ],
     "variations": [
       "Two guards",
@@ -1868,17 +1761,16 @@
     "playersMin": 4,
     "links": [],
     "category": "Wide",
-    "id": "kick-the-can"
+    "id": "kick-the-can",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "5+",
     "notes": "Ensure consent; many schools prefer 'air‑tag'.",
     "keywords": [
-      "a",
       "chase",
       "classic",
       "contact",
-      "it",
       "kiss",
       "modern",
       "no",
@@ -1892,7 +1784,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Agree safe boundaries and no‑contact rules; one is 'it' and chases; on tag, roles swap; short, high‑energy rounds."
+      "Agree safe boundaries and no‑contact rules; one is 'it' and chases; on tag, roles swap; short, high‑energy rounds"
     ],
     "description": "Classic schoolyard chase where 'it' tags a target; modern play often uses no‑contact tags.",
     "equipment": "None",
@@ -1925,7 +1817,8 @@
     "playersMin": 5,
     "links": [],
     "category": "Wide",
-    "id": "kiss-chase"
+    "id": "kiss-chase",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -1939,7 +1832,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Divide your group into teams of 4-6 2 The leader shouts out a letter and each team have to quickly form that letter with their bodies on the floor 3 The team that has the best formation wins 4 You can play many times and award points for each round"
+      "1 divide your group into teams of 4-6 2 the leader shouts out a letter and each team have to quickly form that letter with their bodies on the floor 3 the team that has the best formation wins 4 you can play many times and award points for each round"
     ],
     "description": "Communication Mild Action Game",
     "equipment": "None",
@@ -1977,7 +1870,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Ask your group to form a line in the order of their 'Birthdays By Month' Ask the group to form a line in the order of their 'Shoe Size' Ask the group to form a line in the order of their 'Hair Length' For the older kids give them a shorter time limit to do this if they don't achieve this give them a forfeit!"
+      "Ask your group to form a line in the order of their 'birthdays by month' ask the group to form a line in the order of their 'shoe size' ask the group to form a line in the order of their 'hair length' for the older kids give them a shorter time limit to do this if they don't achieve this give them a forfeit!"
     ],
     "description": "Communication Game",
     "equipment": "None",
@@ -2008,19 +1901,17 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "easy",
       "magic",
       "maths",
       "pocket",
       "puzzle",
       "shock",
-      "trick",
-      "with"
+      "trick"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Read the following to the group… a I am going to write on a piece of paper a number and put this in my pocket (don't tell them what this is) - this number should be the current year times by two for example, if it's 2014 it would be 4028 b Now ask them to take the current year it is and times it by two and put it in their pocket c Pick a person from the group and ask them their age d Now ask them a year of a very important event e Now ask them when they were born f Now ask them how many years ago was it that they had the important event g Ask them to add up all those numbers h Now show them the piece of paper in your pocket it will be the same as their number!"
+      "1 ask the group to form a circle and sit down 2 read the following to the group… a i am going to write on a piece of paper a number and put this in my pocket (don't tell them what this is) - this number should be the current year times by two for example, if it's 2014 it would be 4028 b now ask them to take the current year it is and times it by two and put it in their pocket c pick a person from the group and ask them their age d now ask them a year of a very important event e now ask them when they were born f now ask them how many years ago was it that they had the important event g ask them to add up all those numbers h now show them the piece of paper in your pocket it will be the same as their number!"
     ],
     "description": "Easy Maths Puzzle With A Shock",
     "equipment": "None",
@@ -2052,7 +1943,6 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "hike",
       "map",
       "reading",
@@ -2061,8 +1951,8 @@
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 The group is split into 6 2 The Leader takes each team to an area slightly unknown to the children 3 The leader shows the teams a map of the area and appoints to each team a place to be visited and shows the route on the map pointing out landmarks 4 Each group should have a fixed distance to go and should note down as many points of interest such as landmarks, buildings etc.",
-      "along the way 5 On their return the leader inspects their reports 6 The winning team is the team that brings back the best report in the shortest amount of time"
+      "1 the group is split into 6 2 the leader takes each team to an area slightly unknown to the children 3 the leader shows the teams a map of the area and appoints to each team a place to be visited and shows the route on the map pointing out landmarks 4 each group should have a fixed distance to go and should note down as many points of interest such as landmarks, buildings etc",
+      "Along the way 5 on their return the leader inspects their reports 6 the winning team is the team that brings back the best report in the shortest amount of time"
     ],
     "description": "A very short hike",
     "equipment": "Little",
@@ -2099,11 +1989,11 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Set up the kicking, throwing, and blowing stations separately so groups can rotate through them with minimised waiting 2 Split your group into teams of 4-6 get them to each give you a name for their team 3 Kick: Each team stands at the kicking line and one by one kicks one of their marshmallows as far as they can.",
-      "Their distance is measured and listed under their groups name You might have a rule that a child can have a second attempt if it is missed or goes less than 1 foot 4 Throw: Each team stands at the throwing line and one by one throws one of their marshmallows as far as they can.",
-      "Their distance is measured and listed under their groups name 5 Blow: Each team stands at the blowing line and one by one puts a marshmallow in their mouth and blows it out as far as they can.",
-      "Their distance is measured and listed under their groups name 6 The winner is the team with the farthest combined distances.",
-      "7 If you have uneven teams you may to need get a leader to join in or do an average on the points at the end."
+      "1 set up the kicking, throwing, and blowing stations separately so groups can rotate through them with minimised waiting 2 split your group into teams of 4-6 get them to each give you a name for their team 3 kick: each team stands at the kicking line and one by one kicks one of their marshmallows as far as they can",
+      "Their distance is measured and listed under their groups name you might have a rule that a child can have a second attempt if it is missed or goes less than 1 foot 4 throw: each team stands at the throwing line and one by one throws one of their marshmallows as far as they can",
+      "Their distance is measured and listed under their groups name 5 blow: each team stands at the blowing line and one by one puts a marshmallow in their mouth and blows it out as far as they can",
+      "Their distance is measured and listed under their groups name 6 the winner is the team with the farthest combined distances",
+      "7 if you have uneven teams you may to need get a leader to join in or do an average on the points at the end"
     ],
     "description": "Sporty Competition!",
     "equipment": "3 Marshmallows per child",
@@ -2159,14 +2049,13 @@
       "scattered",
       "stealth",
       "torches",
-      "while",
-      "with"
+      "while"
     ],
     "regionalPopularity": [
       "UK-wide"
     ],
     "generalRules": [
-      "Scatter items; appoint patrollers with torches; teams retrieve items without being tagged/spotlit. Most items wins."
+      "Scatter items; appoint patrollers with torches; teams retrieve items without being tagged/spotlit. most items wins"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -2178,7 +2067,8 @@
     "tags": [
       "night"
     ],
-    "id": "mission-really-difficult"
+    "id": "mission-really-difficult",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -2186,13 +2076,12 @@
     "keywords": [
       "action",
       "corners",
-      "fun",
       "game",
       "muscial"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Mark each corner of the room, or cones if outside, corner #1, corner #2, corner #3 and corner #4 (If playing outside space the cones out equally to mimic a room size 2 A leader holds the bucket with the four numbers in it 3 When the music starts, the group runs around the area 4 When the music stops, everyone runs to a corner 5 Then the person with the bucket of numbers chooses a child to pull a number out 6 Everyone in the corner whose number is called is now out of the game and can help pìck the next number 7 This continues until it gets down to the last person who is then the winner"
+      "1 mark each corner of the room, or cones if outside, corner #1, corner #2, corner #3 and corner #4 (if playing outside space the cones out equally to mimic a room size 2 a leader holds the bucket with the four numbers in it 3 when the music starts, the group runs around the area 4 when the music stops, everyone runs to a corner 5 then the person with the bucket of numbers chooses a child to pull a number out 6 everyone in the corner whose number is called is now out of the game and can help pìck the next number 7 this continues until it gets down to the last person who is then the winner"
     ],
     "description": "Fun Action Game",
     "equipment": "Music, 4 cones if playing outside or corners of your room, a bucket/container with bits of paper numbered 1-4",
@@ -2238,19 +2127,15 @@
       "bumps",
       "dance",
       "floor",
-      "it",
       "music",
       "musical",
-      "on",
       "quickly",
       "sit",
       "stops",
-      "the",
-      "to",
       "when"
     ],
     "generalRules": [
-      "Last to sit is out/gets a strike; continue to a winner."
+      "Last to sit is out/gets a strike; continue to a winner"
     ],
     "skillsDeveloped": [
       "Balance",
@@ -2264,10 +2149,11 @@
     "tags": [
       "music"
     ],
-    "id": "musical-bumps"
+    "id": "musical-bumps",
+    "prepLevel": "Unknown"
   },
   {
-    "recommendedPlayersText": "5–12",
+    "recommendedPlayersText": "5-12",
     "ageMax": 11,
     "playersMax": 12,
     "ageMin": 8,
@@ -2288,22 +2174,19 @@
     "keywords": [
       "chairs",
       "each",
-      "is",
       "left",
       "music",
       "musical",
-      "on",
       "one",
       "out",
       "player",
       "round",
       "sit",
       "stop",
-      "to",
       "walk"
     ],
     "generalRules": [
-      "Arrange chairs (one fewer than players); remove a chair each round; last seated wins."
+      "Arrange chairs (one fewer than players); remove a chair each round; last seated wins"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -2313,7 +2196,8 @@
     "tags": [
       "music"
     ],
-    "id": "musical-chairs"
+    "id": "musical-chairs",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "3+",
@@ -2330,20 +2214,17 @@
     "traditionality": "Traditional",
     "notes": "Inclusive scoring works well.",
     "keywords": [
-      "and",
       "dance",
       "freeze",
       "instantly",
-      "it",
       "music",
       "musical",
       "statues",
       "stops",
-      "to",
       "when"
     ],
     "generalRules": [
-      "Any movement after stop is a strike/out; last standing wins or tally least strikes."
+      "Any movement after stop is a strike/out; last standing wins or tally least strikes"
     ],
     "skillsDeveloped": [
       "Control",
@@ -2358,26 +2239,25 @@
     "tags": [
       "music"
     ],
-    "id": "musical-statues"
+    "id": "musical-statues",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "easy",
       "four",
       "maths",
       "mystery",
       "number",
       "puzzle",
-      "shock",
-      "with"
+      "shock"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Ask them to think of a number but don't tell anyone.",
-      "That number will be called the \"mystery number\" 3 Tell them to add five 4 Now add two 5 Then subtract three 6 Now ask them to take away their original number (they should end up with 4)"
+      "1 ask the group to form a circle and sit down 2 ask them to think of a number but don't tell anyone",
+      "That number will be called the \"mystery number\" 3 tell them to add five 4 now add two 5 then subtract three 6 now ask them to take away their original number (they should end up with 4)"
     ],
     "description": "Easy Maths Puzzle With A Shock",
     "equipment": "None",
@@ -2412,14 +2292,12 @@
       "activity",
       "game",
       "knowledge",
-      "name",
-      "person",
-      "that"
+      "person"
     ],
     "ageMax": 12,
     "generalRules": [
-      "Ask each child to bring in an unwanted newspaper (not local) or magazine Get them to cut out well know people from the newspaper anyone from Politcians, Sports People, Celebrities, Royalty etc.",
-      "Put the cutouts in a box and mix up Split your group into small teams The first team pick a person from the box and name's the person If they are correct they gain two points if they can't answer it goes back into the box And so on until all the people have been named"
+      "Ask each child to bring in an unwanted newspaper (not local) or magazine get them to cut out well know people from the newspaper anyone from politcians, sports people, celebrities, royalty etc",
+      "Put the cutouts in a box and mix up split your group into small teams the first team pick a person from the box and name's the person if they are correct they gain two points if they can't answer it goes back into the box and so on until all the people have been named"
     ],
     "description": "Knowledge Activity/Game",
     "equipment": "Little",
@@ -2458,7 +2336,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Sit in a circle with one child in the middle that hides his eyes while the others pass a passable object 2 When the center child says \"Stop\" the person with the object names a letter and passes the object 3 The middle child then has to name three foods/toys/names etc… that start with that letter before the object gets back to the letter-namer 4 If he does, the two trade places"
+      "1 sit in a circle with one child in the middle that hides his eyes while the others pass a passable object 2 when the center child says \"stop\" the person with the object names a letter and passes the object 3 the middle child then has to name three foods/toys/names etc… that start with that letter before the object gets back to the letter-namer 4 if he does, the two trade places"
     ],
     "description": "Quick Thinking",
     "equipment": "1 Object",
@@ -2483,25 +2361,23 @@
     "playersMin": null,
     "links": [],
     "category": "Wide",
-    "prepLevel": "1 Object",
+    "prepLevel": "1 object",
     "id": "naming-objects"
   },
   {
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "around",
       "game",
       "haystack",
-      "in",
       "needle",
       "run"
     ],
     "ageMax": 11,
     "generalRules": [
-      "The children are sent out of the room The leader places a small item for example a ring, coin, etc.",
-      "in a place where it is perfectly visible but in a spot where it is not likely to be noticed The children are asked to come back in and find the small item that has been placed but not hidden out of view If a child thinks they've seen the item they must sit down without indicating to others where the item is After a set time the children sitting down are asked to point to the item to those who have not found it The first one to sit down was the winner or the ones to sit down at the alloted time is the winner Now the winner can place the item and you can play again if you wish"
+      "The children are sent out of the room the leader places a small item for example a ring, coin, etc",
+      "In a place where it is perfectly visible but in a spot where it is not likely to be noticed the children are asked to come back in and find the small item that has been placed but not hidden out of view if a child thinks they've seen the item they must sit down without indicating to others where the item is after a set time the children sitting down are asked to point to the item to those who have not found it the first one to sit down was the winner or the ones to sit down at the alloted time is the winner now the winner can place the item and you can play again if you wish"
     ],
     "description": "Run Around Game",
     "equipment": "Very Little",
@@ -2525,7 +2401,7 @@
     "playersMin": null,
     "links": [],
     "category": "Wide",
-    "prepLevel": "Very Little",
+    "prepLevel": "Very little",
     "id": "needle-in-a-haystack"
   },
   {
@@ -2540,10 +2416,10 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Split your group into four teams (you want at least 3 in each team so if your group is quite small then split it into three teams 2 Everyone needs to write two subjects on two separate pieces of paper, then fold them up and put them in a box or any sort of container 3 Assign a leader to each team (if you do not have anough adult leaders for each team use children as the leaders read futher to understand why) 4 The first person in each team picks a subject out of the box, which should be situated equal distance from each team 5 The first player in each team starts talking about their subject for one minute only a.",
-      "They are not allowed to repeat the same ideas b.",
-      "They must stick to the subject c.",
-      "If that child slows down, their turn is finished and the next person in the team picks a new subject and speaks for a maximum of one minute 6 The job of the leader is to keep track (write down) of how long each player speaks for without slowing down this time is added up at the end 7 After each team has talked about one subject each for as long as they can but not more than one minute the game is finished 8 The winner is the team which has spoken for the longest time after all the seconds are added up 9 Play the game again if time permits."
+      "1 split your group into four teams (you want at least 3 in each team so if your group is quite small then split it into three teams 2 everyone needs to write two subjects on two separate pieces of paper, then fold them up and put them in a box or any sort of container 3 assign a leader to each team (if you do not have anough adult leaders for each team use children as the leaders read futher to understand why) 4 the first person in each team picks a subject out of the box, which should be situated equal distance from each team 5 the first player in each team starts talking about their subject for one minute only a",
+      "They are not allowed to repeat the same ideas b",
+      "They must stick to the subject c",
+      "If that child slows down, their turn is finished and the next person in the team picks a new subject and speaks for a maximum of one minute 6 the job of the leader is to keep track (write down) of how long each player speaks for without slowing down this time is added up at the end 7 after each team has talked about one subject each for as long as they can but not more than one minute the game is finished 8 the winner is the team which has spoken for the longest time after all the seconds are added up 9 play the game again if time permits"
     ],
     "description": "Communication Game",
     "equipment": "Pen & Paper",
@@ -2567,17 +2443,17 @@
     "playersMin": null,
     "links": [],
     "category": "Wide",
-    "prepLevel": "Pen & Paper",
+    "prepLevel": "Pen & paper",
     "id": "non-stop-talk"
   },
   {
-    "recommendedPlayersText": "6–12",
+    "recommendedPlayersText": "6-12",
     "ageMax": 11,
     "equipment": "None",
     "playersMax": 12,
     "ageMin": 8,
     "skillsDeveloped": [
-      "Spatial awareness",
+      "Spatial Awareness",
       "Speed"
     ],
     "name": "Octopus",
@@ -2602,12 +2478,10 @@
       "stationary",
       "tag",
       "tagged",
-      "that",
-      "where",
-      "with"
+      "where"
     ],
     "generalRules": [
-      "Caller in centre; runners cross on command; tagged become seaweed; last runner wins."
+      "Caller in centre; runners cross on command; tagged become seaweed; last runner wins"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -2618,7 +2492,8 @@
       "active",
       "tag"
     ],
-    "id": "octopus"
+    "id": "octopus",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "2+",
@@ -2635,12 +2510,11 @@
       "origami",
       "paper",
       "revealing",
-      "teller",
-      "with"
+      "teller"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Fold model; chooser selects colour/number; operator opens/closes count; reveal flap; rotate roles."
+      "Fold model; chooser selects colour/number; operator opens/closes count; reveal flap; rotate roles"
     ],
     "description": "Origami fortune device with numbered/coloured flaps revealing messages.",
     "equipment": "Folded paper",
@@ -2662,7 +2536,7 @@
       "UK-wide"
     ],
     "skillsDeveloped": [
-      "Fine motor",
+      "Fine Motor",
       "Literacy",
       "Creativity"
     ],
@@ -2675,10 +2549,11 @@
     "playersMin": 2,
     "links": [],
     "category": "Party",
-    "id": "paper-fortune-teller-cootie-catcher"
+    "id": "paper-fortune-teller-cootie-catcher",
+    "prepLevel": "Unknown"
   },
   {
-    "recommendedPlayersText": "4–12",
+    "recommendedPlayersText": "4-12",
     "ageMax": 11,
     "playersMax": 12,
     "ageMin": 8,
@@ -2693,23 +2568,20 @@
     "traditionality": "Traditional",
     "notes": "Adult controls music for fairness.",
     "keywords": [
-      "a",
       "each",
       "layer",
       "music",
-      "on",
       "parcel",
       "pass",
       "stop",
-      "the",
       "unwrap",
       "wrapped"
     ],
     "generalRules": [
-      "Include small treats or tasks in layers; final layer is main prize."
+      "Include small treats or tasks in layers; final layer is main prize"
     ],
     "skillsDeveloped": [
-      "Turn‑taking",
+      "Turn‑Taking",
       "Anticipation"
     ],
     "variations": [],
@@ -2720,15 +2592,14 @@
     "tags": [
       "music"
     ],
-    "id": "pass-the-parcel"
+    "id": "pass-the-parcel",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "5+",
     "notes": "Small movements keep it subtle.",
     "keywords": [
-      "a",
       "along",
-      "and",
       "guesses",
       "holder",
       "pass",
@@ -2737,13 +2608,12 @@
       "secretly",
       "slide",
       "spotter",
-      "the",
       "watches",
       "while"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Thread ring on ribbon; players hold ribbon; passer slides ring covertly; spotter calls stop/points to holder within a set number of guesses; rotate roles."
+      "Thread ring on ribbon; players hold ribbon; passer slides ring covertly; spotter calls stop/points to holder within a set number of guesses; rotate roles"
     ],
     "description": "Slide a ring secretly along a ribbon while a spotter watches and guesses the holder.",
     "equipment": "Ribbon and small ring",
@@ -2774,24 +2644,23 @@
     "playersMin": 5,
     "links": [],
     "category": "Party",
-    "id": "pass-the-ring"
+    "id": "pass-the-ring",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
       "action",
-      "and",
       "game",
       "mild",
-      "of",
       "perception",
       "thinking",
       "time"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 All children sit on a chair or the floor 2 The leader says I want you to stand up when you think 30 seconds has passed 3 If the child got it right they stay in the game if they didn’t get them to stand at the side of the room 4 Now do the same for 20 seconds 5 Now do the same for 1 minute 6 You can stop there or get everyone to come back in and play again"
+      "1 all children sit on a chair or the floor 2 the leader says i want you to stand up when you think 30 seconds has passed 3 if the child got it right they stay in the game if they didn’t get them to stand at the side of the room 4 now do the same for 20 seconds 5 now do the same for 1 minute 6 you can stop there or get everyone to come back in and play again"
     ],
     "description": "Thinking And Mild Action Game",
     "equipment": "None",
@@ -2830,8 +2699,6 @@
     "links": [],
     "notes": "Good KS2 science tie-in.",
     "keywords": [
-      "a",
-      "and",
       "carnivores",
       "chain",
       "collecting",
@@ -2843,14 +2710,13 @@
       "prey",
       "roles",
       "tagging",
-      "token",
-      "with"
+      "token"
     ],
     "regionalPopularity": [
       "UK-wide"
     ],
     "generalRules": [
-      "Assign roles; herbivores collect from plants; carnivores tag herbivores; use zones and time/score win conditions."
+      "Assign roles; herbivores collect from plants; carnivores tag herbivores; use zones and time/score win conditions"
     ],
     "skillsDeveloped": [
       "Ecosystems",
@@ -2866,30 +2732,26 @@
     "tags": [
       "tag"
     ],
-    "id": "predator-and-prey"
+    "id": "predator-and-prey",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "5",
     "notes": "Works indoors or out.",
     "keywords": [
-      "a",
-      "and",
       "centre",
       "corner",
       "corners",
       "five",
-      "for",
       "four",
       "game",
-      "in",
       "puss",
       "sprint",
-      "switching",
-      "the"
+      "switching"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Mark four corners; four players take corners; centre player (Puss) races to claim a vacated corner when others switch; the player left without a corner becomes Puss."
+      "Mark four corners; four players take corners; centre player (puss) races to claim a vacated corner when others switch; the player left without a corner becomes puss"
     ],
     "description": "Corner‑switching sprint game for five (four corners and a centre).",
     "equipment": "None",
@@ -2910,7 +2772,7 @@
     "skillsDeveloped": [
       "Reaction",
       "Acceleration",
-      "Spatial sense"
+      "Spatial Sense"
     ],
     "variations": [
       "Extra corners for larger groups",
@@ -2921,7 +2783,8 @@
     "playersMin": 5,
     "links": [],
     "category": "Wide",
-    "id": "puss-in-the-corner"
+    "id": "puss-in-the-corner",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "4+",
@@ -2934,12 +2797,11 @@
       "guessing",
       "queenie",
       "s",
-      "the",
       "who"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Leader tosses ball backwards; someone hides it behind back while all feign; leader gets limited guesses to find holder; correct becomes new leader."
+      "Leader tosses ball backwards; someone hides it behind back while all feign; leader gets limited guesses to find holder; correct becomes new leader"
     ],
     "description": "'Queenie, Queenie, who’s got the ball?' guessing circle game.",
     "equipment": "Soft ball",
@@ -2973,7 +2835,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Group",
-    "id": "queenie"
+    "id": "queenie",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -2987,7 +2850,7 @@
     ],
     "ageMax": 14,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Choose one child to be the quick change artist 3 The quick change artist has to leave the room and change something about themselves that is visible for example, untie their shoe laces, change their hair, take a shoe off, put their trousers on back to front or anything they want 4 The change artist walks back into the centre of the circle and turns around slowly 5 The first person to shout out what they have changed about themselves now becomes the change artist 6 Play this as many times as your time allows"
+      "1 ask the group to form a circle and sit down 2 choose one child to be the quick change artist 3 the quick change artist has to leave the room and change something about themselves that is visible for example, untie their shoe laces, change their hair, take a shoe off, put their trousers on back to front or anything they want 4 the change artist walks back into the centre of the circle and turns around slowly 5 the first person to shout out what they have changed about themselves now becomes the change artist 6 play this as many times as your time allows"
     ],
     "description": "Memory Game",
     "equipment": "None",
@@ -3022,10 +2885,7 @@
     "keywords": [
       "ages",
       "all",
-      "and",
       "easy",
-      "for",
-      "fun",
       "game",
       "left",
       "prize",
@@ -3034,35 +2894,35 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Everyone site in a circle.",
-      "Start the game by handing out 3 envelopes to three different people in the group 2 Inform everyone that you are going to tell a story and that every time they hear the word RIGHT they need to pass the prize to the right, and every time they hear the word LEFT they need to pass the prize left.",
-      "Tell the story.",
-      "Here are a couple of stories for each age group that you can use or you can just make up your own… The child left with the prize at the end can claim it! SUITABLE FOR 10+ yo Once upon a time not so long ago Ms.",
-      "LEFT met Mr.",
-      "RIGHT, RIGHT away they knew it was love at first SIGHT.",
-      "He did all the RIGHT things and that LEFT her heart flipping.",
-      "She filled in all the RIGHT holes that his life had been skipping.",
-      "Soon he got down on his RIGHT knee and took her LEFT hand, And said he wanted to always be her RIGHT man.",
-      "So Ms.",
-      "LEFT LEFT the LEFT name behind and became MRS.",
-      "RIGHT, And they LEFT their old places to find a new home that was just RIGHT.",
-      "Soon a RIGHT baby was born into the happy RIGHT home, And now there were three RIGHTS Soon the little RIGHT was able to walk and drove Mrs, RIGHT crazy She decided when he was old enough to put him into Beavers and To her astonishment the Beaver leader was called Mrs.",
-      "LEFT, Mrs.",
-      "LEFT was a really good leader and really looked after the little RIGHT Mr.",
-      "RIGHT and Mrs.",
-      "RIGHT were so happy that Mrs.",
-      "LEFT was so lovely And the RIGHTs lived happily ever after! SUITABLE FOR 6 to 10 yo Once upon a time there was a little pig called Mr.",
-      "RIGHT He used to roll in the mud first to the RIGHT then to the LEFT He always got so dirty but he didn’t care until one day he met Mrs.",
-      "LEFT Mrs.",
-      "LEFT never rolled in the mud to the LEFT or to the RIGHT instead she walked Carefully to the LEFT and to the RIGHT Mr.",
-      "RIGHT thought he would try the same so he walked to the RIGHT then to the LEFT He realised that he looked so much better and soon Mrs.",
-      "LEFT asked him over for tea She said come to the door on the RIGHT then into the Kitchen on your LEFT There they both sat eating cake but Mrs.",
-      "LEFT forgot the tea so Mrs.",
-      "LEFT said to Mr.",
-      "RIGHT If you open the cupboard on the RIGHT and then look to your LEFT you will see the tea So Mr.",
-      "RIGHT took the tea and added to some sugar he stirred to the LEFT then to the RIGHT Once they finished their lovely tea and cake Mr.",
-      "RIGHT said goodbye to Mrs.",
-      "LEFT and walked out To RIGHT then to the LEFT and off he went home as happy as anything."
+      "1 everyone site in a circle",
+      "Start the game by handing out 3 envelopes to three different people in the group 2 inform everyone that you are going to tell a story and that every time they hear the word right they need to pass the prize to the right, and every time they hear the word left they need to pass the prize left",
+      "Tell the story",
+      "Here are a couple of stories for each age group that you can use or you can just make up your own… the child left with the prize at the end can claim it! suitable for 10+ yo once upon a time not so long ago ms",
+      "Left met mr",
+      "Right, right away they knew it was love at first sight",
+      "He did all the right things and that left her heart flipping",
+      "She filled in all the right holes that his life had been skipping",
+      "Soon he got down on his right knee and took her left hand, and said he wanted to always be her right man",
+      "So ms",
+      "Left left the left name behind and became mrs",
+      "Right, and they left their old places to find a new home that was just right",
+      "Soon a right baby was born into the happy right home, and now there were three rights soon the little right was able to walk and drove mrs, right crazy she decided when he was old enough to put him into beavers and to her astonishment the beaver leader was called mrs",
+      "Left, mrs",
+      "Left was a really good leader and really looked after the little right mr",
+      "Right and mrs",
+      "Right were so happy that mrs",
+      "Left was so lovely and the rights lived happily ever after! suitable for 6 to 10 yo once upon a time there was a little pig called mr",
+      "Right he used to roll in the mud first to the right then to the left he always got so dirty but he didn’t care until one day he met mrs",
+      "Left mrs",
+      "Left never rolled in the mud to the left or to the right instead she walked carefully to the left and to the right mr",
+      "Right thought he would try the same so he walked to the right then to the left he realised that he looked so much better and soon mrs",
+      "Left asked him over for tea she said come to the door on the right then into the kitchen on your left there they both sat eating cake but mrs",
+      "Left forgot the tea so mrs",
+      "Left said to mr",
+      "Right if you open the cupboard on the right and then look to your left you will see the tea so mr",
+      "Right took the tea and added to some sugar he stirred to the left then to the right once they finished their lovely tea and cake mr",
+      "Right said goodbye to mrs",
+      "Left and walked out to right then to the left and off he went home as happy as anything"
     ],
     "description": "Fun for all ages and really EASY",
     "equipment": "3 envelopes with some small age related prizes",
@@ -3093,7 +2953,6 @@
     "recommendedPlayersText": "6+",
     "notes": "Set time limits and clear zones.",
     "keywords": [
-      "and",
       "hide",
       "jails",
       "mechanics",
@@ -3101,12 +2960,11 @@
       "ringolevio",
       "seek",
       "tag",
-      "team",
-      "with"
+      "team"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Split teams; mark jails; hiders get head start; seekers tag to jail; teammates free prisoners by touch; round ends when a team is fully jailed or time expires."
+      "Split teams; mark jails; hiders get head start; seekers tag to jail; teammates free prisoners by touch; round ends when a team is fully jailed or time expires"
     ],
     "description": "Team hide‑and‑seek/tag with jails and rescue mechanics.",
     "equipment": "None",
@@ -3144,13 +3002,13 @@
     "playersMin": 6,
     "links": [],
     "category": "Wide",
-    "id": "ringolevio"
+    "id": "ringolevio",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "could",
       "duck",
       "end",
@@ -3158,21 +3016,16 @@
       "funny",
       "get",
       "good",
-      "in",
       "meeting",
-      "of",
       "really",
-      "rubber",
-      "the",
-      "this",
-      "your"
+      "rubber"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 In this game one person must go to the center of the room and interact with a rubber duck in any way they want to try and illicit laughs from everyone else.",
-      "(This can be any sort of stuffed animal that you can get hold of) 2 They can converse with it, dance with it, cry on its shoulder, whatever they can think of.",
-      "They have 1 minute to try and make at least one person laugh.",
-      "The first person who laughs must take their turn with the rubber duck."
+      "1 in this game one person must go to the center of the room and interact with a rubber duck in any way they want to try and illicit laughs from everyone else",
+      "(this can be any sort of stuffed animal that you can get hold of) 2 they can converse with it, dance with it, cry on its shoulder, whatever they can think of",
+      "They have 1 minute to try and make at least one person laugh",
+      "The first person who laughs must take their turn with the rubber duck"
     ],
     "description": "This could get really funny. A good fill in a the end of your meeting",
     "equipment": "Little",
@@ -3210,7 +3063,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Everyone stands in a tight circle, with their heads down looking at their shoes 2 When ‘Heads Up’ is called, everyone looks up and stares at someone else in the circle 3 If that person is staring right back at you, then you scream real loud and jump back out of the circle 4 If the person you’re looking at is not looking at you, put your head back down and wait for the next round 5 Keep going until there are two players remaining or an alloted time is up"
+      "1 everyone stands in a tight circle, with their heads down looking at their shoes 2 when ‘heads up’ is called, everyone looks up and stares at someone else in the circle 3 if that person is staring right back at you, then you scream real loud and jump back out of the circle 4 if the person you’re looking at is not looking at you, put your head back down and wait for the next round 5 keep going until there are two players remaining or an alloted time is up"
     ],
     "description": "Reaction Game",
     "equipment": "None",
@@ -3250,12 +3103,11 @@
       "seven",
       "tappers",
       "thumbs",
-      "up",
-      "with"
+      "up"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Pick seven tappers; others heads down, thumbs up; tappers press thumbs; tapped players guess who chose them; correct swaps in."
+      "Pick seven tappers; others heads down, thumbs up; tappers press thumbs; tapped players guess who chose them; correct swaps in"
     ],
     "description": "Quiet classroom guessing game with seven tappers pressing thumbs.",
     "equipment": "None",
@@ -3278,7 +3130,7 @@
     "skillsDeveloped": [
       "Memory",
       "Deduction",
-      "Self‑control"
+      "Self‑Control"
     ],
     "variations": [
       "Five Up for small groups",
@@ -3289,10 +3141,11 @@
     "playersMin": 7,
     "links": [],
     "category": "Party",
-    "id": "seven-up-heads-up-seven-up"
+    "id": "seven-up-heads-up-seven-up",
+    "prepLevel": "Unknown"
   },
   {
-    "recommendedPlayersText": "5–15",
+    "recommendedPlayersText": "5-15",
     "ageMax": 11,
     "equipment": "None",
     "playersMax": 15,
@@ -3311,7 +3164,6 @@
     "notes": "Ideal on grass.",
     "keywords": [
       "across",
-      "and",
       "central",
       "convert",
       "crossing",
@@ -3321,13 +3173,10 @@
       "shark",
       "sharks",
       "tags",
-      "the",
-      "them",
-      "to",
       "while"
     ],
     "generalRules": [
-      "One shark in the middle; others cross on the call; tagged players become sharks; last minnow wins."
+      "One shark in the middle; others cross on the call; tagged players become sharks; last minnow wins"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -3339,7 +3188,8 @@
       "active",
       "tag"
     ],
-    "id": "sharks-and-minnows"
+    "id": "sharks-and-minnows",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "4+",
@@ -3350,8 +3200,6 @@
       "chatter",
       "circle",
       "drops",
-      "in",
-      "or",
       "outs",
       "passing",
       "poor",
@@ -3363,7 +3211,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Stand/sit in a circle; pass a soft ball silently; infractions lead to elimination or a strike; last standing or least strikes wins."
+      "Stand/sit in a circle; pass a soft ball silently; infractions lead to elimination or a strike; last standing or least strikes wins"
     ],
     "description": "Circle passing in total silence; drops, chatter or poor throws cause outs or strikes.",
     "equipment": "Soft ball",
@@ -3386,8 +3234,8 @@
     ],
     "skillsDeveloped": [
       "Focus",
-      "Motor control",
-      "Self‑regulation"
+      "Motor Control",
+      "Self‑Regulation"
     ],
     "variations": [
       "Three lives",
@@ -3398,7 +3246,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Group",
-    "id": "silent-ball"
+    "id": "silent-ball",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "3+",
@@ -3416,7 +3265,6 @@
     "traditionality": "Traditional",
     "notes": "Use themed vocab.",
     "keywords": [
-      "by",
       "commands",
       "follow",
       "only",
@@ -3426,7 +3274,7 @@
       "when"
     ],
     "generalRules": [
-      "Leader issues mixed commands; doing an action without 'Simon says' causes a forfeit or elimination."
+      "Leader issues mixed commands; doing an action without 'simon says' causes a forfeit or elimination"
     ],
     "skillsDeveloped": [
       "Listening",
@@ -3438,7 +3286,8 @@
     "regionalNames": [],
     "relatedGames": [],
     "tags": [],
-    "id": "simon-says"
+    "id": "simon-says",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "3+",
@@ -3463,20 +3312,17 @@
       "lions",
       "make",
       "move",
-      "or",
       "players",
       "sleeping",
       "still",
-      "them",
-      "to",
       "try",
       "while"
     ],
     "generalRules": [
-      "One or two leaders attempt to elicit movement (no touching). Last to move wins."
+      "One or two leaders attempt to elicit movement (no touching). last to move wins"
     ],
     "skillsDeveloped": [
-      "Self‑control",
+      "Self‑Control",
       "Focus"
     ],
     "variations": [],
@@ -3484,7 +3330,8 @@
     "description": "Players lie still while leaders try to make them move or laugh.",
     "relatedGames": [],
     "tags": [],
-    "id": "sleeping-lions"
+    "id": "sleeping-lions",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -3497,7 +3344,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Ask the group to form a circle and sit down 2 Choose one person to leave the room/area 3 Ask two people to move to a different position in the circle 4 Now ask the “It” person to come back into the room that person has to now guess who moved to a different position in the circle 5 Play this game again depending on your time"
+      "1 ask the group to form a circle and sit down 2 choose one person to leave the room/area 3 ask two people to move to a different position in the circle 4 now ask the “it” person to come back into the room that person has to now guess who moved to a different position in the circle 5 play this game again depending on your time"
     ],
     "description": "Concentration Game",
     "equipment": "None",
@@ -3530,7 +3377,6 @@
     "recommendedPlayersText": "4+",
     "notes": "Use foam balls; reduce steps indoors.",
     "keywords": [
-      "and",
       "ball",
       "call",
       "d",
@@ -3539,7 +3385,6 @@
       "knock",
       "letters",
       "number",
-      "on",
       "out",
       "p",
       "players",
@@ -3550,13 +3395,12 @@
       "then",
       "three",
       "throw",
-      "to",
       "u",
       "up"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Assign numbers; thrower lobs ball calling a number; called player retrieves and yells 'Spud!'; everyone freezes; up to three steps and throw; hit gives target a letter; once at SPUD, they’re out; last in wins."
+      "Assign numbers; thrower lobs ball calling a number; called player retrieves and yells 'spud!'; everyone freezes; up to three steps and throw; hit gives target a letter; once at spud, they’re out; last in wins"
     ],
     "description": "Number‑call ball game; freeze on 'Spud', then take up to three steps and throw; letters S‑P‑U‑D knock players out.",
     "equipment": "Soft playground ball",
@@ -3577,8 +3421,8 @@
       "UK-wide"
     ],
     "skillsDeveloped": [
-      "Throwing accuracy",
-      "Decision‑making"
+      "Throwing Accuracy",
+      "Decision‑Making"
     ],
     "variations": [
       "No elimination; reset at SPUD",
@@ -3589,7 +3433,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Group",
-    "id": "spud"
+    "id": "spud",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "10+",
@@ -3611,7 +3456,6 @@
     "traditionality": "Traditional",
     "notes": "Mark boundaries clearly.",
     "keywords": [
-      "and",
       "base",
       "beanbags",
       "being",
@@ -3623,12 +3467,10 @@
       "steal",
       "tagged",
       "teams",
-      "the",
-      "to",
       "without"
     ],
     "generalRules": [
-      "Each team guards a pile of items. If tagged while carrying, drop and return to base. Most items wins."
+      "Each team guards a pile of items. if tagged while carrying, drop and return to base. most items wins"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -3639,28 +3481,26 @@
     "tags": [
       "tag"
     ],
-    "id": "steal-the-gold"
+    "id": "steal-the-gold",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
       "figure",
-      "for",
       "kids",
       "out",
       "something",
       "sticks",
-      "the",
-      "to",
       "trick"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Have all children gather in a circle 2 As the leader, tell how you have studied chaos and the meaning of the cosmos and have concluded that all random events have meaning 3 Take a few sticks and drop them on the ground in front of you 4 Study the sticks and then ask the kids if they can tell you what number the sticks represent.",
-      "After a few guesses, announce the number 5 Repeat this a few times, and some in the group may figure it out.",
-      "If they do, allow them to drop the sticks and you guess the number The Solution To The Trick: When you drop the sticks, you place your hands on your knees or on the ground in front of you.",
-      "The number represented by the sticks is actually the number of fingers you have pointing out.",
+      "1 have all children gather in a circle 2 as the leader, tell how you have studied chaos and the meaning of the cosmos and have concluded that all random events have meaning 3 take a few sticks and drop them on the ground in front of you 4 study the sticks and then ask the kids if they can tell you what number the sticks represent",
+      "After a few guesses, announce the number 5 repeat this a few times, and some in the group may figure it out",
+      "If they do, allow them to drop the sticks and you guess the number the solution to the trick: when you drop the sticks, you place your hands on your knees or on the ground in front of you",
+      "The number represented by the sticks is actually the number of fingers you have pointing out",
       "You can make the placing of your hands more and more obvious until someone gets it"
     ],
     "description": "Something for the kids to figure out!",
@@ -3695,16 +3535,15 @@
     "keywords": [
       "action",
       "compeition",
-      "fun",
       "game",
       "relay",
       "stunt"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Split your group into teams of six 2 Setup a starting and an end point 3 The first person in each team run to the end point pick up a piece of paper and perform the stunt that it says then they run back tag the next person in their team and they go and do the same 4 The winning team is the one where all children have done a stunt 5 Here’s a list of stunts to use.",
-      "You can make up some of your own if you wish.",
-      "Make sure you lay out the stunts in the same order for each team Example stunts: Do A Cartwheel Hop 3 Times On Your Left Leg Do A Handstand Do A Forward Roll Spin Around 3 Times On Tiptoes Do A Headstand Do A Forward Roll Stand Up & Spin Around On Tiptoe Twice Hop 3 Times on Your Right Leg Then Do A Cartwheel"
+      "1 split your group into teams of six 2 setup a starting and an end point 3 the first person in each team run to the end point pick up a piece of paper and perform the stunt that it says then they run back tag the next person in their team and they go and do the same 4 the winning team is the one where all children have done a stunt 5 here’s a list of stunts to use",
+      "You can make up some of your own if you wish",
+      "Make sure you lay out the stunts in the same order for each team example stunts: do a cartwheel hop 3 times on your left leg do a handstand do a forward roll spin around 3 times on tiptoes do a headstand do a forward roll stand up & spin around on tiptoe twice hop 3 times on your right leg then do a cartwheel"
     ],
     "description": "Fun Action Compeition",
     "equipment": "Paper",
@@ -3737,17 +3576,15 @@
     "keywords": [
       "action",
       "compass",
-      "for",
       "game",
       "great",
       "map",
       "reading",
-      "swap",
-      "the"
+      "swap"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 If you are playing outside and have staves arrange them on the ground in star fashion to represent the 8 points on a compass if you are inside you can use chalk or rope to mark the floor 2 Get eight children to stand at the end of the compass point 3 The leader shouts out two points of the compass, let's say North and Sout East the two children standing at those points must run to change position 4 If any children move without it being their compass point they are out of the game 5 Play the game again with the next lot of children or if you have enough materials for two compass layouts then run two or three games at once with a leader direction each 6 Increase the speed the game as the children get better or if they are older children"
+      "1 if you are playing outside and have staves arrange them on the ground in star fashion to represent the 8 points on a compass if you are inside you can use chalk or rope to mark the floor 2 get eight children to stand at the end of the compass point 3 the leader shouts out two points of the compass, let's say north and sout east the two children standing at those points must run to change position 4 if any children move without it being their compass point they are out of the game 5 play the game again with the next lot of children or if you have enough materials for two compass layouts then run two or three games at once with a leader direction each 6 increase the speed the game as the children get better or if they are older children"
     ],
     "description": "Great Action Game For Map Reading",
     "equipment": "None",
@@ -3779,7 +3616,6 @@
     "notes": "",
     "keywords": [
       "action",
-      "fun",
       "game",
       "kids",
       "love",
@@ -3787,14 +3623,12 @@
       "relay",
       "shirt",
       "t",
-      "the",
       "think",
-      "this",
       "will"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Split your group into teams of three-six 2 The first person in each team has to put on the oversized t-shirt 3 Each team lines up with each other 4 Now the first and second person in each team face each other and holds hands 5 The Leader says go and the rest of the team pulls the shirt up over the first players head, up his arms, down the next players arms and finally completely on the next player (the shirt will be inside out at this point) 6 Now player two turns to player three and you start again the first team to have the t-shirt on their last team member is the winner"
+      "1 split your group into teams of three-six 2 the first person in each team has to put on the oversized t-shirt 3 each team lines up with each other 4 now the first and second person in each team face each other and holds hands 5 the leader says go and the rest of the team pulls the shirt up over the first players head, up his arms, down the next players arms and finally completely on the next player (the shirt will be inside out at this point) 6 now player two turns to player three and you start again the first team to have the t-shirt on their last team member is the winner"
     ],
     "description": "Think the kids will love this one - Fun Action",
     "equipment": "An oversized t-shirt for each team",
@@ -3827,13 +3661,12 @@
     "keywords": [
       "activity",
       "nose",
-      "test",
-      "your"
+      "test"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Prepare a number of paper bags and put a different smelling item in each for example, an onion, coffee beans, orange peel, etc.",
-      "Get each child to come up and smell the bags making their way along the line tell them they have a couple of seconds to sniff each one They then have to write down what they think they are in the order they smelt them in The leaders checks everyone answers"
+      "Prepare a number of paper bags and put a different smelling item in each for example, an onion, coffee beans, orange peel, etc",
+      "Get each child to come up and smell the bags making their way along the line tell them they have a couple of seconds to sniff each one they then have to write down what they think they are in the order they smelt them in the leaders checks everyone answers"
     ],
     "description": "Activity",
     "equipment": "Little",
@@ -3862,13 +3695,12 @@
     "keywords": [
       "game",
       "generation",
-      "memory",
-      "the"
+      "memory"
     ],
     "ageMax": 11,
     "generalRules": [
-      "Collect on a tray a number of objects used in Scouting for example, Spoons, Pencil, Knives, Candles, Stones, Twigs etc.",
-      "Cover the tray with a cloth Uncover the tray for one minute so the children can try to memorise what's on it Each child writes down what they think they saw Leaders check the papers to see who came the closest Alternative Procedure In Teams Increase the number of items Split the Group into teams of 4 and get each team to write the items that they can remember The team with the most correct items wins"
+      "Collect on a tray a number of objects used in scouting for example, spoons, pencil, knives, candles, stones, twigs etc",
+      "Cover the tray with a cloth uncover the tray for one minute so the children can try to memorise what's on it each child writes down what they think they saw leaders check the papers to see who came the closest alternative procedure in teams increase the number of items split the group into teams of 4 and get each team to write the items that they can remember the team with the most correct items wins"
     ],
     "description": "Memory Game",
     "equipment": "Little",
@@ -3901,19 +3733,16 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "hike",
       "meeting",
       "mile",
       "short",
-      "the",
       "twist",
-      "very",
-      "with"
+      "very"
     ],
     "ageMax": 12,
     "generalRules": [
-      "1 Split your group into two and assign a leader to each (assigning a leader to Explorers is optional) 2 Take each group exactly a mile from your meeting place or camp 3 Now each team have to get back to base one carrying a flag 4 The first team to see the other team is the winner 5 Each team can use any tactics to hide if they need to"
+      "1 split your group into two and assign a leader to each (assigning a leader to explorers is optional) 2 take each group exactly a mile from your meeting place or camp 3 now each team have to get back to base one carrying a flag 4 the first team to see the other team is the winner 5 each team can use any tactics to hide if they need to"
     ],
     "description": "A very short hike with a twist",
     "equipment": "Little",
@@ -3944,19 +3773,17 @@
     "recommendedPlayersText": "",
     "notes": "",
     "keywords": [
-      "a",
       "commands",
       "concentration",
       "game",
       "little",
       "needed",
-      "quick",
-      "the"
+      "quick"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Get the entire group to stand in a line next to each other facing you 2 Warn the kids you are going to give them some quick commands if anyone makes a mistake they sit down (you don't want children sitting out for too long so either get them to shout commands with you or keep the rounds short) 3 Here´s a selection of commands.",
-      "You can use any of your own too… Attention Sit Down Stand Up Hands On Hips Arms Forward Left Arm Down Arm By Side Right Arm Up Left Leg Forward Right Hand On Head Hands On Knees At Ease Shout Arms Horizontal Arms Vertical"
+      "1 get the entire group to stand in a line next to each other facing you 2 warn the kids you are going to give them some quick commands if anyone makes a mistake they sit down (you don't want children sitting out for too long so either get them to shout commands with you or keep the rounds short) 3 here´s a selection of commands",
+      "You can use any of your own too… attention sit down stand up hands on hips arms forward left arm down arm by side right arm up left leg forward right hand on head hands on knees at ease shout arms horizontal arms vertical"
     ],
     "description": "A little concentration needed",
     "equipment": "None",
@@ -3989,20 +3816,17 @@
     "recommendedPlayersText": "",
     "notes": "Note: For Younger kids a Adult should accompany each team",
     "keywords": [
-      "a",
       "hike",
       "search",
       "short",
-      "the",
       "twist",
-      "very",
-      "with"
+      "very"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 The leader goes for a walk a day before the game or whenever they can and on some postcards writes a description of various places or things he passes, such as stream, bridge, white gate, old cottage etc.",
-      "2 On the day of the game split your group into small teams and give them each a card 3 Give the children a rough idea of how far they need to go to discover what´s on their card and send them off to find the place or thing on the card 4 One of the leaders should stay at the starting point at all times.",
-      "The first team back wins 5 You should also give the team a time limit, so if for example, they haven't found their thing after 30 minutes has passed they should make their way back"
+      "1 the leader goes for a walk a day before the game or whenever they can and on some postcards writes a description of various places or things he passes, such as stream, bridge, white gate, old cottage etc",
+      "2 on the day of the game split your group into small teams and give them each a card 3 give the children a rough idea of how far they need to go to discover what´s on their card and send them off to find the place or thing on the card 4 one of the leaders should stay at the starting point at all times",
+      "The first team back wins 5 you should also give the team a time limit, so if for example, they haven't found their thing after 30 minutes has passed they should make their way back"
     ],
     "description": "A very short hike with a twist",
     "equipment": "Little",
@@ -4033,34 +3857,27 @@
     "recommendedPlayersText": "",
     "notes": "for Younger kids just put 5 balls in their box",
     "keywords": [
-      "a",
-      "an",
       "bit",
       "bop",
       "box",
       "but",
       "game",
       "hilarious",
-      "is",
-      "it",
-      "of",
       "prep",
       "takes",
-      "the",
-      "this",
       "tissue",
       "well",
       "worth"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 This hilarious game takes some prep work but it is SO worth it.",
-      "For each child you'll need an empty rectangle tissue box, and about 10 ping pong balls in each.",
-      "You'll also need string or ribbon 2 Before your meeting lace the sting through each box so that you will be able to tie it around the waist of the players.",
-      "Next fill each box with the ping pong balls and your ready 3 Tie the tissue box belts around each players waist, making sure the tissue box is at the back.",
-      "Put on some music and let the players shake their booties to the music.",
-      "No touching the box with your hands or help from others.",
-      "The object of the game is to be the first to bop all their balls out."
+      "1 this hilarious game takes some prep work but it is so worth it",
+      "For each child you'll need an empty rectangle tissue box, and about 10 ping pong balls in each",
+      "You'll also need string or ribbon 2 before your meeting lace the sting through each box so that you will be able to tie it around the waist of the players",
+      "Next fill each box with the ping pong balls and your ready 3 tie the tissue box belts around each players waist, making sure the tissue box is at the back",
+      "Put on some music and let the players shake their booties to the music",
+      "No touching the box with your hands or help from others",
+      "The object of the game is to be the first to bop all their balls out"
     ],
     "description": "This is an hilarious game takes a bit of prep but well worth it",
     "equipment": "A lot but worth it!",
@@ -4094,7 +3911,7 @@
     "playersMax": null,
     "ageMin": 8,
     "skillsDeveloped": [
-      "Reaction time",
+      "Reaction Time",
       "Listening"
     ],
     "name": "Traffic Lights",
@@ -4107,7 +3924,6 @@
     "traditionality": "Traditional",
     "notes": "Add fun commands.",
     "keywords": [
-      "by",
       "commands",
       "controlled",
       "game",
@@ -4119,7 +3935,7 @@
       "verbal"
     ],
     "generalRules": [
-      "Leader calls Green/Amber/Red (run/walk/stop). Mistakes cause elimination or restart."
+      "Leader calls green/amber/red (run/walk/stop). mistakes cause elimination or restart"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -4129,7 +3945,8 @@
     "tags": [
       "active"
     ],
-    "id": "traffic-lights"
+    "id": "traffic-lights",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -4137,54 +3954,52 @@
     "keywords": [
       "action",
       "false",
-      "fun",
       "game",
       "little",
-      "or",
       "true"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Ask everyone to stand up 2 Now you ask the group a \"True or False\" question.",
-      "Everyone has to answer true or false by putting their hands on their heads if they think the answer is true, or their hands on their bum if they think it is false 3 Give them 5-10 seconds to decide.",
-      "You then reveal the answer - everyone who guessed wrong sits down, everyone who got it right remains standing 4 When you get down to the last few get the children to face opposite directions so they can't see what each other is answering 5 The last person standing is the winner or if you run out of questions the last people standing are the winners! 6 I have listed below 3 rounds of questions however you can make up your own or get the kids to each make up a round of questions for the other teams...",
-      "Round 1 - Questions 1.",
-      "In space it is impossible to cry? - True 2.",
-      "Most Eskimoes have fridges? - True 3.",
-      "The human body has four lungs.",
-      "False 4.",
-      "An emu cannot fly? - True 5.",
-      "There are no Squibs at Hogwarts - False 6.",
-      "The Simpsons have 1 dog and 2 cats - False 7.",
-      "An Ostrich's eye is bigger than it's brain? - True 8.",
-      "The Simpson Live in Wingfield - False 9.",
-      "Thomas Edison, who invented the lightbulb, was afraid of the dark? - True 10.",
-      "The letter \"t\" is the second most common letter used in the English language? - True Round 2 - Questions 1.",
-      "Spiders have six legs.",
-      "False 2.",
-      "Bart Simpson is 10 years old - True 3.",
-      "The moon orbits the earth once every 29.5 days.",
-      "True 4.",
-      "Wetlands can store water in heavy rains which prevents flooding downstream.",
-      "False 5.",
-      "Marge Simpson's maiden name is Bouiver - True 6.",
-      "There are four houses at Hogwarts school - True 7.",
-      "Ron Weasley is Harry's worst enemy - False 8.",
-      "Homer is so dumb because he got a crayon wedged in his brain - True 9.",
-      "Homer is Mr.",
-      "Burns personal assistant - False 10.",
-      "Bart has a secret twin sister? - False Round 3 - Questions 1.",
-      "Bart Simpson has never had a tattoo? - False 2.",
-      "Harry Potter is a Muggle - False 3.",
-      "Homer Simpsons middle name is Jay - True 4.",
-      "Cats spend an average of 13 to 14 hours a day sleeping.",
-      "True 5.",
-      "Slug's don't have any noses? - False 6.",
-      "A coat hanger is 44 inches long when straightened - True 7.",
-      "Harry Potter is in Ravenclaw - False 8.",
-      "If colouring weren't added to Coca-Cola, it would be green - True 9.",
-      "Herbivores eat meat - False 10.",
-      "Kangaroos are only an inch long at birth? - True"
+      "1 ask everyone to stand up 2 now you ask the group a \"true or false\" question",
+      "Everyone has to answer true or false by putting their hands on their heads if they think the answer is true, or their hands on their bum if they think it is false 3 give them 5-10 seconds to decide",
+      "You then reveal the answer - everyone who guessed wrong sits down, everyone who got it right remains standing 4 when you get down to the last few get the children to face opposite directions so they can't see what each other is answering 5 the last person standing is the winner or if you run out of questions the last people standing are the winners! 6 i have listed below 3 rounds of questions however you can make up your own or get the kids to each make up a round of questions for the other teams",
+      "Round 1 - questions 1",
+      "In space it is impossible to cry? - true 2",
+      "Most eskimoes have fridges? - true 3",
+      "The human body has four lungs",
+      "False 4",
+      "An emu cannot fly? - true 5",
+      "There are no squibs at hogwarts - false 6",
+      "The simpsons have 1 dog and 2 cats - false 7",
+      "An ostrich's eye is bigger than it's brain? - true 8",
+      "The simpson live in wingfield - false 9",
+      "Thomas edison, who invented the lightbulb, was afraid of the dark? - true 10",
+      "The letter \"t\" is the second most common letter used in the english language? - true round 2 - questions 1",
+      "Spiders have six legs",
+      "False 2",
+      "Bart simpson is 10 years old - true 3",
+      "The moon orbits the earth once every 29.5 days",
+      "True 4",
+      "Wetlands can store water in heavy rains which prevents flooding downstream",
+      "False 5",
+      "Marge simpson's maiden name is bouiver - true 6",
+      "There are four houses at hogwarts school - true 7",
+      "Ron weasley is harry's worst enemy - false 8",
+      "Homer is so dumb because he got a crayon wedged in his brain - true 9",
+      "Homer is mr",
+      "Burns personal assistant - false 10",
+      "Bart has a secret twin sister? - false round 3 - questions 1",
+      "Bart simpson has never had a tattoo? - false 2",
+      "Harry potter is a muggle - false 3",
+      "Homer simpsons middle name is jay - true 4",
+      "Cats spend an average of 13 to 14 hours a day sleeping",
+      "True 5",
+      "Slug's don't have any noses? - false 6",
+      "A coat hanger is 44 inches long when straightened - true 7",
+      "Harry potter is in ravenclaw - false 8",
+      "If colouring weren't added to coca-cola, it would be green - true 9",
+      "Herbivores eat meat - false 10",
+      "Kangaroos are only an inch long at birth? - true"
     ],
     "description": "Fun Little Action Game",
     "equipment": "None",
@@ -4215,10 +4030,8 @@
     "recommendedPlayersText": "4+",
     "notes": "Keep dares kind and age‑appropriate.",
     "keywords": [
-      "a",
       "choosing",
       "dare",
-      "or",
       "safe",
       "silly",
       "take",
@@ -4227,7 +4040,7 @@
     ],
     "ageMax": 11,
     "generalRules": [
-      "Sit in a circle; on your turn ask 'Truth or dare?'; answer honestly or perform an agreed safe dare; rotate; set boundaries first."
+      "Sit in a circle; on your turn ask 'truth or dare?'; answer honestly or perform an agreed safe dare; rotate; set boundaries first"
     ],
     "description": "Take turns choosing truth or a safe, silly dare.",
     "equipment": "None",
@@ -4244,7 +4057,7 @@
       "UK-wide"
     ],
     "skillsDeveloped": [
-      "Social confidence",
+      "Social Confidence",
       "Storytelling"
     ],
     "variations": [
@@ -4256,7 +4069,8 @@
     "playersMin": 4,
     "links": [],
     "category": "Party",
-    "id": "truth-or-dare"
+    "id": "truth-or-dare",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "10 or more",
@@ -4266,21 +4080,20 @@
       "concentration",
       "game",
       "jenkins",
-      "the",
       "up"
     ],
     "ageMax": 11,
     "generalRules": [
-      "As many players can take part in this game as there are places at the table Form two teams with an equal number of players and choose a captain for each team The teams sit along each side of the table, facing each other The captains sit at the ends of the table The captain of one team gets the coin and passes it under the table to the second person of their team The players on that team pass the coin under the table back and forth from one player to another The object of the game is to do it so carefully that the opposing team cannot guess which player has the coin At any time, the captain of the opposing team may call out, \"Up Jenkins!\" At this signal, the players on the team with the coin hold their hands over their heads with their fists clenched The captain then calls out, \"Down Jenkins!\" and the players slap their hands with palms on the table, keeping the coin hidden under one of the palms.",
-      "Be careful that there is no clinking sound of the coin when hands are slammed down on the table Then the first two players on the opposing team guess which player has the coin.",
-      "One of them says \"Show Up,\" to the player he or she thinks has the coin.",
-      "This player must lift up both hands to show if the coin is on the table.",
-      "If it isn't, the second player gets to guess.",
-      "If one of the guesses is right, the opposing team gets a point, and wins a chance to hide the coin.",
-      "If the guesses are both wrong, the coin stays with the first team, who gets a point.",
-      "Next time around the third and fourth players on the opposing team get to guess.",
-      "Set a time limit for play.",
-      "At that point the team with the most points wins."
+      "As many players can take part in this game as there are places at the table form two teams with an equal number of players and choose a captain for each team the teams sit along each side of the table, facing each other the captains sit at the ends of the table the captain of one team gets the coin and passes it under the table to the second person of their team the players on that team pass the coin under the table back and forth from one player to another the object of the game is to do it so carefully that the opposing team cannot guess which player has the coin at any time, the captain of the opposing team may call out, \"up jenkins!\" at this signal, the players on the team with the coin hold their hands over their heads with their fists clenched the captain then calls out, \"down jenkins!\" and the players slap their hands with palms on the table, keeping the coin hidden under one of the palms",
+      "Be careful that there is no clinking sound of the coin when hands are slammed down on the table then the first two players on the opposing team guess which player has the coin",
+      "One of them says \"show up,\" to the player he or she thinks has the coin",
+      "This player must lift up both hands to show if the coin is on the table",
+      "If it isn't, the second player gets to guess",
+      "If one of the guesses is right, the opposing team gets a point, and wins a chance to hide the coin",
+      "If the guesses are both wrong, the coin stays with the first team, who gets a point",
+      "Next time around the third and fourth players on the opposing team get to guess",
+      "Set a time limit for play",
+      "At that point the team with the most points wins"
     ],
     "description": "Calm Concentration Game",
     "equipment": "A long table (or tables put together), Chairs and a Coin",
@@ -4305,7 +4118,7 @@
     "playersMin": 10,
     "links": [],
     "category": "Party",
-    "prepLevel": "Very Little",
+    "prepLevel": "Very little",
     "id": "up-the-jenkins"
   },
   {
@@ -4318,15 +4131,14 @@
       "s",
       "sheet",
       "spot",
-      "this",
       "where"
     ],
     "ageMax": 12,
     "generalRules": [
-      "Take the children for a short walk around your local area.",
-      "Take a series of photos of objects, trees, windows, cross-roads water etc.",
-      "along the way (you need to note down where the picture was taken) Once the photos have been printed Split your group into small teams Show the photos to each team in turn and ask them where abouts in your local area they think this object, tree etc.",
-      "is Each team scores a point for each correct answer"
+      "Take the children for a short walk around your local area",
+      "Take a series of photos of objects, trees, windows, cross-roads water etc",
+      "Along the way (you need to note down where the picture was taken) once the photos have been printed split your group into small teams show the photos to each team in turn and ask them where abouts in your local area they think this object, tree etc",
+      "Is each team scores a point for each correct answer"
     ],
     "description": "Game imported from sheet.",
     "equipment": "Little",
@@ -4372,7 +4184,6 @@
     "traditionality": "Traditional",
     "notes": "Great calm game.",
     "keywords": [
-      "by",
       "culprit",
       "deduce",
       "eliminates",
@@ -4380,12 +4191,11 @@
       "murderer",
       "others",
       "secret",
-      "the",
       "wink",
       "winking"
     ],
     "generalRules": [
-      "Choose a murderer secretly; wink to eliminate; accusations permitted per house rules; correct accuser becomes next detective/murderer variant."
+      "Choose a murderer secretly; wink to eliminate; accusations permitted per house rules; correct accuser becomes next detective/murderer variant"
     ],
     "variations": [],
     "historicalNotes": "",
@@ -4394,7 +4204,8 @@
     "regionalNames": [],
     "relatedGames": [],
     "tags": [],
-    "id": "wink-murder"
+    "id": "wink-murder",
+    "prepLevel": "Unknown"
   },
   {
     "recommendedPlayersText": "",
@@ -4404,14 +4215,12 @@
       "funny",
       "off",
       "smile",
-      "that",
-      "wipe",
-      "your"
+      "wipe"
     ],
     "ageMax": 11,
     "generalRules": [
-      "1 Split the group into three teams.",
-      "The team sizes shouldn´t be more than 8 so if you have a smaller or larger group split your teams accordingly but you need a leader per team 2 Each leader should stand near a team and the teams need to form a circle 3 The leader picks the first child to stand in the middle and tells them to smile their biggest, silliest, goofiest, smile at each person around the circle, and try to make someone giggle or laugh 4 If someone can´t keep a straight face they step back out of the circle 5 After one minute the leader adds up how many people that person has managed to make smile or giggle and writes it down 6 Now the next child in the team has to make everyone 7 The winner of each team is the child that has made the most children smile"
+      "1 split the group into three teams",
+      "The team sizes shouldn´t be more than 8 so if you have a smaller or larger group split your teams accordingly but you need a leader per team 2 each leader should stand near a team and the teams need to form a circle 3 the leader picks the first child to stand in the middle and tells them to smile their biggest, silliest, goofiest, smile at each person around the circle, and try to make someone giggle or laugh 4 if someone can´t keep a straight face they step back out of the circle 5 after one minute the leader adds up how many people that person has managed to make smile or giggle and writes it down 6 now the next child in the team has to make everyone 7 the winner of each team is the child that has made the most children smile"
     ],
     "description": "Funny",
     "equipment": "None",
