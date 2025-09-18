@@ -48,6 +48,7 @@
     --shadow-subtle: 0 1px 2px rgb(0 0 0 / 0.05);
     --border-width: 1px;
     --focus-ring: oklch(0.7 0.2 150);
+    --body-background-image: url("/Itsallfunandgames/bg_light.png");
   }
 
   .dark {
@@ -70,6 +71,7 @@
     --border: 217 32% 17%;
     --input: 217 32% 17%;
     --ring: 150 62% 58%;
+    --body-background-image: url("/Itsallfunandgames/bg_dark.png");
   }
 
   /* Avoid putting borders on EVERYTHING */
@@ -85,15 +87,11 @@
     line-height: 26px;
 
     /* Background image */
-    background-image: url('/bg_light.png'); /* file in /public */
-    background-repeat: repeat;
+    background-image: var(--body-background-image); /* file in /public */
+    background-repeat: repeat; /* tile the pattern */
   }
 
-  /* Dark mode override: remove the light texture */
-  html.dark body {
-    background-image: none;
-  }
-
+  /* The CSS variable above flips to the dark texture when `.dark` is active */
   h1 {
     font-family: var(--font-outfit), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     font-size: 40px;
