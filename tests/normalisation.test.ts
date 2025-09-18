@@ -1,14 +1,6 @@
 // tests/normalisation.test.ts
 import { describe, it, expect } from 'vitest';
-// Note: You would need to export your normalisation logic to test it directly.
-// For this example, let's assume `normaliseNullishString` is exported.
-
-// Dummy function for demonstration
-const normaliseNullishString = (value: unknown): string | null => {
-  if (typeof value !== 'string') return null;
-  const trimmed = value.trim();
-  return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null : trimmed;
-};
+import { normaliseNullishString } from '../lib/loadGames';
 
 describe('Data Normalisation', () => {
   it('should convert "null," to null', () => {

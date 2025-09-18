@@ -2,7 +2,12 @@
 "use client";
 
 import { Game } from "@/lib/types";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import {
+  useSearchParams,
+  useRouter,
+  usePathname,
+  type ReadonlyURLSearchParams,
+} from "next/navigation";
 import { useEffect, useState, useMemo } from "react";
 import { useDebounce } from "use-debounce";
 import Fuse from "fuse.js";
@@ -30,6 +35,53 @@ const fuseOptions = {
 
 type Facets = Record<string, string[]>;
 
+type FiltersState = {
+  query: string;
+  category: string;
+  tags: string;
+  traditionality: string;
+  prepLevel: string;
+  skillsDeveloped: string;
+  regionalPopularity: string;
+  page: number;
+};
+
+const DEFAULT_PAGE = 1;
+
+const parsePageParam = (value: string | null) => {
+  if (!value) {
+    return DEFAULT_PAGE;
+  }
+  const parsed = Number.parseInt(value, 10);
+  if (Number.isNaN(parsed) || parsed < DEFAULT_PAGE) {
+    return DEFAULT_PAGE;
+  }
+  return parsed;
+};
+
+const buildFiltersFromParams = (
+  params: ReadonlyURLSearchParams
+): FiltersState => ({
+  query: params.get("q") ?? "",
+  category: params.get("category") ?? "",
+  tags: params.get("tags") ?? "",
+  traditionality: params.get("traditionality") ?? "",
+  prepLevel: params.get("prepLevel") ?? "",
+  skillsDeveloped: params.get("skillsDeveloped") ?? "",
+  regionalPopularity: params.get("regionalPopularity") ?? "",
+  page: parsePageParam(params.get("page")),
+});
+
+const areFiltersEqual = (a: FiltersState, b: FiltersState) =>
+  a.query === b.query &&
+  a.category === b.category &&
+  a.tags === b.tags &&
+  a.traditionality === b.traditionality &&
+  a.prepLevel === b.prepLevel &&
+  a.skillsDeveloped === b.skillsDeveloped &&
+  a.regionalPopularity === b.regionalPopularity &&
+  a.page === b.page;
+
 export function GameClient({
   allGames,
   facets,
@@ -42,16 +94,9 @@ export function GameClient({
   const searchParams = useSearchParams();
   const perPage = 12;
 
-  const [filters, setFilters] = useState({
-    query: searchParams.get("q") || "",
-    category: searchParams.get("category") || "",
-    tags: searchParams.get("tags") || "",
-    traditionality: searchParams.get("traditionality") || "",
-    prepLevel: searchParams.get("prepLevel") || "",
-    skillsDeveloped: searchParams.get("skillsDeveloped") || "",
-    regionalPopularity: searchParams.get("regionalPopularity") || "",
-    page: Number(searchParams.get("page")) || 1,
-  });
+  const [filters, setFilters] = useState<FiltersState>(() =>
+    buildFiltersFromParams(searchParams)
+  );
 
   const [debouncedQuery] = useDebounce(filters.query, 300);
 
@@ -105,11 +150,27 @@ export function GameClient({
     if (filters.regionalPopularity)
       params.set("regionalPopularity", filters.regionalPopularity);
     if (currentPage > 1) params.set("page", String(currentPage));
-    router.replace(`${pathname}?${params.toString()}`);
-  }, [filters, pathname, router, currentPage]);
+
+    const search = params.toString();
+    const currentSearch = searchParams.toString();
+
+    if (search === currentSearch) {
+      return;
+    }
+
+    const next = search ? `${pathname}?${search}` : pathname;
+    router.replace(next);
+  }, [filters, currentPage, pathname, router, searchParams]);
+
+  useEffect(() => {
+    const nextFilters = buildFiltersFromParams(searchParams);
+    setFilters((current) =>
+      areFiltersEqual(current, nextFilters) ? current : nextFilters
+    );
+  }, [searchParams]);
 
   const handlePageChange = (page: number) => {
-    setFilters((f) => ({ ...f, page }));
+    setFilters((f) => ({ ...f, page: Math.max(page, DEFAULT_PAGE) }));
   };
 
   const resetFilters = () => {
@@ -121,7 +182,7 @@ export function GameClient({
       prepLevel: "",
       skillsDeveloped: "",
       regionalPopularity: "",
-      page: 1,
+      page: DEFAULT_PAGE,
     });
   };
 
@@ -143,7 +204,7 @@ export function GameClient({
         <Select
           value={filters.category}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, category: value, page: 1 }))
+            setFilters((f) => ({ ...f, category: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Group">
@@ -160,7 +221,7 @@ export function GameClient({
         <Select
           value={filters.tags}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, tags: value, page: 1 }))
+            setFilters((f) => ({ ...f, tags: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Type">
@@ -177,7 +238,7 @@ export function GameClient({
         <Select
           value={filters.traditionality}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, traditionality: value, page: 1 }))
+            setFilters((f) => ({ ...f, traditionality: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Traditionality">
@@ -194,7 +255,7 @@ export function GameClient({
         <Select
           value={filters.prepLevel}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, prepLevel: value, page: 1 }))
+            setFilters((f) => ({ ...f, prepLevel: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Prep Level">
@@ -211,7 +272,7 @@ export function GameClient({
         <Select
           value={filters.skillsDeveloped}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, skillsDeveloped: value, page: 1 }))
+            setFilters((f) => ({ ...f, skillsDeveloped: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Skill">
@@ -228,7 +289,7 @@ export function GameClient({
         <Select
           value={filters.regionalPopularity}
           onValueChange={(value) =>
-            setFilters((f) => ({ ...f, regionalPopularity: value, page: 1 }))
+            setFilters((f) => ({ ...f, regionalPopularity: value, page: DEFAULT_PAGE }))
           }
         >
           <SelectTrigger className="h-9 min-w-28 rounded-md border border-input bg-card px-3 text-sm font-medium shadow-sm" aria-label="Region">
@@ -258,7 +319,7 @@ export function GameClient({
           placeholder="Search"
           value={filters.query}
           onChange={(e) =>
-            setFilters((f) => ({ ...f, query: e.target.value, page: 1 }))
+            setFilters((f) => ({ ...f, query: e.target.value, page: DEFAULT_PAGE }))
           }
           className="h-10 border-none bg-transparent shadow-none focus-visible:ring-0"
         />

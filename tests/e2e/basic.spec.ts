@@ -1,29 +1,54 @@
 // tests/e2e/basic.spec.ts
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
   // Base path needs to be included for local testing if running a static server
-  await page.goto('http://localhost:3000/Itsallfunandgames/');
+  await page.goto("http://localhost:3000/Itsallfunandgames/");
 });
 
-test('has title', async ({ page }) => {
-  await expect(page).toHaveTitle(/itsallfunandgames/);
+test("has title", async ({ page }) => {
+  await expect(page).toHaveTitle(/itsallfunandgames/i);
 });
 
-test('loads and displays games', async ({ page }) => {
-  // Wait for the client component to render
-  await expect(page.getByText('Tag')).toBeVisible();
-  await expect(page.getByText('Hide-and-Seek')).toBeVisible();
+test("loads and displays games", async ({ page }) => {
+  await expect(
+    page.getByRole("heading", { name: "Find Your Next Favourite Game" })
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Clear Filter" })).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Balance & Patience" })
+  ).toBeVisible();
 });
 
-test('search filters games', async ({ page }) => {
-    await page.getByPlaceholder('Search by name...').fill('hide');
-    await expect(page.getByText('Hide-and-Seek')).toBeVisible();
-    await expect(page.getByText('Tag')).not.toBeVisible();
+test("search filters games", async ({ page }) => {
+  const search = page.getByPlaceholder("Search");
+  await search.fill("patience");
+  await expect(
+    page.getByRole("link", { name: "Balance & Patience" })
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Blind Man’s Buff" })
+  ).toHaveCount(0);
 });
 
-test('diagnostics page shows bad record', async ({ page }) => {
-    await page.goto('http://localhost:3000/Itsallfunandgames/data/quality');
-    await expect(page.getByText('bad-record')).toBeVisible();
-    await expect(page.getByText('Name is required')).toBeVisible();
+test("updates the URL only when filters change", async ({ page }) => {
+  await expect(page).toHaveURL("http://localhost:3000/Itsallfunandgames/");
+
+  const search = page.getByPlaceholder("Search");
+  await search.fill("balance");
+  await expect(page).toHaveURL(/\?q=balance/);
+
+  await page.getByRole("button", { name: "Clear Filter" }).click();
+  await expect(page).toHaveURL("http://localhost:3000/Itsallfunandgames/");
+  await expect(search).toHaveValue("");
+});
+
+test("diagnostics page shows construction message", async ({ page }) => {
+  await page.goto("http://localhost:3000/Itsallfunandgames/data/quality");
+  await expect(
+    page.getByRole("heading", { name: "Under Construction" })
+  ).toBeVisible();
+  await expect(
+    page.getByText("We're currently working on our Data Quality Diagnostics page.")
+  ).toBeVisible();
 });
