@@ -30,11 +30,17 @@ export default function HomePage() {
   };
 
   return (
-    <section className="space-y-12">
-      <div className="mx-auto max-w-2xl text-center">
-        <h1 className="text-primary">Find Your Next Favourite Game</h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Find the perfect game for any group, age, and space.
+    <section className="relative z-10 space-y-12 sm:space-y-16">
+      <div className="mx-auto max-w-3xl text-center">
+        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-primary shadow-sm">
+          <span aria-hidden="true">🎲</span>
+          Game night inspiration
+        </span>
+        <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          Find Your Next Favourite Game
+        </h1>
+        <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
+          Browse curated activities, mix and match filters, and plan unforgettable play sessions for any group, age, or space.
         </p>
       </div>
       <Suspense
