@@ -4,7 +4,7 @@ import path from 'path';
 import { Game, GameSchema } from './types';
 
 // Utility to slugify strings for IDs
-const slugify = (str: string) =>
+export const slugify = (str: string) =>
   str
     .toLowerCase()
     .trim()
@@ -13,14 +13,14 @@ const slugify = (str: string) =>
     .replace(/^-+|-+$/g, '');
 
 // Utility to normalise potentially nullish string values
-const normaliseNullishString = (value: unknown): string | null => {
+export const normaliseNullishString = (value: unknown): string | null => {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
   return ['', 'null', 'null,'].includes(trimmed.toLowerCase()) ? null : trimmed;
 };
 
 // This function uses generics to provide type safety, avoiding `any`.
-const trimStrings = <T>(obj: T): T => {
+export const trimStrings = <T>(obj: T): T => {
   if (Array.isArray(obj)) {
     // We can safely cast here as we are preserving the array structure.
     return obj.map(trimStrings) as T;
