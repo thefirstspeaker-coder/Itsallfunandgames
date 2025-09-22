@@ -34,7 +34,7 @@ export default function HomePage() {
       <div className="mx-auto max-w-3xl text-center">
         <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-primary shadow-sm">
           <span aria-hidden="true">🎲</span>
-          Game night inspiration
+          Game inspiration
         </span>
         <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           Find Your Next Favourite Game
