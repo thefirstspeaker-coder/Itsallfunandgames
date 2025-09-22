@@ -274,9 +274,11 @@ const getPalette = (id?: string) =>
   palettes[Math.abs(id?.length || 0) % palettes.length];
 
 const InfoItem = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => (
-  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-    <Icon className="h-4 w-4 text-rose-500" />
-    <span>{label}</span>
+  <div className="flex w-full items-center gap-3 rounded-xl border border-border/50 bg-white/90 px-3 py-2 text-sm font-medium text-foreground shadow-sm">
+    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 text-rose-600">
+      <Icon className="h-4 w-4" />
+    </span>
+    <span className="min-w-0 flex-1 break-words">{label}</span>
   </div>
 );
 
@@ -759,7 +761,7 @@ export function GameClient({
           </div>
         )}
         {paginatedGames.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {paginatedGames.map((game) => {
               const palette = getPalette(game.id);
               const playersText = formatPlayers(game);
@@ -775,46 +777,54 @@ export function GameClient({
               const topRegions = (game.regionalPopularity || []).slice(0, 2);
 
               return (
-                <div
+                <Card
                   key={game.id}
-                  className={`rounded-3xl bg-gradient-to-br ${palette.frame} p-[1px]`}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-white/95 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <Card className="h-full rounded-[26px] border-none bg-white/95 shadow-lg">
-                    <CardHeader className="space-y-4 p-6 pb-0">
-                      <div className="flex items-start justify-between gap-3">
-                        <CardTitle className="text-2xl font-black leading-tight tracking-tight text-foreground">
-                          <Link href={`/game/${game.id}`} className="hover:underline">
+                  <div
+                    className={`pointer-events-none absolute inset-x-0 top-0 h-1 rounded-b-full bg-gradient-to-r ${palette.frame} opacity-80`}
+                  />
+                  <CardHeader className="flex flex-col gap-4 px-6 pt-6 pb-0">
+                    <div className="flex flex-wrap items-start gap-3">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-rose-600 md:text-xl lg:text-2xl">
+                          <Link
+                            href={`/game/${game.id}`}
+                            className="line-clamp-2 break-words"
+                          >
                             {game.name}
                           </Link>
                         </CardTitle>
-                        {game.category && (
-                          <Badge className="rounded-full bg-rose-500/10 px-2 py-1 text-[11px] font-semibold text-rose-600">
-                            {prettifyFilterValue(game.category)}
-                          </Badge>
-                        )}
                       </div>
-                      {game.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {game.tags.slice(0, 3).map((tag) => (
-                            <Badge
-                              key={tag}
-                              variant="outline"
-                              className="rounded-full border-rose-100 bg-rose-50/50 px-3 py-1 text-xs text-rose-600"
-                            >
-                              #{prettifyFilterValue(tag)}
-                            </Badge>
-                          ))}
-                        </div>
+                      {game.category && (
+                        <Badge className="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700 shadow-sm">
+                          {prettifyFilterValue(game.category)}
+                        </Badge>
                       )}
-                    </CardHeader>
-                    <CardContent className="flex h-full flex-col gap-5 p-6">
+                    </div>
+                    {game.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {game.tags.slice(0, 3).map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="outline"
+                            className="rounded-full border-rose-200 bg-white px-3 py-1 text-xs font-medium text-rose-600"
+                          >
+                            #{prettifyFilterValue(tag)}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                  </CardHeader>
+                  <CardContent className="flex flex-1 flex-col gap-6 px-6 pb-6 pt-4">
+                    <div className="space-y-4">
+                      <p className="text-sm leading-relaxed text-muted-foreground line-clamp-4">
+                        {description ||
+                          "Discover the rules, twists, and fun variations for this game."}
+                      </p>
                       <div
-                        className={`space-y-4 rounded-2xl p-4 text-sm ${palette.subtle}`}
+                        className={`rounded-2xl border border-border/40 p-4 shadow-inner ${palette.subtle}`}
                       >
-                        <p className="min-h-[3.5rem] text-sm text-muted-foreground line-clamp-4">
-                          {description ||
-                            "Discover the rules, twists, and fun variations for this game."}
-                        </p>
                         <div className="grid gap-3 sm:grid-cols-2">
                           {playersText && <InfoItem icon={Users} label={playersText} />}
                           {ageText && <InfoItem icon={Baby} label={ageText} />}
@@ -824,59 +834,59 @@ export function GameClient({
                           )}
                         </div>
                       </div>
-                      {(topSkills.length > 0 || topRegions.length > 0) && (
-                        <div className="space-y-4">
-                          {topSkills.length > 0 && (
-                            <div>
-                              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                                <Sparkles className="h-3.5 w-3.5 text-rose-500" />
-                                Key skills
-                              </div>
-                              <div className="flex flex-wrap gap-2">
-                                {topSkills.map((skill) => (
-                                  <Badge
-                                    key={skill}
-                                    variant="outline"
-                                    className="rounded-full border-rose-100 bg-white px-3 py-1 text-xs text-rose-600"
-                                  >
-                                    {prettifyFilterValue(skill)}
-                                  </Badge>
-                                ))}
-                              </div>
+                    </div>
+                    {(topSkills.length > 0 || topRegions.length > 0) && (
+                      <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-white/80 p-4 shadow-sm">
+                        {topSkills.length > 0 && (
+                          <div>
+                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                              <Sparkles className="h-3.5 w-3.5 text-rose-500" />
+                              Key skills
                             </div>
-                          )}
-                          {topRegions.length > 0 && (
-                            <div>
-                              <div className="mb-1 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                                <Globe2 className="h-3.5 w-3.5 text-emerald-500" />
-                                Popular in
-                              </div>
-                              <div className="flex flex-wrap gap-2">
-                                {topRegions.map((region) => (
-                                  <Badge
-                                    key={region}
-                                    variant="secondary"
-                                    className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs text-emerald-700"
-                                  >
-                                    {region}
-                                  </Badge>
-                                ))}
-                              </div>
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {topSkills.map((skill) => (
+                                <Badge
+                                  key={skill}
+                                  variant="outline"
+                                  className="rounded-full border-rose-200 bg-white px-3 py-1 text-xs font-medium text-rose-600"
+                                >
+                                  {prettifyFilterValue(skill)}
+                                </Badge>
+                              ))}
                             </div>
-                          )}
-                        </div>
-                      )}
-                      <div className="mt-auto">
-                        <Button
-                          asChild
-                          className={`w-full rounded-full text-base font-semibold text-white ${palette.accent}`}
-                        >
-                          <Link href={`/game/${game.id}`}>View Game</Link>
-                        </Button>
+                          </div>
+                        )}
+                        {topRegions.length > 0 && (
+                          <div>
+                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                              <Globe2 className="h-3.5 w-3.5 text-emerald-500" />
+                              Popular in
+                            </div>
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              {topRegions.map((region) => (
+                                <Badge
+                                  key={region}
+                                  variant="secondary"
+                                  className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700"
+                                >
+                                  {region}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    )}
+                    <div className="mt-auto">
+                      <Button
+                        asChild
+                        className={`w-full rounded-full text-base font-semibold text-white ${palette.accent}`}
+                      >
+                        <Link href={`/game/${game.id}`}>View Game</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               );
             })}
           </div>
