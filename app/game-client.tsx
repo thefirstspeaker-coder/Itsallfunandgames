@@ -302,6 +302,13 @@ export function GameClient({
   );
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const initialExpandedFiltersRef = useRef<FacetKey[] | null>(null);
+
+  if (initialExpandedFiltersRef.current === null) {
+    initialExpandedFiltersRef.current = facetKeys.filter(
+      (key) => filters[key].length > 0
+    );
+  }
 
   const [debouncedQuery] = useDebounce(filters.query, 300);
 
@@ -542,7 +549,7 @@ export function GameClient({
         </div>
         <Accordion
           type="multiple"
-          defaultValue={facetKeys.map((key) => key)}
+          defaultValue={initialExpandedFiltersRef.current ?? []}
           className="space-y-3"
         >
           {filterGroups.map((group) => {
