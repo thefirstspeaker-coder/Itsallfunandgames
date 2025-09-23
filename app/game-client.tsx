@@ -13,12 +13,12 @@ import {
   useMemo,
   useState,
   useRef,
+  type CSSProperties,
   type FormEvent,
 } from "react";
 import { useDebounce } from "use-debounce";
 import Fuse from "fuse.js";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import {
@@ -38,9 +38,11 @@ import {
 } from "@/components/ui/accordion";
 import {
   Activity,
+  ArrowRight,
   Baby,
   Brain,
   CircleDashed,
+  Filter,
   Globe2,
   Handshake,
   Map,
@@ -236,46 +238,9 @@ const filterMeta: Record<
   },
 };
 
-// Playful palettes for card frames/buttons
-const palettes = [
-  {
-    frame: "from-amber-400 to-yellow-300",
-    accent: "bg-amber-500 hover:bg-amber-600",
-    subtle: "bg-amber-50",
-  },
-  {
-    frame: "from-rose-400 to-red-300",
-    accent: "bg-rose-500 hover:bg-rose-600",
-    subtle: "bg-rose-50",
-  },
-  {
-    frame: "from-teal-400 to-emerald-300",
-    accent: "bg-teal-500 hover:bg-teal-600",
-    subtle: "bg-teal-50",
-  },
-  {
-    frame: "from-sky-400 to-blue-300",
-    accent: "bg-sky-500 hover:bg-sky-600",
-    subtle: "bg-sky-50",
-  },
-  {
-    frame: "from-violet-400 to-fuchsia-300",
-    accent: "bg-violet-500 hover:bg-violet-600",
-    subtle: "bg-violet-50",
-  },
-  {
-    frame: "from-lime-400 to-green-300",
-    accent: "bg-lime-500 hover:bg-lime-600",
-    subtle: "bg-lime-50",
-  },
-];
-
-const getPalette = (id?: string) =>
-  palettes[Math.abs(id?.length || 0) % palettes.length];
-
 const InfoItem = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => (
-  <div className="flex w-full items-center gap-3 rounded-xl border border-border/50 bg-white/90 px-3 py-2 text-sm font-medium text-foreground shadow-sm">
-    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 text-rose-600">
+  <div className="flex items-center gap-3 rounded-2xl bg-[#80B380]/10 px-3 py-2 text-sm font-medium text-[#4B4B4B]">
+    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#80B380]/20 text-[#80B380]">
       <Icon className="h-4 w-4" />
     </span>
     <span className="min-w-0 flex-1 break-words">{label}</span>
@@ -303,6 +268,8 @@ export function GameClient({
     () => createEmptySearches()
   );
   const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
+  const closeMobileFilters = () => setIsMobileFiltersOpen(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const initialExpandedFiltersRef = useRef<FacetKey[] | null>(null);
 
@@ -419,6 +386,17 @@ export function GameClient({
     );
   }, [searchParams]);
 
+  useEffect(() => {
+    if (!isMobileFiltersOpen) {
+      return;
+    }
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMobileFiltersOpen]);
+
   const updateFilterValue = (key: FacetKey, value: string, include: boolean) => {
     setFilters((prev) => {
       const hasValue = prev[key].includes(value);
@@ -467,6 +445,23 @@ export function GameClient({
   );
 
   const hasActiveFilters = activeFilters.length > 0;
+
+  const trimmedQuery = filters.query.trim();
+  const resultsCount = filteredGames.length;
+  const heading =
+    trimmedQuery.length > 0
+      ? `Results for “${trimmedQuery}` + "”"
+      : hasActiveFilters
+        ? "Showing filtered games"
+        : "Showing all games";
+  const resultsSummary =
+    resultsCount === 0
+      ? "No games match your current filters."
+      : `${resultsCount} game${resultsCount === 1 ? "" : "s"} ${
+          trimmedQuery.length > 0 || hasActiveFilters
+            ? "matching your criteria"
+            : "ready to explore"
+        }`;
 
   const filterGroups = facetKeys
     .map((key) => {
@@ -528,148 +523,47 @@ export function GameClient({
     return null;
   };
 
-  return (
-    <div className="grid gap-10 lg:grid-cols-[320px,1fr]">
-      <aside className="space-y-6 rounded-3xl border border-border bg-white/80 p-6 shadow-sm ring-1 ring-black/5">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">Refine games</h2>
-            <p className="text-sm text-muted-foreground">
-              Mix and match filters to find the perfect play.
-            </p>
-          </div>
-          {hasActiveFilters ? (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="h-8 px-3 text-xs text-rose-600 hover:bg-rose-50"
-              onClick={resetFilters}
-            >
-              Clear all
-            </Button>
-          ) : null}
-        </div>
-        <Accordion
-          type="multiple"
-          defaultValue={initialExpandedFiltersRef.current ?? []}
-          className="space-y-3"
-        >
-          {filterGroups.map((group) => {
-            const {
-              key,
-              label,
-              description,
-              icon: Icon,
-              optionIcons,
-              options,
-              showSearch,
-            } = group;
-            const selectedCount = filters[key].length;
-            const searchTerm = filterSearches[key].toLowerCase().trim();
-            const visibleOptions =
-              searchTerm.length > 0
-                ? options.filter((option) =>
-                    option.toLowerCase().includes(searchTerm)
-                  )
-                : options;
-
-            return (
-              <AccordionItem
-                key={key}
-                value={key}
-                className="border-none rounded-2xl bg-white/80 shadow-sm ring-1 ring-black/5"
+  const renderFilterPanel = (variant: "desktop" | "mobile") => {
+    const isMobile = variant === "mobile";
+    return (
+      <div className="flex h-full flex-col gap-6">
+        <div className="space-y-5">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h2 className="text-xl font-semibold text-[#4B4B4B]">
+                Refine games
+              </h2>
+              <p className="text-sm text-[#4B4B4B]/70">
+                Search and tailor filters to match your group.
+              </p>
+            </div>
+            {isMobile ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-9 w-9 rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+                onClick={closeMobileFilters}
+                aria-label="Close filters"
               >
-                <AccordionTrigger className="px-4 text-left text-base font-semibold">
-                  <span className="flex w-full items-center gap-2">
-                    <Icon className="h-4 w-4 text-rose-500" />
-                    <span>{label}</span>
-                    {selectedCount > 0 && (
-                      <Badge className="ml-auto rounded-full bg-rose-500/10 px-2 py-1 text-[11px] font-semibold text-rose-600">
-                        {selectedCount}
-                      </Badge>
-                    )}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="px-4">
-                  <p className="mb-3 text-xs text-muted-foreground">{description}</p>
-                  {showSearch && (
-                    <div className="relative mb-3">
-                      <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
-                      <Input
-                        value={filterSearches[key]}
-                        onChange={(event) =>
-                          setFilterSearches((prev) => ({
-                            ...prev,
-                            [key]: event.target.value,
-                          }))
-                        }
-                        placeholder={`Search ${label.toLowerCase()}`}
-                        className="h-9 rounded-full border border-border bg-white pl-9 text-sm shadow-none focus-visible:ring-rose-400/40"
-                      />
-                    </div>
-                  )}
-                  <div className="space-y-2 overflow-hidden rounded-2xl border border-border/60 bg-white/90 p-2 shadow-inner">
-                    <div className="max-h-52 space-y-2 overflow-y-auto pr-1">
-                      {visibleOptions.length > 0 ? (
-                        visibleOptions.map((option) => {
-                          const isChecked = filters[key].includes(option);
-                          const OptionIcon = optionIcons?.[option];
-                          return (
-                            <label
-                              key={option}
-                              className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2 text-sm transition ${
-                                isChecked
-                                  ? "bg-rose-50 text-rose-700 shadow-sm"
-                                  : "hover:bg-rose-50/70"
-                              }`}
-                            >
-                              <Checkbox
-                                className="h-4 w-4 border-rose-300 data-[state=checked]:bg-rose-500"
-                                checked={isChecked}
-                                onCheckedChange={(checked) =>
-                                  updateFilterValue(key, option, checked === true)
-                                }
-                              />
-                              {OptionIcon && (
-                                <OptionIcon className="h-4 w-4 text-rose-500" />
-                              )}
-                              <span className="flex-1 text-sm text-foreground">
-                                {prettifyFilterValue(option)}
-                              </span>
-                            </label>
-                          );
-                        })
-                      ) : (
-                        <p className="px-3 py-6 text-center text-xs text-muted-foreground">
-                          No matches for “{filterSearches[key]}”.
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                  {selectedCount > 0 && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="mt-3 h-8 px-3 text-xs text-rose-600 hover:bg-rose-50"
-                      onClick={() => clearFilterGroup(key)}
-                    >
-                      Clear {label}
-                    </Button>
-                  )}
-                </AccordionContent>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
-      </aside>
-      <div className="space-y-8">
-        <div className="relative">
-          <div className="relative mx-auto w-full max-w-3xl">
+                <X className="h-4 w-4" />
+              </Button>
+            ) : hasActiveFilters ? (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                onClick={resetFilters}
+              >
+                Clear all
+              </Button>
+            ) : null}
+          </div>
+          <div className="relative">
             <form
               onSubmit={handleSearchSubmit}
-              className="flex items-center gap-3 rounded-full border border-border bg-white/90 px-5 py-3 shadow-sm ring-1 ring-black/5 focus-within:ring-rose-400/50"
+              className="flex items-center gap-3 rounded-full border border-[#80B380]/30 bg-white/90 px-4 py-2.5 shadow-sm focus-within:ring-2 focus-within:ring-[#F0A763]"
             >
-              <SearchIcon className="h-5 w-5 text-rose-500" />
+              <SearchIcon className="h-5 w-5 text-[#80B380]" />
               <Input
                 ref={inputRef}
                 aria-label="Search games"
@@ -684,33 +578,31 @@ export function GameClient({
                 }
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => setTimeout(() => setIsSearchFocused(false), 100)}
-                className="h-10 flex-1 border-none bg-transparent p-0 text-base shadow-none focus-visible:ring-0"
+                className="h-9 flex-1 border-none bg-transparent p-0 text-sm focus-visible:ring-0"
               />
               <Button
                 type="submit"
-                className="h-10 rounded-full bg-rose-500 px-5 text-white hover:bg-rose-600"
+                className="h-9 rounded-full bg-[#F0A763] px-4 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
               >
                 Search
               </Button>
             </form>
             {showSuggestions && (
-              <div className="absolute left-0 right-0 top-full z-20 mt-3 overflow-hidden rounded-2xl border border-border bg-white/95 shadow-xl backdrop-blur">
-                <ul className="divide-y divide-border">
+              <div className="absolute inset-x-0 top-full z-20 mt-3 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white shadow-lg">
+                <ul className="divide-y divide-[#80B380]/20">
                   {suggestions.map((game) => (
                     <li key={game.id}>
                       <button
                         type="button"
-                        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm hover:bg-rose-50"
+                        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm text-[#4B4B4B] transition hover:bg-[#80B380]/10"
                         onMouseDown={(event) => {
                           event.preventDefault();
                           handleSuggestionSelect(game);
                         }}
                       >
-                        <span className="font-medium text-foreground">
-                          {game.name}
-                        </span>
+                        <span className="font-medium">{game.name}</span>
                         {game.category && (
-                          <Badge className="rounded-full bg-rose-500/10 px-2 py-1 text-[11px] font-semibold text-rose-600">
+                          <Badge className="rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
                             {prettifyFilterValue(game.category)}
                           </Badge>
                         )}
@@ -722,240 +614,401 @@ export function GameClient({
             )}
           </div>
         </div>
-        {hasActiveFilters && (
-          <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-border bg-white/80 p-4 shadow-sm ring-1 ring-black/5">
-            <span className="text-sm font-medium text-muted-foreground">
-              Active filters:
-            </span>
-            {activeFilters.map(({ key, value }) => {
-              const label = filterMeta[key].label;
+        <div className="flex-1 space-y-4 overflow-y-auto pr-1">
+          <Accordion
+            type="multiple"
+            defaultValue={initialExpandedFiltersRef.current ?? []}
+            className="flex flex-col gap-3"
+          >
+            {filterGroups.map((group) => {
+              const {
+                key,
+                label,
+                description,
+                icon: Icon,
+                optionIcons,
+                options,
+                showSearch,
+              } = group;
+              const selectedCount = filters[key].length;
+              const searchTerm = filterSearches[key].toLowerCase().trim();
+              const visibleOptions =
+                searchTerm.length > 0
+                  ? options.filter((option) =>
+                      option.toLowerCase().includes(searchTerm)
+                    )
+                  : options;
+
               return (
-                <Badge
-                  key={`${key}-${value}`}
-                  variant="secondary"
-                  className="flex items-center gap-2 rounded-full bg-rose-500/10 px-3 py-1 text-sm text-rose-600"
+                <AccordionItem
+                  key={key}
+                  value={key}
+                  className="overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white/80 shadow-sm"
                 >
-                  <span className="font-medium text-rose-700">{label}:</span>
-                  <span>{prettifyFilterValue(value)}</span>
-                  <button
-                    type="button"
-                    className="rounded-full p-0.5 text-rose-500 transition hover:bg-rose-100 hover:text-rose-600"
-                    onClick={() => updateFilterValue(key, value, false)}
-                  >
-                    <X className="h-3 w-3" />
-                    <span className="sr-only">
-                      Remove {prettifyFilterValue(value)}
+                  <AccordionTrigger className="px-4 text-left text-base font-semibold text-[#4B4B4B] hover:text-[#80B380]">
+                    <span className="flex w-full items-center gap-2">
+                      <Icon className="h-4 w-4 text-[#80B380]" />
+                      <span>{label}</span>
+                      {selectedCount > 0 && (
+                        <Badge className="ml-auto rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                          {selectedCount}
+                        </Badge>
+                      )}
                     </span>
-                  </button>
-                </Badge>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4">
+                    <p className="mb-3 text-xs text-[#4B4B4B]/70">{description}</p>
+                    {showSearch && (
+                      <div className="relative mb-3">
+                        <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#80B380]/70" />
+                        <Input
+                          value={filterSearches[key]}
+                          onChange={(event) =>
+                            setFilterSearches((prev) => ({
+                              ...prev,
+                              [key]: event.target.value,
+                            }))
+                          }
+                          placeholder={`Search ${label.toLowerCase()}`}
+                          className="h-9 rounded-full border border-[#80B380]/30 bg-white pl-9 text-sm focus-visible:ring-[#F0A763]"
+                        />
+                      </div>
+                    )}
+                    <div className="space-y-2 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/60 p-2">
+                      <div className="max-h-52 space-y-2 overflow-y-auto pr-1">
+                        {visibleOptions.length > 0 ? (
+                          visibleOptions.map((option) => {
+                            const isChecked = filters[key].includes(option);
+                            const OptionIcon = optionIcons?.[option];
+                            return (
+                              <label
+                                key={option}
+                                className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2 text-sm transition ${
+                                  isChecked
+                                    ? "bg-[#80B380]/15 text-[#4B4B4B] shadow-inner"
+                                    : "hover:bg-[#80B380]/10"
+                                }`}
+                              >
+                                <Checkbox
+                                  className="h-4 w-4 border-[#80B380]/50 data-[state=checked]:border-[#80B380] data-[state=checked]:bg-[#80B380] data-[state=checked]:text-white"
+                                  checked={isChecked}
+                                  onCheckedChange={(checked) =>
+                                    updateFilterValue(key, option, checked === true)
+                                  }
+                                />
+                                {OptionIcon && (
+                                  <OptionIcon className="h-4 w-4 text-[#80B380]" />
+                                )}
+                                <span className="flex-1 text-sm">
+                                  {prettifyFilterValue(option)}
+                                </span>
+                              </label>
+                            );
+                          })
+                        ) : (
+                          <p className="px-3 py-6 text-center text-xs text-[#4B4B4B]/60">
+                            No matches for “{filterSearches[key]}”.
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    {selectedCount > 0 && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="mt-3 h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                        onClick={() => clearFilterGroup(key)}
+                      >
+                        Clear {label}
+                      </Button>
+                    )}
+                  </AccordionContent>
+                </AccordionItem>
               );
             })}
+          </Accordion>
+        </div>
+        {isMobile && (
+          <div className="mt-auto flex flex-col gap-3 border-t border-[#80B380]/20 pt-4">
             <Button
-              variant="ghost"
-              size="sm"
-              className="ml-auto h-8 px-3 text-xs text-rose-600 hover:bg-rose-50"
-              onClick={resetFilters}
+              className="h-11 rounded-full bg-[#F0A763] text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+              onClick={closeMobileFilters}
+            >
+              Apply filters
+            </Button>
+            <Button
+              variant="outline"
+              className="h-11 rounded-full border-[#80B380]/40 bg-white text-sm font-semibold text-[#80B380] transition hover:bg-[#80B380]/10"
+              onClick={() => {
+                resetFilters();
+                closeMobileFilters();
+              }}
             >
               Clear all
             </Button>
           </div>
         )}
-        {paginatedGames.length > 0 ? (
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {paginatedGames.map((game) => {
-              const palette = getPalette(game.id);
-              const playersText = formatPlayers(game);
-              const ageText = formatAges(game);
-              const prepText = game.prepLevel
-                ? prettifyFilterValue(game.prepLevel)
-                : null;
-              const traditionText = game.traditionality
-                ? prettifyFilterValue(game.traditionality)
-                : null;
-              const description = game.description?.trim();
-              const topSkills = (game.skillsDeveloped || []).slice(0, 3);
-              const topRegions = (game.regionalPopularity || []).slice(0, 2);
+      </div>
+    );
+  };
 
-              return (
-                <Card
-                  key={game.id}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-white/95 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
-                >
-                  <div
-                    className={`pointer-events-none absolute inset-x-0 top-0 h-1 rounded-b-full bg-gradient-to-r ${palette.frame} opacity-80`}
-                  />
-                  <CardHeader className="flex flex-col gap-4 px-6 pt-6 pb-0">
-                    <div className="flex flex-wrap items-start gap-3">
-                      <div className="min-w-0 flex-1">
-                        <CardTitle className="text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-rose-600 md:text-xl lg:text-2xl">
-                          <Link
-                            href={`/game/${game.id}`}
-                            className="line-clamp-2 break-words"
-                          >
+  return (
+    <div
+      className="relative min-h-screen bg-[#F9F7E8] text-[#4B4B4B]"
+      style={{ "--focus-ring": "#F0A763" } as CSSProperties}
+    >
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10 lg:flex-row lg:gap-10 lg:px-8 lg:py-14">
+        <aside className="hidden w-full max-w-xs flex-shrink-0 lg:block">
+          <div className="sticky top-6 rounded-3xl border border-[#80B380]/30 bg-white/80 p-6 shadow-sm backdrop-blur">
+            {renderFilterPanel("desktop")}
+          </div>
+        </aside>
+        <main className="flex w-full flex-1 flex-col gap-8">
+          <div className="rounded-3xl border border-[#80B380]/20 bg-white/70 p-6 shadow-sm backdrop-blur">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <h1 className="text-2xl font-semibold text-[#4B4B4B] sm:text-3xl">{heading}</h1>
+                <p className="mt-2 text-sm text-[#4B4B4B]/70">{resultsSummary}</p>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                className="inline-flex items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763] lg:hidden"
+                onClick={() => setIsMobileFiltersOpen(true)}
+              >
+                <Filter className="h-4 w-4 text-[#80B380]" />
+                Filters
+              </Button>
+            </div>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#4B4B4B]/75">
+              Discover activities that spark connection, collaboration, and laughs for every group size.
+            </p>
+            <p className="mt-2 text-sm text-[#4B4B4B]/60 lg:hidden">
+              Tap “Filters” to search games and refine the results.
+            </p>
+          </div>
+          {hasActiveFilters && (
+            <div className="flex flex-wrap items-center gap-2 rounded-3xl border border-[#80B380]/20 bg-white/70 p-4 shadow-sm backdrop-blur">
+              <span className="text-sm font-medium text-[#4B4B4B]/80">Active filters:</span>
+              {activeFilters.map(({ key, value }) => {
+                const label = filterMeta[key].label;
+                return (
+                  <Badge
+                    key={`${key}-${value}`}
+                    variant="secondary"
+                    className="flex items-center gap-2 rounded-full bg-[#80B380]/15 px-3 py-1 text-sm font-medium text-[#4B4B4B]"
+                  >
+                    <span className="font-semibold text-[#80B380]">{label}:</span>
+                    <span>{prettifyFilterValue(value)}</span>
+                    <button
+                      type="button"
+                      className="rounded-full p-0.5 text-[#80B380] transition hover:bg-[#80B380]/20"
+                      onClick={() => updateFilterValue(key, value, false)}
+                    >
+                      <X className="h-3 w-3" />
+                      <span className="sr-only">Remove {prettifyFilterValue(value)}</span>
+                    </button>
+                  </Badge>
+                );
+              })}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="ml-auto h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                onClick={resetFilters}
+              >
+                Clear all
+              </Button>
+            </div>
+          )}
+          {paginatedGames.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {paginatedGames.map((game) => {
+                const playersText = formatPlayers(game);
+                const ageText = formatAges(game);
+                const prepText = game.prepLevel ? prettifyFilterValue(game.prepLevel) : null;
+                const traditionText = game.traditionality ? prettifyFilterValue(game.traditionality) : null;
+                const description = game.description?.trim();
+                const topSkills = (game.skillsDeveloped || []).slice(0, 3);
+                const topRegions = (game.regionalPopularity || []).slice(0, 2);
+
+                return (
+                  <Link
+                    key={game.id}
+                    href={`/game/${game.id}`}
+                    className="group flex h-full flex-col justify-between rounded-3xl border border-[#80B380]/25 bg-white/90 p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A763] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F9F7E8]"
+                  >
+                    <div className="flex flex-col gap-4">
+                      <div className="flex flex-wrap items-start gap-3">
+                        <div className="min-w-0 flex-1">
+                          <h2 className="text-lg font-semibold text-[#4B4B4B] transition-colors group-hover:text-[#80B380] sm:text-xl">
                             {game.name}
-                          </Link>
-                        </CardTitle>
+                          </h2>
+                          {game.category && (
+                            <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#80B380]">
+                              {prettifyFilterValue(game.category)}
+                            </p>
+                          )}
+                        </div>
+                        {game.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {game.tags.slice(0, 2).map((tag) => (
+                              <Badge
+                                key={tag}
+                                variant="outline"
+                                className="rounded-full border-[#80B380]/30 bg-white px-3 py-1 text-xs font-medium text-[#80B380]"
+                              >
+                                #{prettifyFilterValue(tag)}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                      {game.category && (
-                        <Badge className="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700 shadow-sm">
-                          {prettifyFilterValue(game.category)}
-                        </Badge>
-                      )}
-                    </div>
-                    {game.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {game.tags.slice(0, 3).map((tag) => (
-                          <Badge
-                            key={tag}
-                            variant="outline"
-                            className="rounded-full border-rose-200 bg-white px-3 py-1 text-xs font-medium text-rose-600"
-                          >
-                            #{prettifyFilterValue(tag)}
-                          </Badge>
-                        ))}
-                      </div>
-                    )}
-                  </CardHeader>
-                  <CardContent className="flex flex-1 flex-col gap-6 px-6 pb-6 pt-4">
-                    <div className="space-y-4">
-                      <p className="text-sm leading-relaxed text-muted-foreground line-clamp-4">
+                      <p className="text-sm leading-6 text-[#4B4B4B]/75 line-clamp-4">
                         {description ||
                           "Discover the rules, twists, and fun variations for this game."}
                       </p>
-                      <div
-                        className={`rounded-2xl border border-border/40 p-4 shadow-inner ${palette.subtle}`}
-                      >
-                        <div className="grid gap-3 sm:grid-cols-2">
-                          {playersText && <InfoItem icon={Users} label={playersText} />}
-                          {ageText && <InfoItem icon={Baby} label={ageText} />}
-                          {prepText && <InfoItem icon={Wrench} label={prepText} />}
-                          {traditionText && (
-                            <InfoItem icon={ScrollText} label={traditionText} />
+                    </div>
+                    <div className="mt-6 space-y-4">
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {playersText && <InfoItem icon={Users} label={playersText} />}
+                        {ageText && <InfoItem icon={Baby} label={ageText} />}
+                        {prepText && <InfoItem icon={Wrench} label={prepText} />}
+                        {traditionText && <InfoItem icon={ScrollText} label={traditionText} />}
+                      </div>
+                      {(topSkills.length > 0 || topRegions.length > 0) && (
+                        <div className="space-y-3 rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/80 p-4">
+                          {topSkills.length > 0 && (
+                            <div>
+                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#4B4B4B]/70">
+                                <Sparkles className="h-3.5 w-3.5 text-[#F0A763]" />
+                                Key skills
+                              </div>
+                              <div className="mt-2 flex flex-wrap gap-2">
+                                {topSkills.map((skill) => (
+                                  <Badge
+                                    key={skill}
+                                    variant="outline"
+                                    className="rounded-full border-[#80B380]/30 bg-white px-3 py-1 text-xs font-medium text-[#4B4B4B]"
+                                  >
+                                    {prettifyFilterValue(skill)}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {topRegions.length > 0 && (
+                            <div>
+                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#4B4B4B]/70">
+                                <Globe2 className="h-3.5 w-3.5 text-[#80B380]" />
+                                Popular in
+                              </div>
+                              <div className="mt-2 flex flex-wrap gap-2">
+                                {topRegions.map((region) => (
+                                  <Badge
+                                    key={region}
+                                    className="rounded-full bg-[#80B380]/15 px-3 py-1 text-xs font-medium text-[#4B4B4B]"
+                                  >
+                                    {region}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
                           )}
                         </div>
-                      </div>
+                      )}
                     </div>
-                    {(topSkills.length > 0 || topRegions.length > 0) && (
-                      <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-white/80 p-4 shadow-sm">
-                        {topSkills.length > 0 && (
-                          <div>
-                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                              <Sparkles className="h-3.5 w-3.5 text-rose-500" />
-                              Key skills
-                            </div>
-                            <div className="mt-2 flex flex-wrap gap-2">
-                              {topSkills.map((skill) => (
-                                <Badge
-                                  key={skill}
-                                  variant="outline"
-                                  className="rounded-full border-rose-200 bg-white px-3 py-1 text-xs font-medium text-rose-600"
-                                >
-                                  {prettifyFilterValue(skill)}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        {topRegions.length > 0 && (
-                          <div>
-                            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                              <Globe2 className="h-3.5 w-3.5 text-emerald-500" />
-                              Popular in
-                            </div>
-                            <div className="mt-2 flex flex-wrap gap-2">
-                              {topRegions.map((region) => (
-                                <Badge
-                                  key={region}
-                                  variant="secondary"
-                                  className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700"
-                                >
-                                  {region}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                    <div className="mt-auto">
-                      <Button
-                        asChild
-                        className={`w-full rounded-full text-base font-semibold text-white ${palette.accent}`}
-                      >
-                        <Link href={`/game/${game.id}`}>View Game</Link>
-                      </Button>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#80B380]">
+                      Explore game
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-rose-200 bg-white/60 p-12 text-center shadow-inner">
-            <Image
-              src="/file.svg"
-              alt="No games"
-              width={120}
-              height={120}
-              className="mb-6 opacity-80"
-            />
-            <p className="mb-4 max-w-md text-base text-muted-foreground">
-              No games matched your filters. Try adjusting your search or start fresh.
-            </p>
-            <Button
-              onClick={resetFilters}
-              className="rounded-full bg-rose-500 px-5 text-white hover:bg-rose-600"
-            >
-              Reset filters
-            </Button>
-          </div>
-        )}
-        {totalPages > 1 && (
-          <div className="space-y-4">
-            <Pagination>
-              <PaginationContent>
-                {Array.from({ length: totalPages }).map((_, i) => (
-                  <PaginationItem key={i}>
-                    <PaginationLink
-                      href="#"
-                      onClick={(event) => {
-                        event.preventDefault();
-                        handlePageChange(i + 1);
-                      }}
-                      isActive={currentPage === i + 1}
-                    >
-                      {i + 1}
-                    </PaginationLink>
-                  </PaginationItem>
-                ))}
-              </PaginationContent>
-            </Pagination>
-            <div className="flex items-center justify-center gap-3">
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-[#80B380]/40 bg-white/70 p-12 text-center shadow-inner">
+              <Image
+                src="/file.svg"
+                alt="No games"
+                width={120}
+                height={120}
+                className="mb-6 opacity-80"
+              />
+              <p className="mb-4 max-w-md text-base text-[#4B4B4B]/70">
+                No games matched your filters. Try adjusting your search or start fresh.
+              </p>
               <Button
-                className="rounded-full bg-rose-100 px-5 text-rose-700 hover:bg-rose-200"
-                onClick={() =>
-                  handlePageChange(Math.max(DEFAULT_PAGE, currentPage - 1))
-                }
-                disabled={currentPage === DEFAULT_PAGE}
+                onClick={resetFilters}
+                className="rounded-full bg-[#F0A763] px-6 py-2 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
               >
-                Previous
-              </Button>
-              <Button
-                className="rounded-full bg-emerald-500 px-5 text-white hover:bg-emerald-600"
-                onClick={() =>
-                  handlePageChange(
-                    Math.min(totalPages || DEFAULT_PAGE, currentPage + 1)
-                  )
-                }
-                disabled={currentPage === (totalPages || DEFAULT_PAGE)}
-              >
-                Next
+                Reset filters
               </Button>
             </div>
-          </div>
-        )}
+          )}
+          {totalPages > 1 && (
+            <div className="space-y-4">
+              <Pagination>
+                <PaginationContent>
+                  {Array.from({ length: totalPages }).map((_, i) => (
+                    <PaginationItem key={i}>
+                      <PaginationLink
+                        href="#"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          handlePageChange(i + 1);
+                        }}
+                        isActive={currentPage === i + 1}
+                        className={`border border-[#80B380]/30 bg-white text-sm font-medium text-[#4B4B4B] hover:bg-[#80B380]/10 hover:text-[#4B4B4B] ${
+                          currentPage === i + 1 ? "bg-[#80B380]/20" : ""
+                        }`}
+                      >
+                        {i + 1}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ))}
+                </PaginationContent>
+              </Pagination>
+              <div className="flex items-center justify-center gap-3">
+                <Button
+                  variant="outline"
+                  className="rounded-full border-[#80B380]/40 bg-white px-5 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10"
+                  onClick={() => handlePageChange(Math.max(DEFAULT_PAGE, currentPage - 1))}
+                  disabled={currentPage === DEFAULT_PAGE}
+                >
+                  Previous
+                </Button>
+                <Button
+                  className="rounded-full bg-[#F0A763] px-5 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+                  onClick={() =>
+                    handlePageChange(Math.min(totalPages || DEFAULT_PAGE, currentPage + 1))
+                  }
+                  disabled={currentPage === (totalPages || DEFAULT_PAGE)}
+                >
+                  Next
+                </Button>
+              </div>
+            </div>
+          )}
+        </main>
       </div>
+      {isMobileFiltersOpen && (
+        <div
+          className="fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeMobileFilters}
+        >
+          <div
+            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl sm:w-[420px]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {renderFilterPanel("mobile")}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
 

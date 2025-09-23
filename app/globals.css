@@ -109,7 +109,7 @@
     /* Background image */
     background-image: var(--body-overlay), var(--body-background-image);
     background-repeat: no-repeat, repeat; /* gradient overlay + tiled pattern */
-    background-size: cover, 260px;
+    background-size: cover, auto;
     background-attachment: fixed, fixed;
     background-position: center, top left;
   }
