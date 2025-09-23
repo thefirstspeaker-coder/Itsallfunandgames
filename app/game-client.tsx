@@ -63,6 +63,8 @@ import {
   X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import styles from "./game-client.module.css";
 
 const fuseOptions = {
   keys: ["name", "description", "keywords"],
@@ -757,8 +759,14 @@ export function GameClient({
       className="relative min-h-screen bg-[#F9F7E8] text-[#4B4B4B]"
       style={{ "--focus-ring": "#F0A763" } as CSSProperties}
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10 lg:flex-row lg:gap-10 lg:px-8 lg:py-14">
-        <aside className="hidden w-full max-w-xs flex-shrink-0 lg:block">
+      <div
+        className={cn(
+          styles.layout,
+          styles.layoutSpacing,
+          "mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10"
+        )}
+      >
+        <aside className={cn(styles.desktopFilters, "w-full max-w-xs flex-shrink-0")}>
           <div className="sticky top-6 rounded-3xl border border-[#80B380]/30 bg-white/80 p-6 shadow-sm backdrop-blur">
             {renderFilterPanel("desktop")}
           </div>
@@ -767,13 +775,16 @@ export function GameClient({
           <div className="rounded-3xl border border-[#80B380]/20 bg-white/70 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h1 className="text-2xl font-semibold text-[#4B4B4B] sm:text-3xl">{heading}</h1>
+                <h1 className={cn(styles.heading, "text-2xl font-semibold text-[#4B4B4B]")}>{heading}</h1>
                 <p className="mt-2 text-sm text-[#4B4B4B]/70">{resultsSummary}</p>
               </div>
               <Button
                 type="button"
                 variant="outline"
-                className="inline-flex items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763] lg:hidden"
+                className={cn(
+                  styles.mobileFiltersButton,
+                  "items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763]"
+                )}
                 onClick={() => setIsMobileFiltersOpen(true)}
               >
                 <Filter className="h-4 w-4 text-[#80B380]" />
@@ -783,7 +794,7 @@ export function GameClient({
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#4B4B4B]/75">
               Discover activities that spark connection, collaboration, and laughs for every group size.
             </p>
-            <p className="mt-2 text-sm text-[#4B4B4B]/60 lg:hidden">
+            <p className={cn(styles.mobileHint, "mt-2 text-sm text-[#4B4B4B]/60")}>
               Tap “Filters” to search games and refine the results.
             </p>
           </div>
@@ -822,7 +833,7 @@ export function GameClient({
             </div>
           )}
           {paginatedGames.length > 0 ? (
-            <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            <div className={cn(styles.gameGrid, "grid gap-6")}>
               {paginatedGames.map((game) => {
                 const playersText = formatPlayers(game);
                 const ageText = formatAges(game);
@@ -841,7 +852,12 @@ export function GameClient({
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-wrap items-start gap-3">
                         <div className="min-w-0 flex-1">
-                          <h2 className="text-lg font-semibold text-[#4B4B4B] transition-colors group-hover:text-[#80B380] sm:text-xl">
+                          <h2
+                            className={cn(
+                              styles.cardTitle,
+                              "text-lg font-semibold text-[#4B4B4B] transition-colors group-hover:text-[#80B380]"
+                            )}
+                          >
                             {game.name}
                           </h2>
                           {game.category && (
@@ -870,7 +886,7 @@ export function GameClient({
                       </p>
                     </div>
                     <div className="mt-6 space-y-4">
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      <div className={cn(styles.infoGrid, "grid gap-3")}>
                         {playersText && <InfoItem icon={Users} label={playersText} />}
                         {ageText && <InfoItem icon={Baby} label={ageText} />}
                         {prepText && <InfoItem icon={Wrench} label={prepText} />}
@@ -994,13 +1010,19 @@ export function GameClient({
       </div>
       {isMobileFiltersOpen && (
         <div
-          className="fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm lg:hidden"
+          className={cn(
+            styles.mobileFiltersOverlay,
+            "fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm"
+          )}
           role="dialog"
           aria-modal="true"
           onClick={closeMobileFilters}
         >
           <div
-            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl sm:w-[420px]"
+            className={cn(
+              styles.mobileFiltersSheet,
+              "h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl"
+            )}
             onClick={(event) => event.stopPropagation()}
           >
             {renderFilterPanel("mobile")}
