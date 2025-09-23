@@ -766,12 +766,17 @@ export function GameClient({
           "mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10"
         )}
       >
-        <aside className={cn(styles.desktopFilters, "w-full max-w-xs flex-shrink-0")}>
+        <aside
+          className={cn(
+            styles.desktopFilters,
+            "w-full flex-shrink-0 lg:basis-[20%] lg:w-[20%]"
+          )}
+        >
           <div className="sticky top-6 rounded-3xl border border-[#80B380]/30 bg-white/80 p-6 shadow-sm backdrop-blur">
             {renderFilterPanel("desktop")}
           </div>
         </aside>
-        <main className="flex w-full flex-1 flex-col gap-8">
+        <main className="flex w-full flex-1 flex-col gap-8 lg:basis-[80%]">
           <div className="rounded-3xl border border-[#80B380]/20 bg-white/70 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
