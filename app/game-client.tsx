@@ -43,6 +43,8 @@ import {
   Brain,
   CircleDashed,
   Filter,
+  PanelLeftClose,
+  PanelLeftOpen,
   Globe2,
   Handshake,
   Map,
@@ -270,8 +272,12 @@ export function GameClient({
     () => createEmptySearches()
   );
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
-  const closeMobileFilters = () => setIsMobileFiltersOpen(false);
+  const [isFilterRailCollapsed, setIsFilterRailCollapsed] = useState(false);
+  const [isFilterSheetOpen, setIsFilterSheetOpen] = useState(false);
+  const [pendingScrollKey, setPendingScrollKey] = useState<FacetKey | null>(
+    null
+  );
+  const closeFilterSheet = () => setIsFilterSheetOpen(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const initialExpandedFiltersRef = useRef<FacetKey[] | null>(null);
 
@@ -389,7 +395,23 @@ export function GameClient({
   }, [searchParams]);
 
   useEffect(() => {
-    if (!isMobileFiltersOpen) {
+    if (typeof window === "undefined") {
+      return;
+    }
+    if (window.innerWidth < 1024) {
+      setIsFilterRailCollapsed(true);
+    }
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsFilterRailCollapsed(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!isFilterSheetOpen) {
       return;
     }
     const originalOverflow = document.body.style.overflow;
@@ -397,7 +419,18 @@ export function GameClient({
     return () => {
       document.body.style.overflow = originalOverflow;
     };
-  }, [isMobileFiltersOpen]);
+  }, [isFilterSheetOpen]);
+
+  useEffect(() => {
+    if (!isFilterSheetOpen || !pendingScrollKey) {
+      return;
+    }
+    const element = document.getElementById(`filter-group-${pendingScrollKey}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setPendingScrollKey(null);
+    }
+  }, [isFilterSheetOpen, pendingScrollKey]);
 
   const updateFilterValue = (key: FacetKey, value: string, include: boolean) => {
     setFilters((prev) => {
@@ -497,6 +530,13 @@ export function GameClient({
     inputRef.current?.blur();
   };
 
+  const openFilterSheet = (key?: FacetKey) => {
+    if (key) {
+      setPendingScrollKey(key);
+    }
+    setIsFilterSheetOpen(true);
+  };
+
   const formatPlayers = (game: Game) => {
     const { playersMin, playersMax } = game;
     if (typeof playersMin === "number" && typeof playersMax === "number") {
@@ -525,8 +565,8 @@ export function GameClient({
     return null;
   };
 
-  const renderFilterPanel = (variant: "desktop" | "mobile") => {
-    const isMobile = variant === "mobile";
+  const renderFilterPanel = (variant: "rail" | "sheet") => {
+    const isSheet = variant === "sheet";
     return (
       <div className="flex h-full flex-col gap-6">
         <div className="space-y-5">
@@ -536,15 +576,15 @@ export function GameClient({
                 Refine games
               </h2>
               <p className="text-sm text-[#4B4B4B]/70">
-                Search and tailor filters to match your group.
+                Tailor filters to match your group.
               </p>
             </div>
-            {isMobile ? (
+            {isSheet ? (
               <Button
                 variant="ghost"
                 size="icon"
                 className="h-9 w-9 rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
-                onClick={closeMobileFilters}
+                onClick={closeFilterSheet}
                 aria-label="Close filters"
               >
                 <X className="h-4 w-4" />
@@ -560,61 +600,7 @@ export function GameClient({
               </Button>
             ) : null}
           </div>
-          <div className="relative">
-            <form
-              onSubmit={handleSearchSubmit}
-              className="flex items-center gap-3 rounded-full border border-[#80B380]/30 bg-white/90 px-4 py-2.5 shadow-sm focus-within:ring-2 focus-within:ring-[#F0A763]"
-            >
-              <SearchIcon className="h-5 w-5 text-[#80B380]" />
-              <Input
-                ref={inputRef}
-                aria-label="Search games"
-                placeholder="Search by name, description, or keyword"
-                value={filters.query}
-                onChange={(event) =>
-                  setFilters((current) => ({
-                    ...current,
-                    query: event.target.value,
-                    page: DEFAULT_PAGE,
-                  }))
-                }
-                onFocus={() => setIsSearchFocused(true)}
-                onBlur={() => setTimeout(() => setIsSearchFocused(false), 100)}
-                className="h-9 flex-1 border-none bg-transparent p-0 text-sm focus-visible:ring-0"
-              />
-              <Button
-                type="submit"
-                className="h-9 rounded-full bg-[#F0A763] px-4 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
-              >
-                Search
-              </Button>
-            </form>
-            {showSuggestions && (
-              <div className="absolute inset-x-0 top-full z-20 mt-3 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white shadow-lg">
-                <ul className="divide-y divide-[#80B380]/20">
-                  {suggestions.map((game) => (
-                    <li key={game.id}>
-                      <button
-                        type="button"
-                        className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm text-[#4B4B4B] transition hover:bg-[#80B380]/10"
-                        onMouseDown={(event) => {
-                          event.preventDefault();
-                          handleSuggestionSelect(game);
-                        }}
-                      >
-                        <span className="font-medium">{game.name}</span>
-                        {game.category && (
-                          <Badge className="rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
-                            {prettifyFilterValue(game.category)}
-                          </Badge>
-                        )}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
+          <div className="h-px bg-[#80B380]/20" />
         </div>
         <div className="flex-1 space-y-4 overflow-y-auto pr-1">
           <Accordion
@@ -646,6 +632,7 @@ export function GameClient({
                   key={key}
                   value={key}
                   className="overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white/80 shadow-sm"
+                  id={`filter-group-${key}`}
                 >
                   <AccordionTrigger className="px-4 text-left text-base font-semibold text-[#4B4B4B] hover:text-[#80B380]">
                     <span className="flex w-full items-center gap-2">
@@ -730,11 +717,11 @@ export function GameClient({
             })}
           </Accordion>
         </div>
-        {isMobile && (
+        {isSheet && (
           <div className="mt-auto flex flex-col gap-3 border-t border-[#80B380]/20 pt-4">
             <Button
               className="h-11 rounded-full bg-[#F0A763] text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
-              onClick={closeMobileFilters}
+              onClick={closeFilterSheet}
             >
               Apply filters
             </Button>
@@ -743,7 +730,7 @@ export function GameClient({
               className="h-11 rounded-full border-[#80B380]/40 bg-white text-sm font-semibold text-[#80B380] transition hover:bg-[#80B380]/10"
               onClick={() => {
                 resetFilters();
-                closeMobileFilters();
+                closeFilterSheet();
               }}
             >
               Clear all
@@ -763,44 +750,193 @@ export function GameClient({
         className={cn(
           styles.layout,
           styles.layoutSpacing,
-          "mx-auto flex w-full max-w-7xl flex-col gap-8 px-4 py-10"
+          "mx-auto flex w-full max-w-7xl flex-wrap gap-6 px-4 py-10 lg:flex-nowrap"
         )}
       >
         <aside
           className={cn(
-            styles.desktopFilters,
-            "w-full flex-shrink-0 lg:basis-[20%] lg:w-[20%]"
+            "flex flex-shrink-0 flex-col transition-all duration-300 ease-in-out",
+            isFilterRailCollapsed ? "w-16" : "w-full sm:w-64 lg:w-72"
           )}
         >
-          <div className="sticky top-6 rounded-3xl border border-[#80B380]/30 bg-white/80 p-6 shadow-sm backdrop-blur">
-            {renderFilterPanel("desktop")}
+          <div
+            className={cn(
+              "sticky top-6 flex flex-col items-stretch",
+              isFilterRailCollapsed
+                ? "gap-4 rounded-3xl border border-[#80B380]/30 bg-white/80 p-3 shadow-sm backdrop-blur"
+                : "rounded-3xl border border-[#80B380]/30 bg-white/80 p-4 shadow-sm backdrop-blur"
+            )}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-10 w-10 self-end rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+              onClick={() => setIsFilterRailCollapsed((prev) => !prev)}
+              aria-label={
+                isFilterRailCollapsed ? "Expand filters" : "Collapse filters"
+              }
+            >
+              {isFilterRailCollapsed ? (
+                <PanelLeftOpen className="h-4 w-4" />
+              ) : (
+                <PanelLeftClose className="h-4 w-4" />
+              )}
+            </Button>
+            {isFilterRailCollapsed ? (
+              <div className="flex flex-1 flex-col items-center gap-2 py-2">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-12 w-12 rounded-2xl bg-[#80B380]/15 text-[#4B4B4B] transition hover:bg-[#80B380]/25"
+                  onClick={() => openFilterSheet()}
+                  aria-label="Open filters"
+                >
+                  <Filter className="h-5 w-5 text-[#80B380]" />
+                </Button>
+                <div className="mt-2 flex flex-1 flex-col items-center gap-2">
+                  {filterGroups.map((group) => {
+                    const Icon = group.icon;
+                    const selectedCount = filters[group.key].length;
+                    return (
+                      <button
+                        key={group.key}
+                        type="button"
+                        onClick={() => openFilterSheet(group.key)}
+                        className={cn(
+                          "relative flex h-11 w-11 items-center justify-center rounded-2xl text-[#4B4B4B] transition",
+                          selectedCount > 0
+                            ? "bg-[#80B380]/20 text-[#80B380]"
+                            : "bg-[#F9F7E8]/70 hover:bg-[#80B380]/15"
+                        )}
+                        aria-label={`Edit ${group.label} filters`}
+                      >
+                        <Icon className="h-5 w-5" />
+                        {selectedCount > 0 && (
+                          <span className="absolute -top-1 -right-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-[#F0A763] px-1 text-[11px] font-semibold text-[#4B4B4B]">
+                            {selectedCount}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-4">
+                {renderFilterPanel("rail")}
+              </div>
+            )}
           </div>
         </aside>
-        <main className="flex w-full flex-1 flex-col gap-8 lg:basis-[80%]">
+        <main className="flex min-w-0 flex-1 flex-col gap-8">
+          <header className="flex flex-wrap items-center gap-3 rounded-3xl border border-[#80B380]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              className="h-10 w-10 rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+              onClick={() => setIsFilterRailCollapsed((prev) => !prev)}
+              aria-label={
+                isFilterRailCollapsed
+                  ? "Expand filter navigation"
+                  : "Collapse filter navigation"
+              }
+            >
+              {isFilterRailCollapsed ? (
+                <PanelLeftOpen className="h-5 w-5" />
+              ) : (
+                <PanelLeftClose className="h-5 w-5" />
+              )}
+            </Button>
+            <div className="relative flex-1 min-w-[220px]">
+              <form
+                onSubmit={handleSearchSubmit}
+                className="flex h-11 items-center gap-3 rounded-full border border-[#80B380]/30 bg-white/90 px-4 shadow-sm focus-within:ring-2 focus-within:ring-[#F0A763]"
+              >
+                <SearchIcon className="h-5 w-5 text-[#80B380]" />
+                <Input
+                  ref={inputRef}
+                  aria-label="Search games"
+                  placeholder="Search by name, description, or keyword"
+                  value={filters.query}
+                  onChange={(event) =>
+                    setFilters((current) => ({
+                      ...current,
+                      query: event.target.value,
+                      page: DEFAULT_PAGE,
+                    }))
+                  }
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => setTimeout(() => setIsSearchFocused(false), 100)}
+                  className="h-full flex-1 border-none bg-transparent p-0 text-sm focus-visible:ring-0"
+                />
+                <Button
+                  type="submit"
+                  className="h-9 rounded-full bg-[#F0A763] px-4 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+                >
+                  Search
+                </Button>
+              </form>
+              {showSuggestions && (
+                <div className="absolute inset-x-0 top-full z-30 mt-3 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white shadow-lg">
+                  <ul className="divide-y divide-[#80B380]/20">
+                    {suggestions.map((game) => (
+                      <li key={game.id}>
+                        <button
+                          type="button"
+                          className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm text-[#4B4B4B] transition hover:bg-[#80B380]/10"
+                          onMouseDown={(event) => {
+                            event.preventDefault();
+                            handleSuggestionSelect(game);
+                          }}
+                        >
+                          <span className="font-medium">{game.name}</span>
+                          {game.category && (
+                            <Badge className="rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                              {prettifyFilterValue(game.category)}
+                            </Badge>
+                          )}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <Button
+              type="button"
+              variant="outline"
+              className="inline-flex flex-shrink-0 items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763]"
+              onClick={() => openFilterSheet()}
+            >
+              <Filter className="h-4 w-4 text-[#80B380]" />
+              Filters
+              {hasActiveFilters && (
+                <Badge className="ml-1 rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                  {activeFilters.length}
+                </Badge>
+              )}
+            </Button>
+          </header>
           <div className="rounded-3xl border border-[#80B380]/20 bg-white/70 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
-                <h1 className={cn(styles.heading, "text-2xl font-semibold text-[#4B4B4B]")}>{heading}</h1>
+                <h1
+                  className={cn(
+                    styles.heading,
+                    "text-2xl font-semibold text-[#4B4B4B]"
+                  )}
+                >
+                  {heading}
+                </h1>
                 <p className="mt-2 text-sm text-[#4B4B4B]/70">{resultsSummary}</p>
               </div>
-              <Button
-                type="button"
-                variant="outline"
-                className={cn(
-                  styles.mobileFiltersButton,
-                  "items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763]"
-                )}
-                onClick={() => setIsMobileFiltersOpen(true)}
-              >
-                <Filter className="h-4 w-4 text-[#80B380]" />
-                Filters
-              </Button>
             </div>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#4B4B4B]/75">
               Discover activities that spark connection, collaboration, and laughs for every group size.
             </p>
-            <p className={cn(styles.mobileHint, "mt-2 text-sm text-[#4B4B4B]/60")}>
-              Tap “Filters” to search games and refine the results.
+            <p className="mt-2 text-sm text-[#4B4B4B]/60">
+              Use the menu button to collapse the filter rail or tap “Filters” to open it as a sheet.
             </p>
           </div>
           {hasActiveFilters && (
@@ -1013,24 +1149,18 @@ export function GameClient({
           )}
         </main>
       </div>
-      {isMobileFiltersOpen && (
+      {isFilterSheetOpen && (
         <div
-          className={cn(
-            styles.mobileFiltersOverlay,
-            "fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm"
-          )}
+          className="fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
-          onClick={closeMobileFilters}
+          onClick={closeFilterSheet}
         >
           <div
-            className={cn(
-              styles.mobileFiltersSheet,
-              "h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl"
-            )}
+            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
-            {renderFilterPanel("mobile")}
+            {renderFilterPanel("sheet")}
           </div>
         </div>
       )}

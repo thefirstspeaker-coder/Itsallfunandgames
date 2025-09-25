@@ -16,58 +16,6 @@
   }
 }
 
-.desktopFilters {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .desktopFilters {
-    display: block;
-  }
-}
-
-.mobileFiltersButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-@media (min-width: 1024px) {
-  .mobileFiltersButton {
-    display: none;
-  }
-}
-
-.mobileHint {
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  .mobileHint {
-    display: none;
-  }
-}
-
-.mobileFiltersOverlay {
-  display: flex;
-}
-
-@media (min-width: 1024px) {
-  .mobileFiltersOverlay {
-    display: none;
-  }
-}
-
-.mobileFiltersSheet {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .mobileFiltersSheet {
-    width: 420px;
-  }
-}
-
 @media (min-width: 640px) {
   .heading {
     font-size: 1.875rem;
