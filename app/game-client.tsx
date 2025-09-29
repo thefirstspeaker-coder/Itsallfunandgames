@@ -743,7 +743,7 @@ export function GameClient({
 
   return (
     <div
-      className="relative min-h-screen bg-[#F9F7E8] text-[#4B4B4B]"
+      className="relative min-h-screen bg-[#F9F7E8]/60 text-[#4B4B4B]"
       style={{ "--focus-ring": "#F0A763" } as CSSProperties}
     >
       <div
@@ -806,7 +806,7 @@ export function GameClient({
                           "relative flex h-11 w-11 items-center justify-center rounded-2xl text-[#4B4B4B] transition",
                           selectedCount > 0
                             ? "bg-[#80B380]/20 text-[#80B380]"
-                            : "bg-[#F9F7E8]/70 hover:bg-[#80B380]/15"
+                            : "bg-[#F9F7E8]/60 hover:bg-[#80B380]/15"
                         )}
                         aria-label={`Edit ${group.label} filters`}
                       >
@@ -988,7 +988,7 @@ export function GameClient({
                   <Link
                     key={game.id}
                     href={`/game/${game.id}`}
-                    className="group flex h-full flex-col justify-between rounded-3xl border border-[#80B380]/25 bg-white/90 p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A763] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F9F7E8]"
+                    className="group flex h-full flex-col justify-between rounded-3xl border border-[#80B380]/25 bg-white/90 p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A763] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F9F7E8]/60"
                   >
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-wrap items-start gap-3">
@@ -1034,7 +1034,7 @@ export function GameClient({
                         {traditionText && <InfoItem icon={ScrollText} label={traditionText} />}
                       </div>
                       {(topSkills.length > 0 || topRegions.length > 0) && (
-                        <div className="space-y-3 rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/80 p-4">
+                        <div className="space-y-3 rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/60 p-4">
                           {topSkills.length > 0 && (
                             <div>
                               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#4B4B4B]/70">
@@ -1157,7 +1157,7 @@ export function GameClient({
           onClick={closeFilterSheet}
         >
           <div
-            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8] px-6 pb-8 pt-6 shadow-2xl"
+            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8]/60 px-6 pb-8 pt-6 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             {renderFilterPanel("sheet")}
