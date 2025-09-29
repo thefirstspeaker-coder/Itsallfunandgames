@@ -750,7 +750,7 @@ export function GameClient({
         className={cn(
           styles.layout,
           styles.layoutSpacing,
-          "mx-auto flex w-full max-w-7xl flex-wrap gap-6 px-4 py-10 lg:flex-nowrap"
+          "mx-auto flex max-w-7xl flex-wrap gap-6 px-4 py-10 lg:flex-nowrap"
         )}
       >
         <aside
