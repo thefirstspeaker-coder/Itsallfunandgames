@@ -756,7 +756,7 @@ export function GameClient({
         <aside
           className={cn(
             "flex flex-shrink-0 flex-col transition-all duration-300 ease-in-out",
-            isFilterRailCollapsed ? "w-16" : "w-full sm:w-64 lg:w-72"
+            isFilterRailCollapsed ? "w-16" : "sm:w-64 lg:w-72"
           )}
         >
           <div
