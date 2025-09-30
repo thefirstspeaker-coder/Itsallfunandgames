@@ -1,4 +1,5 @@
 // app/game/[id]/page.tsx
+import { Fragment } from 'react';
 import { games } from '@/lib/loadGames';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
@@ -16,13 +17,18 @@ export async function generateStaticParams() {
 }
 
 // Helper to format ranges
-const formatRange = (min: number | null | undefined, max: number | null | undefined, suffix: string) => {
-    if (min == null && max == null) return null;
-    if (min != null && max != null) return min === max ? `${min} ${suffix}` : `${min}-${max} ${suffix}`;
-    if (min != null) return `${min}+ ${suffix}`;
-    if (max != null) return `Up to ${max} ${suffix}`;
-    return null;
-}
+const formatRange = (
+  min: number | null | undefined,
+  max: number | null | undefined,
+  suffix: string,
+) => {
+  if (min == null && max == null) return null;
+  if (min != null && max != null)
+    return min === max ? `${min} ${suffix}` : `${min}-${max} ${suffix}`;
+  if (min != null) return `${min}+ ${suffix}`;
+  if (max != null) return `Up to ${max} ${suffix}`;
+  return null;
+};
 
 export default function GameDetailPage({ params }: Props) {
   const game = games.find((g) => g.id === params.id);
@@ -39,9 +45,9 @@ export default function GameDetailPage({ params }: Props) {
       <header className="mb-8 border-b pb-4">
         <h1 className="text-4xl font-bold">{game.name}</h1>
         <div className="mt-2 flex flex-wrap gap-2 text-sm text-muted-foreground">
-            {game.category && <Badge>{game.category}</Badge>}
-            {ageRange && <span>Ages: {ageRange}</span>}
-            {playerRange && <span>Players: {playerRange}</span>}
+          {game.category && <Badge>{game.category}</Badge>}
+          {ageRange && <span>Ages: {ageRange}</span>}
+          {playerRange && <span>Players: {playerRange}</span>}
         </div>
       </header>
       <section className="mt-4 prose dark:prose-invert">
@@ -49,19 +55,19 @@ export default function GameDetailPage({ params }: Props) {
           <p>{game.description}</p>
         )}
 
-  {game.generalRules && game.generalRules.length > 0 && (
-  <div>
-    <h3>Rules</h3>
-    <div className="space-y-0">
-      {game.generalRules.map((rule, i) => (
-        <React.Fragment key={i}>
-          <Markdown content={rule} />
-          {i < game.generalRules.length - 1 && <br />}
-        </React.Fragment>
-      ))}
-    </div>
-  </div>
-)}
+        {game.generalRules && game.generalRules.length > 0 && (
+          <div>
+            <h3>Rules</h3>
+            <div className="space-y-0">
+              {game.generalRules.map((rule, i) => (
+                <Fragment key={`${i}-${rule}`}>
+                  <Markdown content={rule} />
+                  {i < game.generalRules.length - 1 && <br />}
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        )}
 
 
         {game.equipment && (
