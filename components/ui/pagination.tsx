@@ -28,7 +28,7 @@ export function PaginationLink(
     <a
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "flex h-8 w-8 items-center justify-center rounded-md border bg-background p-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--focus-ring)] focus-visible:ring-offset-2",
+        "flex h-8 w-8 items-center justify-center rounded-md border bg-background p-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2",
         isActive && "bg-accent text-accent-foreground",
         className
       )}
