@@ -55,12 +55,16 @@
     "recommendedPlayersText": "4\u002B",
     "equipment": "Soft blindfold",
     "generalRules": [
-      "How to Play:",
+      "**How to Play:**",
       "1. Pick one player to be \u0022it\u0022 and blindfold them.",
       "2. The other players move around and make noise to avoid being caught.",
       "3. \u0022It\u0022 tries to tag someone.",
-      "How to Win: When \u0022it\u0022 tags a person, that person becomes the new \u0022it\u0022 for the next round.",
-      "Important: Play in a safe, clear area with no obstacles."
+      "    ",
+      "**How to Win:**",
+      "When \u0022it\u0022 tags a person, that person becomes the new \u0022it\u0022 for the next round.",
+      "    ",
+      "**Important:** ",
+      "Play in a safe, clear area with no obstacles."
     ],
     "variations": [
       "In a variant, the blindfolded player must correctly identify the person they catch before swapping roles"
