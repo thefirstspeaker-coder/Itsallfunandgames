@@ -54,7 +54,8 @@ export default function GameDetailPage({ params }: Props) {
             <h3>Rules</h3>
             <div className="space-y-4">
               {game.generalRules.map((rule, i) => (
-                <Markdown key={i} content={rule} /><br />
+                <Markdown key={i} content={rule} />
+                <br />
               ))}
             </div>
           </div>
