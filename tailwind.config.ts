@@ -24,6 +24,17 @@ export default {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        brand: {
+          sprout: '#80B380',
+          ink: '#4B4B4B',
+          marigold: '#F0A763',
+          'marigold-dark': '#e6964f',
+          parchment: '#F9F7E8',
+          charcoal: '#383838',
+          mist: '#ccc',
+          cloud: '#f2f2f2',
+          night: '#1a1a1a',
+        },
 
         primary: {
           DEFAULT: 'hsl(var(--primary))',

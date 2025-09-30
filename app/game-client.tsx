@@ -8,14 +8,7 @@ import {
   usePathname,
   type ReadonlyURLSearchParams,
 } from "next/navigation";
-import {
-  useEffect,
-  useMemo,
-  useState,
-  useRef,
-  type CSSProperties,
-  type FormEvent,
-} from "react";
+import { useEffect, useMemo, useState, useRef, type FormEvent } from "react";
 import { useDebounce } from "use-debounce";
 import Fuse from "fuse.js";
 import { Input } from "@/components/ui/input";
@@ -243,8 +236,8 @@ const filterMeta: Record<
 };
 
 const InfoItem = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => (
-  <div className="flex items-center gap-3 rounded-2xl bg-[#80B380]/10 px-3 py-2 text-sm font-medium text-[#4B4B4B]">
-    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#80B380]/20 text-[#80B380]">
+  <div className="flex items-center gap-3 rounded-2xl bg-brand-sprout/10 px-3 py-2 text-sm font-medium text-brand-ink">
+    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-sprout/20 text-brand-sprout">
       <Icon className="h-4 w-4" />
     </span>
     <span className="min-w-0 flex-1 break-words">{label}</span>
@@ -572,10 +565,10 @@ export function GameClient({
         <div className="space-y-5">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h2 className="text-xl font-semibold text-[#4B4B4B]">
+              <h2 className="text-xl font-semibold text-brand-ink">
                 Refine games
               </h2>
-              <p className="text-sm text-[#4B4B4B]/70">
+              <p className="text-sm text-brand-ink/70">
                 Tailor filters to match your group.
               </p>
             </div>
@@ -583,7 +576,7 @@ export function GameClient({
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-9 w-9 rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+                className="h-9 w-9 rounded-full bg-brand-sprout/10 text-brand-ink hover:bg-brand-sprout/20"
                 onClick={closeFilterSheet}
                 aria-label="Close filters"
               >
@@ -593,14 +586,14 @@ export function GameClient({
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                className="h-8 px-3 text-xs font-semibold text-brand-sprout hover:bg-brand-sprout/10"
                 onClick={resetFilters}
               >
                 Clear all
               </Button>
             ) : null}
           </div>
-          <div className="h-px bg-[#80B380]/20" />
+          <div className="h-px bg-brand-sprout/20" />
         </div>
         <div className="flex-1 space-y-4 overflow-y-auto pr-1">
           <Accordion
@@ -631,25 +624,25 @@ export function GameClient({
                 <AccordionItem
                   key={key}
                   value={key}
-                  className="overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white/80 shadow-sm"
+                  className="overflow-hidden rounded-2xl border border-brand-sprout/20 bg-white/80 shadow-sm"
                   id={`filter-group-${key}`}
                 >
-                  <AccordionTrigger className="px-4 text-left text-base font-semibold text-[#4B4B4B] hover:text-[#80B380]">
+                  <AccordionTrigger className="px-4 text-left text-base font-semibold text-brand-ink hover:text-brand-sprout">
                     <span className="flex w-full items-center gap-2">
-                      <Icon className="h-4 w-4 text-[#80B380]" />
+                      <Icon className="h-4 w-4 text-brand-sprout" />
                       <span>{label}</span>
                       {selectedCount > 0 && (
-                        <Badge className="ml-auto rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                        <Badge className="ml-auto rounded-full bg-brand-sprout/15 px-2 py-1 text-[11px] font-semibold text-brand-sprout">
                           {selectedCount}
                         </Badge>
                       )}
                     </span>
                   </AccordionTrigger>
                   <AccordionContent className="px-4">
-                    <p className="mb-3 text-xs text-[#4B4B4B]/70">{description}</p>
+                    <p className="mb-3 text-xs text-brand-ink/70">{description}</p>
                     {showSearch && (
                       <div className="relative mb-3">
-                        <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#80B380]/70" />
+                        <SearchIcon className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-brand-sprout/70" />
                         <Input
                           value={filterSearches[key]}
                           onChange={(event) =>
@@ -659,11 +652,11 @@ export function GameClient({
                             }))
                           }
                           placeholder={`Search ${label.toLowerCase()}`}
-                          className="h-9 rounded-full border border-[#80B380]/30 bg-white pl-9 text-sm focus-visible:ring-[#F0A763]"
+                          className="h-9 rounded-full border border-brand-sprout/30 bg-white pl-9 text-sm focus-visible:ring-brand-marigold"
                         />
                       </div>
                     )}
-                    <div className="space-y-2 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/60 p-2">
+                    <div className="space-y-2 overflow-hidden rounded-2xl border border-brand-sprout/20 bg-brand-parchment/60 p-2">
                       <div className="max-h-52 space-y-2 overflow-y-auto pr-1">
                         {visibleOptions.length > 0 ? (
                           visibleOptions.map((option) => {
@@ -674,19 +667,19 @@ export function GameClient({
                                 key={option}
                                 className={`flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2 text-sm transition ${
                                   isChecked
-                                    ? "bg-[#80B380]/15 text-[#4B4B4B] shadow-inner"
-                                    : "hover:bg-[#80B380]/10"
+                                    ? "bg-brand-sprout/15 text-brand-ink shadow-inner"
+                                    : "hover:bg-brand-sprout/10"
                                 }`}
                               >
                                 <Checkbox
-                                  className="h-4 w-4 border-[#80B380]/50 data-[state=checked]:border-[#80B380] data-[state=checked]:bg-[#80B380] data-[state=checked]:text-white"
+                                  className="h-4 w-4 border-brand-sprout/50 data-[state=checked]:border-brand-sprout data-[state=checked]:bg-brand-sprout data-[state=checked]:text-white"
                                   checked={isChecked}
                                   onCheckedChange={(checked) =>
                                     updateFilterValue(key, option, checked === true)
                                   }
                                 />
                                 {OptionIcon && (
-                                  <OptionIcon className="h-4 w-4 text-[#80B380]" />
+                                  <OptionIcon className="h-4 w-4 text-brand-sprout" />
                                 )}
                                 <span className="flex-1 text-sm">
                                   {prettifyFilterValue(option)}
@@ -695,7 +688,7 @@ export function GameClient({
                             );
                           })
                         ) : (
-                          <p className="px-3 py-6 text-center text-xs text-[#4B4B4B]/60">
+                          <p className="px-3 py-6 text-center text-xs text-brand-ink/60">
                             No matches for “{filterSearches[key]}”.
                           </p>
                         )}
@@ -705,7 +698,7 @@ export function GameClient({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="mt-3 h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                        className="mt-3 h-8 px-3 text-xs font-semibold text-brand-sprout hover:bg-brand-sprout/10"
                         onClick={() => clearFilterGroup(key)}
                       >
                         Clear {label}
@@ -718,16 +711,16 @@ export function GameClient({
           </Accordion>
         </div>
         {isSheet && (
-          <div className="mt-auto flex flex-col gap-3 border-t border-[#80B380]/20 pt-4">
+          <div className="mt-auto flex flex-col gap-3 border-t border-brand-sprout/20 pt-4">
             <Button
-              className="h-11 rounded-full bg-[#F0A763] text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+              className="h-11 rounded-full bg-brand-marigold text-sm font-semibold text-brand-ink transition hover:bg-brand-marigold-dark"
               onClick={closeFilterSheet}
             >
               Apply filters
             </Button>
             <Button
               variant="outline"
-              className="h-11 rounded-full border-[#80B380]/40 bg-white text-sm font-semibold text-[#80B380] transition hover:bg-[#80B380]/10"
+              className="h-11 rounded-full border-brand-sprout/40 bg-white text-sm font-semibold text-brand-sprout transition hover:bg-brand-sprout/10"
               onClick={() => {
                 resetFilters();
                 closeFilterSheet();
@@ -742,10 +735,7 @@ export function GameClient({
   };
 
   return (
-    <div
-      className="relative min-h-screen bg-[#F9F7E8]/60 text-[#4B4B4B]"
-      style={{ "--focus-ring": "#F0A763" } as CSSProperties}
-    >
+    <div className="relative min-h-screen bg-brand-parchment/60 text-brand-ink">
       <div
         className={cn(
           styles.layout,
@@ -763,14 +753,14 @@ export function GameClient({
             className={cn(
               "sticky top-6 flex flex-col items-stretch",
               isFilterRailCollapsed
-                ? "gap-4 rounded-3xl border border-[#80B380]/30 bg-white/80 p-3 shadow-sm backdrop-blur"
-                : "rounded-3xl border border-[#80B380]/30 bg-white/80 p-4 shadow-sm backdrop-blur"
+                ? "gap-4 rounded-3xl border border-brand-sprout/30 bg-white/80 p-3 shadow-sm backdrop-blur"
+                : "rounded-3xl border border-brand-sprout/30 bg-white/80 p-4 shadow-sm backdrop-blur"
             )}
           >
             <Button
               variant="ghost"
               size="icon"
-              className="h-10 w-10 self-end rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+              className="h-10 w-10 self-end rounded-full bg-brand-sprout/10 text-brand-ink hover:bg-brand-sprout/20"
               onClick={() => setIsFilterRailCollapsed((prev) => !prev)}
               aria-label={
                 isFilterRailCollapsed ? "Expand filters" : "Collapse filters"
@@ -787,11 +777,11 @@ export function GameClient({
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-12 w-12 rounded-2xl bg-[#80B380]/15 text-[#4B4B4B] transition hover:bg-[#80B380]/25"
+                  className="h-12 w-12 rounded-2xl bg-brand-sprout/15 text-brand-ink transition hover:bg-brand-sprout/25"
                   onClick={() => openFilterSheet()}
                   aria-label="Open filters"
                 >
-                  <Filter className="h-5 w-5 text-[#80B380]" />
+                  <Filter className="h-5 w-5 text-brand-sprout" />
                 </Button>
                 <div className="mt-2 flex flex-1 flex-col items-center gap-2">
                   {filterGroups.map((group) => {
@@ -803,16 +793,16 @@ export function GameClient({
                         type="button"
                         onClick={() => openFilterSheet(group.key)}
                         className={cn(
-                          "relative flex h-11 w-11 items-center justify-center rounded-2xl text-[#4B4B4B] transition",
+                          "relative flex h-11 w-11 items-center justify-center rounded-2xl text-brand-ink transition",
                           selectedCount > 0
-                            ? "bg-[#80B380]/20 text-[#80B380]"
-                            : "bg-[#F9F7E8]/60 hover:bg-[#80B380]/15"
+                            ? "bg-brand-sprout/20 text-brand-sprout"
+                            : "bg-brand-parchment/60 hover:bg-brand-sprout/15"
                         )}
                         aria-label={`Edit ${group.label} filters`}
                       >
                         <Icon className="h-5 w-5" />
                         {selectedCount > 0 && (
-                          <span className="absolute -top-1 -right-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-[#F0A763] px-1 text-[11px] font-semibold text-[#4B4B4B]">
+                          <span className="absolute -top-1 -right-1 flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-brand-marigold px-1 text-[11px] font-semibold text-brand-ink">
                             {selectedCount}
                           </span>
                         )}
@@ -829,12 +819,12 @@ export function GameClient({
           </div>
         </aside>
         <main className="flex min-w-0 flex-1 flex-col gap-8">
-          <header className="flex flex-wrap items-center gap-3 rounded-3xl border border-[#80B380]/20 bg-white/80 p-4 shadow-sm backdrop-blur">
+          <header className="flex flex-wrap items-center gap-3 rounded-3xl border border-brand-sprout/20 bg-white/80 p-4 shadow-sm backdrop-blur">
             <Button
               type="button"
               variant="ghost"
               size="icon"
-              className="h-10 w-10 rounded-full bg-[#80B380]/10 text-[#4B4B4B] hover:bg-[#80B380]/20"
+              className="h-10 w-10 rounded-full bg-brand-sprout/10 text-brand-ink hover:bg-brand-sprout/20"
               onClick={() => setIsFilterRailCollapsed((prev) => !prev)}
               aria-label={
                 isFilterRailCollapsed
@@ -851,9 +841,9 @@ export function GameClient({
             <div className="relative flex-1 min-w-[220px]">
               <form
                 onSubmit={handleSearchSubmit}
-                className="flex h-11 items-center gap-3 rounded-full border border-[#80B380]/30 bg-white/90 px-4 shadow-sm focus-within:ring-2 focus-within:ring-[#F0A763]"
+                className="flex h-11 items-center gap-3 rounded-full border border-brand-sprout/30 bg-white/90 px-4 shadow-sm focus-within:ring-2 focus-within:ring-brand-marigold"
               >
-                <SearchIcon className="h-5 w-5 text-[#80B380]" />
+                <SearchIcon className="h-5 w-5 text-brand-sprout" />
                 <Input
                   ref={inputRef}
                   aria-label="Search games"
@@ -872,19 +862,19 @@ export function GameClient({
                 />
                 <Button
                   type="submit"
-                  className="h-9 rounded-full bg-[#F0A763] px-4 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+                  className="h-9 rounded-full bg-brand-marigold px-4 text-sm font-semibold text-brand-ink transition hover:bg-brand-marigold-dark"
                 >
                   Search
                 </Button>
               </form>
               {showSuggestions && (
-                <div className="absolute inset-x-0 top-full z-30 mt-3 overflow-hidden rounded-2xl border border-[#80B380]/20 bg-white shadow-lg">
-                  <ul className="divide-y divide-[#80B380]/20">
+                <div className="absolute inset-x-0 top-full z-30 mt-3 overflow-hidden rounded-2xl border border-brand-sprout/20 bg-white shadow-lg">
+                  <ul className="divide-y divide-brand-sprout/20">
                     {suggestions.map((game) => (
                       <li key={game.id}>
                         <button
                           type="button"
-                          className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm text-[#4B4B4B] transition hover:bg-[#80B380]/10"
+                          className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm text-brand-ink transition hover:bg-brand-sprout/10"
                           onMouseDown={(event) => {
                             event.preventDefault();
                             handleSuggestionSelect(game);
@@ -892,7 +882,7 @@ export function GameClient({
                         >
                           <span className="font-medium">{game.name}</span>
                           {game.category && (
-                            <Badge className="rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                            <Badge className="rounded-full bg-brand-sprout/15 px-2 py-1 text-[11px] font-semibold text-brand-sprout">
                               {prettifyFilterValue(game.category)}
                             </Badge>
                           )}
@@ -906,55 +896,55 @@ export function GameClient({
             <Button
               type="button"
               variant="outline"
-              className="inline-flex flex-shrink-0 items-center gap-2 rounded-full border-[#80B380]/40 bg-white px-4 py-2 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10 focus-visible:ring-[#F0A763]"
+              className="inline-flex flex-shrink-0 items-center gap-2 rounded-full border-brand-sprout/40 bg-white px-4 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sprout/10 focus-visible:ring-brand-marigold"
               onClick={() => openFilterSheet()}
             >
-              <Filter className="h-4 w-4 text-[#80B380]" />
+              <Filter className="h-4 w-4 text-brand-sprout" />
               Filters
               {hasActiveFilters && (
-                <Badge className="ml-1 rounded-full bg-[#80B380]/15 px-2 py-1 text-[11px] font-semibold text-[#80B380]">
+                <Badge className="ml-1 rounded-full bg-brand-sprout/15 px-2 py-1 text-[11px] font-semibold text-brand-sprout">
                   {activeFilters.length}
                 </Badge>
               )}
             </Button>
           </header>
-          <div className="rounded-3xl border border-[#80B380]/20 bg-white/70 p-6 shadow-sm backdrop-blur">
+          <div className="rounded-3xl border border-brand-sprout/20 bg-white/70 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h1
                   className={cn(
                     styles.heading,
-                    "text-2xl font-semibold text-[#4B4B4B]"
+                    "text-2xl font-semibold text-brand-ink"
                   )}
                 >
                   {heading}
                 </h1>
-                <p className="mt-2 text-sm text-[#4B4B4B]/70">{resultsSummary}</p>
+                <p className="mt-2 text-sm text-brand-ink/70">{resultsSummary}</p>
               </div>
             </div>
-            <p className="mt-4 max-w-2xl text-sm leading-6 text-[#4B4B4B]/75">
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-brand-ink/75">
               Discover activities that spark connection, collaboration, and laughs for every group size.
             </p>
-            <p className="mt-2 text-sm text-[#4B4B4B]/60">
+            <p className="mt-2 text-sm text-brand-ink/60">
               Use the menu button to collapse the filter rail or tap “Filters” to open it as a sheet.
             </p>
           </div>
           {hasActiveFilters && (
-            <div className="flex flex-wrap items-center gap-2 rounded-3xl border border-[#80B380]/20 bg-white/70 p-4 shadow-sm backdrop-blur">
-              <span className="text-sm font-medium text-[#4B4B4B]/80">Active filters:</span>
+            <div className="flex flex-wrap items-center gap-2 rounded-3xl border border-brand-sprout/20 bg-white/70 p-4 shadow-sm backdrop-blur">
+              <span className="text-sm font-medium text-brand-ink/80">Active filters:</span>
               {activeFilters.map(({ key, value }) => {
                 const label = filterMeta[key].label;
                 return (
                   <Badge
                     key={`${key}-${value}`}
                     variant="secondary"
-                    className="flex items-center gap-2 rounded-full bg-[#80B380]/15 px-3 py-1 text-sm font-medium text-[#4B4B4B]"
+                    className="flex items-center gap-2 rounded-full bg-brand-sprout/15 px-3 py-1 text-sm font-medium text-brand-ink"
                   >
-                    <span className="font-semibold text-[#80B380]">{label}:</span>
+                    <span className="font-semibold text-brand-sprout">{label}:</span>
                     <span>{prettifyFilterValue(value)}</span>
                     <button
                       type="button"
-                      className="rounded-full p-0.5 text-[#80B380] transition hover:bg-[#80B380]/20"
+                      className="rounded-full p-0.5 text-brand-sprout transition hover:bg-brand-sprout/20"
                       onClick={() => updateFilterValue(key, value, false)}
                     >
                       <X className="h-3 w-3" />
@@ -966,7 +956,7 @@ export function GameClient({
               <Button
                 variant="ghost"
                 size="sm"
-                className="ml-auto h-8 px-3 text-xs font-semibold text-[#80B380] hover:bg-[#80B380]/10"
+                className="ml-auto h-8 px-3 text-xs font-semibold text-brand-sprout hover:bg-brand-sprout/10"
                 onClick={resetFilters}
               >
                 Clear all
@@ -988,7 +978,7 @@ export function GameClient({
                   <Link
                     key={game.id}
                     href={`/game/${game.id}`}
-                    className="group flex h-full flex-col justify-between rounded-3xl border border-[#80B380]/25 bg-white/90 p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F0A763] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F9F7E8]/60"
+                    className="group flex h-full flex-col justify-between rounded-3xl border border-brand-sprout/25 bg-white/90 p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-parchment/60"
                   >
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-wrap items-start gap-3">
@@ -996,13 +986,13 @@ export function GameClient({
                           <h2
                             className={cn(
                               styles.cardTitle,
-                              "text-lg font-semibold text-[#4B4B4B] transition-colors group-hover:text-[#80B380]"
+                              "text-lg font-semibold text-brand-ink transition-colors group-hover:text-brand-sprout"
                             )}
                           >
                             {game.name}
                           </h2>
                           {game.category && (
-                            <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-[#80B380]">
+                            <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-brand-sprout">
                               {prettifyFilterValue(game.category)}
                             </p>
                           )}
@@ -1013,7 +1003,7 @@ export function GameClient({
                               <Badge
                                 key={tag}
                                 variant="outline"
-                                className="rounded-full border-[#80B380]/30 bg-white px-3 py-1 text-xs font-medium text-[#80B380]"
+                                className="rounded-full border-brand-sprout/30 bg-white px-3 py-1 text-xs font-medium text-brand-sprout"
                               >
                                 #{prettifyFilterValue(tag)}
                               </Badge>
@@ -1021,7 +1011,7 @@ export function GameClient({
                           </div>
                         )}
                       </div>
-                      <p className="text-sm leading-6 text-[#4B4B4B]/75 line-clamp-4">
+                      <p className="text-sm leading-6 text-brand-ink/75 line-clamp-4">
                         {description ||
                           "Discover the rules, twists, and fun variations for this game."}
                       </p>
@@ -1034,11 +1024,11 @@ export function GameClient({
                         {traditionText && <InfoItem icon={ScrollText} label={traditionText} />}
                       </div>
                       {(topSkills.length > 0 || topRegions.length > 0) && (
-                        <div className="space-y-3 rounded-2xl border border-[#80B380]/20 bg-[#F9F7E8]/60 p-4">
+                        <div className="space-y-3 rounded-2xl border border-brand-sprout/20 bg-brand-parchment/60 p-4">
                           {topSkills.length > 0 && (
                             <div>
-                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#4B4B4B]/70">
-                                <Sparkles className="h-3.5 w-3.5 text-[#F0A763]" />
+                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-ink/70">
+                                <Sparkles className="h-3.5 w-3.5 text-brand-marigold" />
                                 Key skills
                               </div>
                               <div className="mt-2 flex flex-wrap gap-2">
@@ -1046,7 +1036,7 @@ export function GameClient({
                                   <Badge
                                     key={skill}
                                     variant="outline"
-                                    className="rounded-full border-[#80B380]/30 bg-white px-3 py-1 text-xs font-medium text-[#4B4B4B]"
+                                    className="rounded-full border-brand-sprout/30 bg-white px-3 py-1 text-xs font-medium text-brand-ink"
                                   >
                                     {prettifyFilterValue(skill)}
                                   </Badge>
@@ -1056,15 +1046,15 @@ export function GameClient({
                           )}
                           {topRegions.length > 0 && (
                             <div>
-                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-[#4B4B4B]/70">
-                                <Globe2 className="h-3.5 w-3.5 text-[#80B380]" />
+                              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-ink/70">
+                                <Globe2 className="h-3.5 w-3.5 text-brand-sprout" />
                                 Popular in
                               </div>
                               <div className="mt-2 flex flex-wrap gap-2">
                                 {topRegions.map((region) => (
                                   <Badge
                                     key={region}
-                                    className="rounded-full bg-[#80B380]/15 px-3 py-1 text-xs font-medium text-[#4B4B4B]"
+                                    className="rounded-full bg-brand-sprout/15 px-3 py-1 text-xs font-medium text-brand-ink"
                                   >
                                     {region}
                                   </Badge>
@@ -1075,7 +1065,7 @@ export function GameClient({
                         </div>
                       )}
                     </div>
-                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#80B380]">
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-sprout">
                       Explore game
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
@@ -1084,7 +1074,7 @@ export function GameClient({
               })}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-[#80B380]/40 bg-white/70 p-12 text-center shadow-inner">
+            <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-brand-sprout/40 bg-white/70 p-12 text-center shadow-inner">
               <Image
                 src="/file.svg"
                 alt="No games"
@@ -1092,12 +1082,12 @@ export function GameClient({
                 height={120}
                 className="mb-6 opacity-80"
               />
-              <p className="mb-4 max-w-md text-base text-[#4B4B4B]/70">
+              <p className="mb-4 max-w-md text-base text-brand-ink/70">
                 No games matched your filters. Try adjusting your search or start fresh.
               </p>
               <Button
                 onClick={resetFilters}
-                className="rounded-full bg-[#F0A763] px-6 py-2 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+                className="rounded-full bg-brand-marigold px-6 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-marigold-dark"
               >
                 Reset filters
               </Button>
@@ -1116,8 +1106,8 @@ export function GameClient({
                           handlePageChange(i + 1);
                         }}
                         isActive={currentPage === i + 1}
-                        className={`border border-[#80B380]/30 bg-white text-sm font-medium text-[#4B4B4B] hover:bg-[#80B380]/10 hover:text-[#4B4B4B] ${
-                          currentPage === i + 1 ? "bg-[#80B380]/20" : ""
+                        className={`border border-brand-sprout/30 bg-white text-sm font-medium text-brand-ink hover:bg-brand-sprout/10 hover:text-brand-ink ${
+                          currentPage === i + 1 ? "bg-brand-sprout/20" : ""
                         }`}
                       >
                         {i + 1}
@@ -1129,14 +1119,14 @@ export function GameClient({
               <div className="flex items-center justify-center gap-3">
                 <Button
                   variant="outline"
-                  className="rounded-full border-[#80B380]/40 bg-white px-5 text-sm font-semibold text-[#4B4B4B] hover:bg-[#80B380]/10"
+                  className="rounded-full border-brand-sprout/40 bg-white px-5 text-sm font-semibold text-brand-ink hover:bg-brand-sprout/10"
                   onClick={() => handlePageChange(Math.max(DEFAULT_PAGE, currentPage - 1))}
                   disabled={currentPage === DEFAULT_PAGE}
                 >
                   Previous
                 </Button>
                 <Button
-                  className="rounded-full bg-[#F0A763] px-5 text-sm font-semibold text-[#4B4B4B] transition hover:bg-[#e6964f]"
+                  className="rounded-full bg-brand-marigold px-5 text-sm font-semibold text-brand-ink transition hover:bg-brand-marigold-dark"
                   onClick={() =>
                     handlePageChange(Math.min(totalPages || DEFAULT_PAGE, currentPage + 1))
                   }
@@ -1151,13 +1141,13 @@ export function GameClient({
       </div>
       {isFilterSheetOpen && (
         <div
-          className="fixed inset-0 z-40 flex items-start justify-end bg-[#4B4B4B]/40 backdrop-blur-sm"
+          className="fixed inset-0 z-40 flex items-start justify-end bg-brand-ink/40 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           onClick={closeFilterSheet}
         >
           <div
-            className="h-full w-full max-w-md overflow-y-auto border-l border-[#80B380]/30 bg-[#F9F7E8]/60 px-6 pb-8 pt-6 shadow-2xl"
+            className="h-full w-full max-w-md overflow-y-auto border-l border-brand-sprout/30 bg-brand-parchment/60 px-6 pb-8 pt-6 shadow-2xl"
             onClick={(event) => event.stopPropagation()}
           >
             {renderFilterPanel("sheet")}
