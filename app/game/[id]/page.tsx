@@ -2,6 +2,7 @@
 import { games } from '@/lib/loadGames';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
+import { Markdown } from '@/components/markdown';
 
 type Props = {
   params: { id: string };
@@ -53,7 +54,9 @@ export default function GameDetailPage({ params }: Props) {
             <h3>Rules</h3>
             <ol>
               {game.generalRules.map((rule, i) => (
-                <li key={i}>{rule}</li>
+                <li key={i}>
+                  <Markdown content={rule} />
+                </li>
               ))}
             </ol>
           </div>
