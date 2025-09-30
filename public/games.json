@@ -11,12 +11,12 @@
     "recommendedPlayersText": "",
     "equipment": "Plastic bucket filled with water or lightweight objects for balancing",
     "generalRules": [
-      "Objective: The goal is to be the last player to successfully remove their shoes without causing the bucket to tip or fall.",
-      "Players and Setup: Four players lie on their backs in a small circle. They should position themselves so their legs are raised and their feet meet in the middle, creating a stable, flat surface.",
-      "The Bucket: A plastic bucket filled with water is carefully placed on the players\u0027 feet. Use a specific amount of water, like a quarter or half full, to make it consistently challenging but not impossible. For a different twist, use other items like blocks or balls instead of water.",
-      "Taking Turns: The game begins with the player closest to the \u0022referee\u0022 (or a pre-agreed-upon starting point). Play proceeds clockwise.",
-      "The Challenge: On each turn, a player must carefully remove one of their shoes using only their hands, while keeping the bucket balanced on the feet \u0022table.\u0022",
-      "Losing a Turn: If the bucket tips or falls during a player\u0027s turn, that player is out of the round. All players then reset, and a new round begins with the remaining players."
+      "**Objective:** The goal is to be the last player to successfully remove their shoes without causing the bucket to tip or fall.",
+      "**Players and Setup:** Four players lie on their backs in a small circle. They should position themselves so their legs are raised and their feet meet in the middle, creating a stable, flat surface.",
+      "**The Bucket:** A plastic bucket filled with water is carefully placed on the players\u0027 feet. Use a specific amount of water, like a quarter or half full, to make it consistently challenging but not impossible. For a different twist, use other items like blocks or balls instead of water.",
+      "**Taking Turns:** The game begins with the player closest to the \u0022referee\u0022 (or a pre-agreed-upon starting point). Play proceeds clockwise.",
+      "**The Challenge:** On each turn, a player must carefully remove one of their shoes using only their hands, while keeping the bucket balanced on the feet \u0022table.\u0022",
+      "**Losing a Turn:** If the bucket tips or falls during a player\u0027s turn, that player is out of the round. All players then reset, and a new round begins with the remaining players."
     ],
     "variations": [
       "Fill the bucket with objects instead of water and race multiple teams to see who can remove shoes first"
@@ -4257,4 +4257,5 @@
     "links": [],
     "prepLevel": "None"
   }
+
 ]
