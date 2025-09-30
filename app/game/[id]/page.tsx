@@ -49,17 +49,20 @@ export default function GameDetailPage({ params }: Props) {
           <p>{game.description}</p>
         )}
 
-        {game.generalRules && game.generalRules.length > 0 && (
-          <div>
-            <h3>Rules</h3>
-            <div className="space-y-4">
-              {game.generalRules.map((rule, i) => (
-                <Markdown key={i} content={rule} />
-                <br />
-              ))}
-            </div>
-          </div>
-        )}
+  {game.generalRules && game.generalRules.length > 0 && (
+  <div>
+    <h3>Rules</h3>
+    <div className="space-y-0">
+      {game.generalRules.map((rule, i) => (
+        <React.Fragment key={i}>
+          <Markdown content={rule} />
+          {i < game.generalRules.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+    </div>
+  </div>
+)}
+
 
         {game.equipment && (
           <div>
