@@ -52,13 +52,11 @@ export default function GameDetailPage({ params }: Props) {
         {game.generalRules && game.generalRules.length > 0 && (
           <div>
             <h3>Rules</h3>
-            <ol>
+            <div className="space-y-4">
               {game.generalRules.map((rule, i) => (
-                <li key={i}>
-                  <Markdown content={rule} />
-                </li>
+                <Markdown key={i} content={rule} />
               ))}
-            </ol>
+            </div>
           </div>
         )}
 
