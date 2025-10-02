@@ -9,7 +9,7 @@ export function Markdown({ content }: MarkdownProps) {
     <ReactMarkdown
       components={{
         p({ children }) {
-          return <>{children}</>;
+          return <p className="mb-4 last:mb-0">{children}</p>;
         },
       }}
     >

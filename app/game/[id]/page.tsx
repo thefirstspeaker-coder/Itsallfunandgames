@@ -1,5 +1,4 @@
 // app/game/[id]/page.tsx
-import { Fragment } from 'react';
 import { games } from '@/lib/loadGames';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
@@ -58,14 +57,35 @@ export default function GameDetailPage({ params }: Props) {
         {game.generalRules && game.generalRules.length > 0 && (
           <div>
             <h3>Rules</h3>
-            <div className="space-y-0">
-              {game.generalRules.map((rule, i) => (
-                <Fragment key={`${i}-${rule}`}>
-                  <Markdown content={rule} />
-                  {i < game.generalRules.length - 1 && <br />}
-                </Fragment>
-              ))}
-            </div>
+            {(() => {
+              const cleanedRules = game.generalRules
+                .map((rule) => rule.trim())
+                .filter((rule) => rule.length > 0);
+
+              if (cleanedRules.length === 0) {
+                return null;
+              }
+
+              const combinedRules = cleanedRules.reduce(
+                (acc, rule, index) => {
+                  if (index === 0) return rule;
+
+                  const previous = cleanedRules[index - 1];
+                  const currentIsListItem = /^(\d+\.|[-*+])\s/.test(rule);
+                  const previousIsListItem = previous
+                    ? /^(\d+\.|[-*+])\s/.test(previous)
+                    : false;
+
+                  const separator =
+                    currentIsListItem && previousIsListItem ? '\n' : '\n\n';
+
+                  return `${acc}${separator}${rule}`;
+                },
+                '',
+              );
+
+              return <Markdown content={combinedRules} />;
+            })()}
           </div>
         )}
 
