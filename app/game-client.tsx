@@ -21,6 +21,7 @@ import {
   PaginationLink,
 } from "@/components/ui/pagination";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -975,16 +976,20 @@ export function GameClient({
                 const topRegions = (game.regionalPopularity || []).slice(0, 2);
 
                 return (
-                  <Link
+                  <Card
                     key={game.id}
-                    href={`/game/${game.id}`}
-                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-brand-sprout/25 bg-white/95 p-6 text-left shadow-sm transition-all duration-200 no-underline hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2 focus-visible:ring-offset-brand-parchment/60"
+                    asChild
+                    className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border-brand-sprout/25 bg-card p-6 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2 focus-visible:ring-offset-background supports-[backdrop-filter]:bg-card/80 dark:border-brand-sprout/30"
                   >
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-sprout/0 via-brand-sprout/5 to-brand-marigold/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                    <div className="relative flex flex-1 flex-col gap-6">
+                    <Link
+                      href={`/game/${game.id}`}
+                      className="flex h-full flex-col justify-between text-left text-inherit no-underline"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-sprout/0 via-brand-sprout/5 to-brand-marigold/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      />
+                      <div className="relative flex flex-1 flex-col gap-6">
                       <header className="flex flex-col gap-4">
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div className="min-w-0 flex-1 space-y-2">
@@ -1090,6 +1095,7 @@ export function GameClient({
                       </span>
                     </div>
                   </Link>
+                  </Card>
                 );
               })}
             </div>
