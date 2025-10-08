@@ -10,7 +10,8 @@
     "recommendedPlayersText": "any size",
     "prepLevel": "no prep",
     "traditionality": null,
-    "regionalPopularity": null,
+    "regionalPopularity": [
+    ],
     "skillsDeveloped": [
       "listening",
       "coordination",
@@ -4304,6 +4305,7 @@
   }
 
 ]
+
 
 
 
