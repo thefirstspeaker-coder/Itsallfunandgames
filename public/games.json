@@ -60,69 +60,43 @@
   {
     "id": "the-bean-game",
     "name": "The Bean Game",
-    "category": "movement",
-    "players": {
-      "min": 4,
-      "max": null
-    },
-    "ageRange": {
-      "min": 6,
-      "max": 10
-    },
-    "durationMinutes": {
-      "min": 5,
-      "max": 15
-    },
-    "materials": [],
-    "setupImageUrl": "",
-    "playingImageUrl": "",
-    "prepLevel": "low",
-    "traditionality": "traditional",
-    "regionalPopularity": "uk",
+    "category": "physical activity",
+    "ageMin": 5,
+    "ageMax": 14,
+    "playersMin": null,
+    "playersMax": null,
+    "recommendedPlayersText": "any size",
+    "prepLevel": "no prep",
+    "traditionality": null,
+    "regionalPopularity": [
+    ],
     "skillsDeveloped": [
       "listening",
       "coordination",
-      "imagination",
-      "group participation"
+      "creativity"
     ],
+    "description": "A fast-paced physical game where players act out different types of beans when their names are called. Each bean name has a specific action and sometimes a shout, encouraging energy, quick reactions, and lots of laughter.",
     "generalRules": [
-      "**Objective:** Follow the leader’s commands and act out the different ‘bean’ types with matching movements and shouts.",
-      "1. Players spread out so they have enough room to move safely.",
-      "2. The leader calls out a type of bean, and players act it out while saying or doing the associated action or phrase.",
-      "3. Continue calling different beans in quick succession to test reaction time and listening skills.",
-      "4. Encourage creativity by inviting players to suggest new bean ideas.",
-      "5. Optional: The last player to perform the correct action can sit out or perform a fun forfeit.",
-      "**Bean Commands and Actions:**",
-      "- **String Beans:** Stretch up tall and shout “String Beans!”",
-      "- **Broad Beans:** Spread arms and legs wide and say “Broad Beans!”",
-      "- **Runner Beans:** Run on the spot and chant “Run! Run! Run!”",
-      "- **Jumping Beans:** Jump up and down shouting “Boing! Boing!”",
-      "- **Jelly Beans:** Shake your whole body and wobble while saying “Wibble wobble!”",
-      "- **Baked Beans:** Wipe your brow and say “Phew!”",
-      "- **Beans on Toast:** Lie flat on the floor and say “Toast time!”",
-      "- **Chilli Beans:** Shiver dramatically and say “Brrr! Cold!”",
-      "- **Mr. Bean:** Shrug shoulders and make a confused face, mumbling like Mr. Bean.",
-      "- **Beanie Baby:** Suck your thumb and pretend to be a baby.",
-      "- **Human Beans:** Exclaim loudly “To bean or not to bean!”",
-      "- **Bean Bags:** Huddle in a ball on the floor and stay still.",
-      "- **Bean Sprouts:** Stand tall and thin, reaching upward like a plant.",
-      "- **French Beans:** Say “Ooh la la!” or “Bonjour!” and perform a Can-Can kick.",
-      "- **Coffee Beans:** Cough repeatedly while covering your mouth.",
-      "- **Butter Beans:** Slide or scoot around the floor on your bottom.",
-      "- **Has Beans:** Walk slowly and act old and frail.",
-      "- **Magic Beans:** Wave an imaginary wand and shout “Abracadabra!”"
+      "**Objective:** Listen carefully to the leader’s call and act out the correct bean as quickly as possible, including the matching movement and shout where applicable.",
+      "**Setup:** No equipment or preparation is needed. Players stand spaced out with room to move safely.",
+      "**Gameplay:** The leader calls out the name of a bean, and players perform the matching action and say the associated phrase if there is one:\n1. **String beans** – stretch up as high as you can.\n2. **Broad beans** – make yourself as wide as possible.\n3. **Runner beans** – run on the spot.\n4. **Jumping beans** – jump on the spot.\n5. **Jelly beans** – shake your whole body like jelly.\n6. **Baked beans** – wipe your brow and say loudly, *“Phew!”*.\n7. **Beans on toast** – lie flat on the floor.\n8. **Chilli beans** – shiver as if you are freezing and say, *“Brrr!”*.\n9. **Mr. Bean** – shrug your shoulders and make a confused face, saying, *“Hmm?”*.\n10. **Beanie Baby** – suck your thumb and maybe say, *“Waaah!”*.\n11. **Human beans** – stand proudly and exclaim, *“To bean or not to bean!”*.\n12. **Bean bags** – huddle in a ball on the floor.\n13. **Bean sprouts** – stand tall and thin, stretching upwards.\n14. **French beans** – say *“Ooh la la!”* or *“Bonjour!”* and do a Can-Can kick.\n15. **Coffee beans** – cough dramatically, *“Cough! Cough!”*, covering your mouth.\n16. **Butter beans** – slide around the floor on your bottom saying, *“Slippy!”*.\n17. **Has beans** – walk around as if old and frail, saying, *“Oh, my back!”*.\n18. **Magic beans** – wave an imaginary wand and say, *“Abracadabra!”* or *“Hocus pocus!”*.",
+      "**Leader Tips:** Mix up the calls quickly to keep players alert. Gradually speed up or combine two beans to challenge reactions (e.g., *‘Runner Beans and Jelly Beans!’*).",
+      "**Variations:** Invite players to create new bean types with fun movements or sounds. Use as a warm-up or listening skills activity.",
+      "**End of Game:** Continue until players are tired, or the leader calls *“All beans on toast!”* (everyone lies down to finish)."
     ],
+    "setupImageUrl": "",
+    "playingImageUrl": "",
     "keywords": [
-      "movement",
       "beans",
       "scouts",
+      "physical",
+      "movement",
       "listening",
-      "reaction",
-      "fun",
-      "group",
-      "children",
-      "exercise",
-      "commands"
+      "coordination",
+      "creativity",
+      "warmup",
+      "action",
+      "shouts"
     ]
   }
   ,{
@@ -4389,6 +4363,7 @@
   }
 
 ]
+
 
 
 
