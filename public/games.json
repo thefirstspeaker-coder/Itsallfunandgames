@@ -1,5 +1,63 @@
 [
   {
+    "id": "traffic-lights",
+    "name": "Traffic Lights",
+    "category": "Physical Activity",
+    "ageMin": 5,
+    "ageMax": 11,
+    "playersMin": 2,
+    "playersMax": null,
+    "recommendedPlayersText": "suitable for small or large groups",
+    "prepLevel": "low",
+    "traditionality": "modern",
+    "regionalPopularity": ["UK primary schools"],
+    "regionalNames": [],
+    "description": "Traffic Lights is an energetic warm-up and reaction game where a leader calls out traffic-related commands, and players respond with the matching physical action. It helps children develop listening, coordination, and teamwork skills while being active and having fun.",
+    "generalRules": [
+      "**Objective:** Follow each command quickly and correctly based on the traffic-related cue announced by the leader.",
+      "**Commands:**",
+      "- **Red:** Stop completely.",
+      "- **Yellow:** Run on the spot.",
+      "- **Green:** Run freely around the area.",
+      "- **Roundabout:** Turn around once.",
+      "- **Motorway:** Sprint (used later in warm-up).",
+      "- **Speedbump:** Jump and continue running.",
+      "- **Carpool:** Move in groups of two or more.",
+      "- **Foggy weather:** One leads, the other closes eyes and follows.",
+      "- **Low bridge:** Walk crouched or low to the ground.",
+      "- **Traffic Jam:** Walk or jog slowly.",
+      "- **Right/Left:** Change direction.",
+      "- **School Zone:** Alternate between slow walking and stopping.",
+      "- **Change Lanes:** Change direction again.",
+      "- **Reverse Parking:** Walk backwards.",
+      "- **Roadworks:** Run in single file.",
+      "- **Breakdown:** Lie down until rescued.",
+      "- **Rain:** Move arms like windscreen wipers.",
+      "- **Zebra crossing:** Gallop like a zebra.",
+      "- **Pelican crossing:** Move arms like wings or a beak.",
+      "- **Lollipop lady:** Hold hands out and shout “stop.”",
+      "- **Traffic warden:** Pretend to check a watch and wag finger saying “tut tut tut.”",
+      "- **Police Car:** Sit and spin while shouting “nee naw.”",
+      "- **Fire Engine:** Run pretending to hold a hose.",
+      "**Optional Variations:**",
+      "- Use gears for speed changes: 1st = walk, 2nd = jog, 3rd = run, 4th = sprint.",
+      "- Add a football or basketball for extra challenge: e.g., 'Park' = sit on the ball, 'New Car' = run to a new ball.",
+      "- Extend with new commands, and introduce a ‘driver’s test’ for fun assessment."
+    ],
+    "variations": [
+      "Include footballs or basketballs for added coordination challenges.",
+      "Add new themed commands over time.",
+      "Introduce a driver’s license system or tickets for incorrect actions."
+    ],
+    "skillsDeveloped": ["listening skills", "reaction time", "coordination", "teamwork"],
+    "tags": ["movement", "warm-up", "listening", "reaction", "coordination", "teamwork", "classroom", "PE", "UK"],
+    "keywords": ["traffic", "game", "commands", "movement", "reaction", "listening", "warm-up", "children", "PE", "school"],
+    "relatedGames": [],
+    "links": [],
+    "setupImageUrl": "",
+    "playingImageUrl": ""
+  },
+  {
     "id": "the-bean-game",
     "name": "The Bean Game",
     "category": "movement",
@@ -4331,5 +4389,6 @@
   }
 
 ]
+
 
 
