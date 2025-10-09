@@ -20,13 +20,17 @@ const getUniqueValues = (games: Game[], key: keyof Game) => {
 };
 
 export default function HomePage() {
+  const sortedGames = [...games].sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+  );
+
   const facets = {
-    category: getUniqueValues(games, 'category'),
-    tags: getUniqueValues(games, 'tags'),
-    traditionality: getUniqueValues(games, 'traditionality'),
-    prepLevel: getUniqueValues(games, 'prepLevel'),
-    skillsDeveloped: getUniqueValues(games, 'skillsDeveloped'),
-    regionalPopularity: getUniqueValues(games, 'regionalPopularity'),
+    category: getUniqueValues(sortedGames, 'category'),
+    tags: getUniqueValues(sortedGames, 'tags'),
+    traditionality: getUniqueValues(sortedGames, 'traditionality'),
+    prepLevel: getUniqueValues(sortedGames, 'prepLevel'),
+    skillsDeveloped: getUniqueValues(sortedGames, 'skillsDeveloped'),
+    regionalPopularity: getUniqueValues(sortedGames, 'regionalPopularity'),
   };
 
   return (
@@ -52,7 +56,7 @@ export default function HomePage() {
           </div>
         }
       >
-        <GameClient allGames={games} facets={facets} />
+        <GameClient allGames={sortedGames} facets={facets} />
       </Suspense>
     </section>
   );
