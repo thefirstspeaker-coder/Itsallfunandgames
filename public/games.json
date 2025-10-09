@@ -98,9 +98,9 @@
       "action",
       "shouts"
     ]
-  }
-  ,{
-    "id": "balance-patience",
+  },
+  {
+    "id": "balancing-act",
     "name": "Balancing Act",
     "description": "A team balance challenge where four players form a table with their feet and try to remove their shoes without tipping a bucket on top.",
     "category": "Wide",
@@ -113,10 +113,10 @@
     "generalRules": [
       "**Objective:** The goal is to be the last player to successfully remove their shoes without causing the bucket to tip or fall.",
       "**Players and Setup:** Four players lie on their backs in a small circle. They should position themselves so their legs are raised and their feet meet in the middle, creating a stable, flat surface.",
-      "**The Bucket:** A plastic bucket filled with water is carefully placed on the players\u0027 feet. Use a specific amount of water, like a quarter or half full, to make it consistently challenging but not impossible. For a different twist, use other items like blocks or balls instead of water.",
-      "**Taking Turns:** The game begins with the player closest to the \u0022referee\u0022 (or a pre-agreed-upon starting point). Play proceeds clockwise.",
-      "**The Challenge:** On each turn, a player must carefully remove one of their shoes using only their hands, while keeping the bucket balanced on the feet \u0022table.\u0022",
-      "**Losing a Turn:** If the bucket tips or falls during a player\u0027s turn, that player is out of the round. All players then reset, and a new round begins with the remaining players."
+      "**The Bucket:** A plastic bucket filled with water is carefully placed on the players' feet. Use a specific amount of water, like a quarter or half full, to make it consistently challenging but not impossible. For a different twist, use other items like blocks or balls instead of water.",
+      "**Taking Turns:** The game begins with the player closest to the 'referee' (or a pre-agreed-upon starting point). Play proceeds clockwise.",
+      "**The Challenge:** On each turn, a player must carefully remove one of their shoes using only their hands, while keeping the bucket balanced on the feet 'table.'",
+      "**Losing a Turn:** If the bucket tips or falls during a player's turn, that player is out of the round. All players then reset, and a new round begins with the remaining players."
     ],
     "variations": [
       "Fill the bucket with objects instead of water and race multiple teams to see who can remove shoes first"
@@ -129,41 +129,48 @@
       "wide-area"
     ],
     "regionalPopularity": [
-      "UK-wide"
+      "United Kingdom"
     ],
     "regionalNames": [],
     "keywords": [
       "balance",
-      "patience"
+      "patience",
+      "teamwork",
+      "bucket",
+      "coordination",
+      "challenge",
+      "game"
     ],
     "traditionality": "Traditional",
     "historicalNotes": "",
     "notes": "",
     "relatedGames": [],
     "links": [],
-    "prepLevel": "Little"
+    "prepLevel": "Little",
+    "setupImageUrl": "",
+    "playingImageUrl": ""
   },
   {
     "id": "blind-man-s-buff",
-    "name": "Blind Man\u2019s Buff",
+    "name": "Blind Man’s Buff",
     "description": "Find and tag another player while blindfolded.",
     "category": "Party",
     "ageMin": 8,
     "ageMax": 11,
     "playersMin": 5,
     "playersMax": null,
-    "recommendedPlayersText": "4\u002B",
+    "recommendedPlayersText": "4+",
     "equipment": "Soft blindfold",
     "generalRules": [
       "**How to Play:**",
-      "1. Pick one player to be \u0022it\u0022 and blindfold them.",
+      "1. Pick one player to be 'it' and blindfold them.",
       "2. The other players move around and make noise to avoid being caught.",
-      "3. \u0022It\u0022 tries to tag someone.",
-      "    ",
+      "3. 'It' tries to tag someone.",
+      "",
       "**How to Win:**",
-      "When \u0022it\u0022 tags a person, that person becomes the new \u0022it\u0022 for the next round.",
-      "    ",
-      "**Important:** ",
+      "When 'it' tags a person, that person becomes the new 'it' for the next round.",
+      "",
+      "**Important:**",
       "Play in a safe, clear area with no obstacles."
     ],
     "variations": [
@@ -178,25 +185,28 @@
       "tag"
     ],
     "regionalPopularity": [
-      "UK-wide"
+      "United Kingdom"
     ],
     "regionalNames": [],
     "keywords": [
-      "area",
-      "blind",
-      "blindfolded",
-      "buff",
-      "clear",
-      "man",
-      "safe",
-      "tag"
+      "blindfold",
+      "tag",
+      "classic",
+      "game",
+      "party",
+      "traditional",
+      "chasing",
+      "children",
+      "safe"
     ],
     "traditionality": "Traditional",
-    "historicalNotes": "The game dates back more than two millennia; it was played in Ancient Greece and has variants across Europe with names like \u201Cblind cow\u201D and \u201Cblind hen\u201D.",
+    "historicalNotes": "The game dates back more than two millennia; it was played in Ancient Greece and has variants across Europe with names like 'blind cow' and 'blind hen'.",
     "notes": "Remove hazards first.",
     "relatedGames": [],
     "links": [],
-    "prepLevel": "Unknown"
+    "prepLevel": "Little",
+    "setupImageUrl": "",
+    "playingImageUrl": ""
   },
   {
     "id": "blindmans-prize",
@@ -205,52 +215,55 @@
     "category": "Wide",
     "ageMin": 8,
     "ageMax": 11,
-    "playersMin": null,
+    "playersMin": 2,
     "playersMax": null,
-    "recommendedPlayersText": "",
-    "equipment": "Little",
+    "recommendedPlayersText": "pairs; 4+ ideal",
+    "equipment": "Soft blindfolds (one per team); a prize (e.g., small toy or treat); optional cones or markers to define boundaries or hazards",
     "generalRules": [
-      "Setup:",
-      "1. Designate a clear, open playing area free of any obstacles or breakable items.",
-      "2. Divide all players into teams of two.",
-      "3. One partner from each team is blindfolded, making sure they cannot peek.",
-      "4. All teams start on one side of the playing area.",
-      "How to Play:",
-      "1. Once everyone is in position, reveal the prize. It should be something appealing, like a bar of chocolate, a small toy, or a fun item.",
-      "2. All teams begin at the same time. The non-blindfolded partners must remain at the starting line. They can only guide their blindfolded partner to the prize using verbal commands (e.g., \u0022three steps forward,\u0022 \u0022turn left,\u0022 \u0022stop\u0022). No physical contact or pointing is allowed.",
-      "3. The blindfolded partners must listen carefully and follow their teammate\u0027s instructions.",
-      "4. The game ends when a blindfolded partner successfully grabs the prize.",
-      "Winning: The team whose blindfolded partner grabs the prize first wins the round.",
-      "Variations:",
-      "Multiple Rounds: The blindfolded partners can swap with their teammates for another round to give everyone a chance to be the guide.",
-      "Obstacle Course: For a more challenging version, you could add simple, non-hazardous obstacles (like pillows or blankets) for the blindfolded players to navigate around."
+      "**Setup:** Designate a clear, open playing area free of obstacles or breakables. Divide players into teams of two; blindfold one partner from each team. All teams start from the same baseline; sighted partners must remain at the line.",
+      "**How to Play:** On the signal, sighted partners guide their blindfolded teammates using only verbal commands (e.g., \"three steps forward,\" \"turn left,\" \"stop\"). No physical contact or pointing is allowed. Blindfolded partners follow instructions to navigate toward the prize.",
+      "**Winning:** The round ends when a blindfolded partner grabs the prize; that team wins the round.",
+      "**Safety:** Use soft blindfolds, check for hazards, and keep the guiding partner behind the start line to avoid collisions."
     ],
-    "variations": [],
+    "variations": [
+      "Multiple rounds: partners swap roles so everyone guides and navigates.",
+      "Obstacle course: add simple, non-hazardous obstacles (e.g., pillows) to navigate around for a harder version."
+    ],
     "skillsDeveloped": [
+      "Communication",
+      "Listening",
+      "Trust",
+      "Spatial Awareness",
       "Agility"
     ],
     "tags": [
-      "wide-area"
+      "wide-area",
+      "blindfold"
     ],
     "regionalPopularity": [
-      "UK-wide"
+      "United Kingdom"
     ],
     "regionalNames": [],
     "keywords": [
-      "action",
-      "blindmans",
-      "communication",
-      "funny",
-      "game",
-      "mild",
-      "prize"
+      "blindfold",
+      "verbal",
+      "guide",
+      "partner",
+      "team",
+      "race",
+      "prize",
+      "navigation",
+      "wide-game",
+      "communication"
     ],
     "traditionality": "Traditional",
     "historicalNotes": "",
     "notes": "",
     "relatedGames": [],
     "links": [],
-    "prepLevel": "Little"
+    "prepLevel": "Little",
+    "setupImageUrl": "",
+    "playingImageUrl": ""
   },
   {
     "id": "body-parts",
@@ -4363,6 +4376,7 @@
   }
 
 ]
+
 
 
 
