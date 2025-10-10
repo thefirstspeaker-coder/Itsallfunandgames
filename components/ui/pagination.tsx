@@ -14,7 +14,12 @@ export function Pagination({ className, ...props }: React.ComponentProps<"nav">)
 }
 
 export function PaginationContent({ className, ...props }: React.ComponentProps<"ul">) {
-  return <ul className={cn("flex flex-row items-center gap-1", className)} {...props} />
+  return (
+    <ul
+      className={cn("flex flex-row list-none items-center gap-1", className)}
+      {...props}
+    />
+  )
 }
 
 export function PaginationItem({ className, ...props }: React.ComponentProps<"li">) {
