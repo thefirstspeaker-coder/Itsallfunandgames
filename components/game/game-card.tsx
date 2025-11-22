@@ -13,16 +13,39 @@ import {
     Wrench,
     LucideIcon,
 } from "lucide-react";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface GameCardProps {
     game: Game;
 }
 
-const InfoItem = ({ icon: Icon, label }: { icon: LucideIcon; label: string }) => (
-    <div className="flex items-center gap-2.5 text-sm font-medium text-text-brand/80">
-        <Icon className="h-4 w-4 text-brand-sprout" />
-        <span className="truncate">{label}</span>
-    </div>
+const InfoItem = ({
+    icon: Icon,
+    label,
+    tooltip,
+}: {
+    icon: LucideIcon;
+    label: string;
+    tooltip: string;
+}) => (
+    <TooltipProvider>
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <div className="flex items-center gap-2.5 text-sm font-medium text-text-brand/80 cursor-help">
+                    <Icon className="h-4 w-4 text-brand-sprout" />
+                    <span className="truncate">{label}</span>
+                </div>
+            </TooltipTrigger>
+            <TooltipContent>
+                <p>{tooltip}</p>
+            </TooltipContent>
+        </Tooltip>
+    </TooltipProvider>
 );
 
 export function GameCard({ game }: GameCardProps) {
@@ -91,13 +114,32 @@ export function GameCard({ game }: GameCardProps) {
 
                     <div className="mt-auto space-y-4">
                         <div className="grid grid-cols-2 gap-y-2 gap-x-4 rounded-2xl bg-surface-sunken/50 p-3">
-                            {playersText && <InfoItem icon={Users} label={playersText} />}
-                            {ageText && <InfoItem icon={Baby} label={ageText} />}
-                            {prepText && <InfoItem icon={Wrench} label={prepText} />}
+                            {playersText && (
+                                <InfoItem
+                                    icon={Users}
+                                    label={playersText}
+                                    tooltip="Number of players"
+                                />
+                            )}
+                            {ageText && (
+                                <InfoItem
+                                    icon={Baby}
+                                    label={ageText}
+                                    tooltip="Recommended age"
+                                />
+                            )}
+                            {prepText && (
+                                <InfoItem
+                                    icon={Wrench}
+                                    label={prepText}
+                                    tooltip="Preparation level"
+                                />
+                            )}
                             {game.traditionality && (
                                 <InfoItem
                                     icon={ScrollText}
                                     label={prettifyFilterValue(game.traditionality)}
+                                    tooltip="Game style"
                                 />
                             )}
                         </div>
