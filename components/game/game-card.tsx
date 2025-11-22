@@ -86,7 +86,7 @@ export function GameCard({ game }: GameCardProps) {
     return (
         <Card
             asChild
-            className="group relative flex h-full flex-col overflow-hidden rounded-3xl border-brand-sprout/20 bg-surface-raised p-0 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-sprout/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2"
+            className="group relative flex h-full flex-col overflow-hidden rounded-[32px] border-brand-sprout/20 bg-surface-raised p-0 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-sprout/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2"
         >
             <Link
                 href={`/game/${game.id}`}
