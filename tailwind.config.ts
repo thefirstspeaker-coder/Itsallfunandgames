@@ -35,6 +35,18 @@ export default {
           cloud: '#f2f2f2',
           night: '#1a1a1a',
         },
+        // Semantic tokens
+        surface: {
+          DEFAULT: 'hsl(var(--background))',
+          sunken: 'var(--surface-sunken)', // e.g. parchment/60
+          raised: 'var(--surface-raised)', // e.g. white/80
+          highlight: 'var(--surface-highlight)', // e.g. sprout/15
+        },
+        text: {
+          primary: 'hsl(var(--foreground))',
+          secondary: 'hsl(var(--muted-foreground))',
+          brand: 'var(--text-brand)', // e.g. brand-ink
+        },
 
         primary: {
           DEFAULT: 'hsl(var(--primary))',

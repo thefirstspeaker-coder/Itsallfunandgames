@@ -59,6 +59,12 @@
         rgba(255, 237, 213, 0.65),
         rgba(255, 237, 213, 0)
       );
+
+    /* Semantic Tokens */
+    --surface-sunken: rgba(249, 247, 232, 0.6); /* parchment/60 */
+    --surface-raised: rgba(255, 255, 255, 0.8); /* white/80 */
+    --surface-highlight: rgba(128, 179, 128, 0.15); /* sprout/15 */
+    --text-brand: #4B4B4B; /* brand-ink */
   }
 
   .dark {
@@ -92,6 +98,12 @@
         rgba(76, 29, 149, 0.35),
         rgba(15, 23, 42, 0)
       );
+      
+    /* Dark Mode Semantic Tokens */
+    --surface-sunken: rgba(15, 23, 42, 0.5);
+    --surface-raised: rgba(30, 41, 59, 0.8);
+    --surface-highlight: rgba(128, 179, 128, 0.1);
+    --text-brand: #E2E8F0;
   }
 
   /* Avoid putting borders on EVERYTHING */
