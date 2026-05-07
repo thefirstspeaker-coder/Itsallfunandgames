@@ -6,9 +6,7 @@ import { prettifyFilterValue } from "@/lib/utils";
 import {
     ArrowRight,
     Baby,
-    Globe2,
     ScrollText,
-    Sparkles,
     Users,
     Wrench,
     LucideIcon,
@@ -36,8 +34,8 @@ const InfoItem = ({
     <TooltipProvider>
         <Tooltip>
             <TooltipTrigger asChild>
-                <div className="flex items-center gap-2.5 text-sm font-medium text-text-brand/80 cursor-help">
-                    <Icon className="h-4 w-4 text-brand-sprout" />
+                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-2.5 py-1 text-xs font-semibold text-cyan-100/95 cursor-help transition-colors group-hover:border-cyan-200/50 group-hover:bg-cyan-300/20">
+                    <Icon className="h-3.5 w-3.5 text-cyan-200" />
                     <span className="truncate">{label}</span>
                 </div>
             </TooltipTrigger>
