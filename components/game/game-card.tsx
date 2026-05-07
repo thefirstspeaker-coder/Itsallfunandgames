@@ -86,7 +86,7 @@ export function GameCard({ game }: GameCardProps) {
     return (
         <Card
             asChild
-            className="group relative flex h-full flex-col overflow-hidden rounded-[32px] border-brand-sprout/20 bg-surface-raised p-0 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-brand-sprout/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold focus-visible:ring-offset-2"
+            className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border-cyan-300/25 bg-slate-900/70 p-0 text-left shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_rgba(6,182,212,0.2)] hover:border-cyan-300/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2"
         >
             <Link
                 href={`/game/${game.id}`}
@@ -97,23 +97,23 @@ export function GameCard({ game }: GameCardProps) {
                         <div className="flex items-start justify-between gap-3">
                             <div className="space-y-1.5">
                                 {game.category && (
-                                    <span className="inline-flex items-center rounded-full bg-brand-sprout/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-brand-sprout">
+                                    <span className="inline-flex items-center rounded-full bg-cyan-300/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-cyan-200">
                                         {prettifyFilterValue(game.category)}
                                     </span>
                                 )}
-                                <h2 className="font-heading text-xl font-bold text-text-brand transition-colors group-hover:text-brand-sprout sm:text-2xl line-clamp-2">
+                                <h2 className="font-heading text-xl font-bold text-slate-100 transition-colors group-hover:text-cyan-200 sm:text-2xl line-clamp-2">
                                     {game.name}
                                 </h2>
                             </div>
                         </div>
-                        <p className="text-sm leading-relaxed text-text-brand/70 line-clamp-3">
+                        <p className="text-sm leading-relaxed text-slate-300/90 line-clamp-3">
                             {description ||
                                 "Discover the rules, twists, and fun variations for this game."}
                         </p>
                     </header>
 
                     <div className="mt-auto space-y-4">
-                        <div className="grid grid-cols-2 gap-y-2 gap-x-4 rounded-2xl bg-surface-sunken/50 p-3">
+                        <div className="grid grid-cols-2 gap-y-2 gap-x-4 rounded-2xl border border-slate-700/80 bg-slate-950/45 p-3">
                             {playersText && (
                                 <InfoItem
                                     icon={Users}
@@ -150,7 +150,7 @@ export function GameCard({ game }: GameCardProps) {
                                     <Badge
                                         key={skill}
                                         variant="secondary"
-                                        className="rounded-md bg-surface-highlight px-2 py-0.5 text-[10px] font-semibold text-text-brand/80 transition-colors group-hover:bg-brand-sprout/10 group-hover:text-brand-sprout"
+                                        className="rounded-md bg-cyan-300/10 px-2 py-0.5 text-[10px] font-semibold text-cyan-100 transition-colors group-hover:bg-fuchsia-300/20 group-hover:text-fuchsia-100"
                                     >
                                         {prettifyFilterValue(skill)}
                                     </Badge>
@@ -160,7 +160,7 @@ export function GameCard({ game }: GameCardProps) {
                     </div>
                 </div>
 
-                <div className="relative flex items-center justify-between border-t border-brand-sprout/10 bg-surface-sunken/30 px-5 py-3 text-sm font-semibold text-brand-sprout transition-colors group-hover:bg-brand-sprout/5">
+                <div className="relative flex items-center justify-between border-t border-cyan-300/20 bg-slate-950/60 px-5 py-3 text-sm font-semibold text-cyan-200 transition-colors group-hover:bg-cyan-300/10">
                     <span className="inline-flex items-center gap-2">
                         View details
                     </span>

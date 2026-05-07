@@ -36,14 +36,14 @@ export default function HomePage() {
   return (
     <section className="relative z-10 space-y-12 sm:space-y-16">
       <div className="mx-auto max-w-3xl text-center">
-        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-primary shadow-sm">
+        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-400/10 px-4 py-1 text-sm font-semibold uppercase tracking-wide text-cyan-200 shadow-sm">
           <span aria-hidden="true">🎲</span>
           Game inspiration
         </span>
-        <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+        <h1 className="bg-gradient-to-r from-cyan-200 via-sky-100 to-fuchsia-200 bg-clip-text text-4xl font-black tracking-tight text-transparent sm:text-5xl lg:text-6xl">
           Find Your Next Favourite Game
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground sm:text-xl">
+        <p className="mt-4 text-lg text-slate-300 sm:text-xl">
           Browse curated activities, mix and match filters, and plan unforgettable play sessions for any group, age, or space.
         </p>
       </div>

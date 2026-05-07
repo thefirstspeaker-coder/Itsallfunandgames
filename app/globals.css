@@ -23,81 +23,69 @@
     --color-neutral-900: #0B0F12;
 
     /* shadcn/ui tokens (HSL values) */
-    --background: 52 100% 96%; /* warm light */
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --background: 218 47% 10%;
+    --foreground: 210 40% 98%;
+    --card: 222 40% 14%;
+    --card-foreground: 210 40% 98%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 123 46% 34%; /* #2E7D32 */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 207 75% 46%; /* #1976D2 */
+    --primary: 188 100% 47%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 273 100% 68%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 38 100% 50%; /* #FFB300 */
-    --accent-foreground: 230 25% 15%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 215 20% 78%;
+    --accent: 334 100% 62%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 150 62% 58%;
+    --border: 222 23% 26%;
+    --input: 222 23% 26%;
+    --ring: 188 100% 47%;
 
     --spacing-base: 8px;
     --radius: 16px;
     --shadow-subtle: 0 1px 2px rgb(0 0 0 / 0.05);
     --border-width: 1px;
     --focus-ring: oklch(0.7 0.2 150);
-    --body-background-image: url("/Itsallfunandgames/bg_light.png");
-    --body-overlay: radial-gradient(
-        circle at 15% 20%,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.45) 55%
-      ),
-      radial-gradient(
-        circle at 85% 80%,
-        rgba(255, 237, 213, 0.65),
-        rgba(255, 237, 213, 0)
-      );
+    --body-background-image: none;
+    --body-overlay:
+      radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.18), transparent 35%),
+      radial-gradient(circle at 80% 12%, rgba(217, 70, 239, 0.16), transparent 30%),
+      linear-gradient(180deg, #0b1120 0%, #131b33 50%, #0b1020 100%);
 
     /* Semantic Tokens */
-    --surface-sunken: rgba(249, 247, 232, 0.6); /* parchment/60 */
-    --surface-raised: rgba(255, 255, 255, 0.8); /* white/80 */
-    --surface-highlight: rgba(128, 179, 128, 0.15); /* sprout/15 */
-    --text-brand: #4B4B4B; /* brand-ink */
+    --surface-sunken: rgba(15, 23, 42, 0.72);
+    --surface-raised: rgba(30, 41, 59, 0.72);
+    --surface-highlight: rgba(34, 211, 238, 0.18);
+    --text-brand: #e2e8f0;
   }
 
   .dark {
-    --background: 222 47% 7%;
+    --background: 218 47% 10%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
+    --card: 222 40% 14%;
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
-    --primary: 123 53% 46%;
-    --primary-foreground: 0 0% 10%;
-    --secondary: 207 75% 46%;
-    --secondary-foreground: 0 0% 10%;
+    --primary: 188 100% 47%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 273 100% 68%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 217 32% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 38 100% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 334 100% 62%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 63% 37%;
     --destructive-foreground: 0 0% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 150 62% 58%;
-    --body-background-image: url("/Itsallfunandgames/bg_dark.png");
-    --body-overlay: radial-gradient(
-        circle at 15% 20%,
-        rgba(15, 23, 42, 0.88),
-        rgba(15, 23, 42, 0.6) 60%
-      ),
-      radial-gradient(
-        circle at 80% 85%,
-        rgba(76, 29, 149, 0.35),
-        rgba(15, 23, 42, 0)
-      );
+    --border: 222 23% 26%;
+    --input: 222 23% 26%;
+    --ring: 188 100% 47%;
+    --body-background-image: none;
+    --body-overlay:
+      radial-gradient(circle at 20% 10%, rgba(34, 211, 238, 0.18), transparent 35%),
+      radial-gradient(circle at 80% 12%, rgba(217, 70, 239, 0.16), transparent 30%),
+      linear-gradient(180deg, #0b1120 0%, #131b33 50%, #0b1020 100%);
       
     /* Dark Mode Semantic Tokens */
     --surface-sunken: rgba(15, 23, 42, 0.5);
@@ -145,4 +133,3 @@
     @apply !transition-none !animate-none;
   }
 }
-
