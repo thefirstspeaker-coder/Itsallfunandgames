@@ -9,16 +9,16 @@ export function Header() {
   const { setTheme, theme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-cyan-400/20 bg-slate-950/75 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/65">
       <div className="container flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="font-heading text-2xl font-bold text-primary transition-colors hover:text-secondary"
+          className="font-heading text-2xl font-bold tracking-tight text-cyan-300 transition-colors hover:text-fuchsia-300"
         >
           itsallfunandgames
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium">
-          <Link href="/data/quality" className="hover:text-secondary">
+        <nav className="flex items-center gap-6 text-sm font-medium text-slate-200">
+          <Link href="/data/quality" className="transition-colors hover:text-cyan-300">
             Diagnostics
           </Link>
           <Button
