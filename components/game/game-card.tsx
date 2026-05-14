@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { prettifyFilterValue } from "@/lib/utils";
 import { Bookmark, BookmarkCheck } from "lucide-react";
+import Link from "next/link";
 
 interface GameCardProps {
   game: Game;
@@ -59,7 +60,11 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
         </Button>
       </div>
       <div className="space-y-4 p-5">
-        <h2 className="text-2xl font-bold text-text-brand">{game.name}</h2>
+        <h2 className="text-2xl font-bold text-text-brand">
+          <Link href={`/game/${game.id}`} className="hover:underline focus-visible:underline">
+            {game.name}
+          </Link>
+        </h2>
         <p className="line-clamp-3 text-sm text-text-brand/75">{game.description || "A playful activity for your next group session."}</p>
         <div className="flex flex-wrap gap-2">
           {metadata.map((item, index) => {
@@ -80,6 +85,14 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
               </button>
             );
           })}
+        </div>
+        <div className="pt-1">
+          <Link
+            href={`/game/${game.id}`}
+            className="inline-flex rounded-full bg-brand-marigold px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand-marigold-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-sprout"
+          >
+            View game details
+          </Link>
         </div>
       </div>
     </Card>
