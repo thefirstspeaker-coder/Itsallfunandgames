@@ -18,7 +18,7 @@ import {
   PanelLeftOpen,
   X,
 } from "lucide-react";
-import { cn, prettifyFilterValue } from "@/lib/utils";
+import { prettifyFilterValue } from "@/lib/utils";
 import { FacetKey, facetKeys, filterMeta } from "@/lib/constants";
 import { FilterSidebar } from "@/components/game/filter-sidebar";
 import { SearchBar } from "@/components/game/search-bar";
@@ -37,6 +37,7 @@ type Facets = Record<FacetKey, string[]>;
 type FiltersState = {
   query: string;
   page: number;
+  bookmarkedOnly: boolean;
 } & {
   [K in FacetKey]: string[];
 };
@@ -52,6 +53,7 @@ const createEmptySelections = (): Record<FacetKey, string[]> =>
 const createDefaultFilters = (): FiltersState => ({
   query: "",
   page: DEFAULT_PAGE,
+  bookmarkedOnly: false,
   ...createEmptySelections(),
 });
 
@@ -78,6 +80,7 @@ const buildFiltersFromParams = (
   const next = createDefaultFilters();
   next.query = params.get("q") ?? "";
   next.page = parsePageParam(params.get("page"));
+  next.bookmarkedOnly = params.get("bookmarked") === "1";
 
   facetKeys.forEach((key) => {
     const values = params
@@ -100,7 +103,7 @@ const arraysEqual = (a: string[], b: string[]) => {
 };
 
 const areFiltersEqual = (a: FiltersState, b: FiltersState) => {
-  if (a.query !== b.query || a.page !== b.page) return false;
+  if (a.query !== b.query || a.page !== b.page || a.bookmarkedOnly !== b.bookmarkedOnly) return false;
   return facetKeys.every((key) => arraysEqual(a[key], b[key]));
 };
 
@@ -141,6 +144,7 @@ export function GameClient({
   }
 
   const [debouncedQuery] = useDebounce(filters.query, 300);
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
 
   const filteredGames = useMemo(() => {
     const trimmedQuery = debouncedQuery.trim();
@@ -149,6 +153,7 @@ export function GameClient({
       : allGames;
 
     return searchResults.filter((game) => {
+      if (filters.bookmarkedOnly && !bookmarkedIds.has(game.id)) return false;
       const {
         category: selectedCategories,
         tags: selectedTags,
@@ -207,7 +212,7 @@ export function GameClient({
 
       return true;
     });
-  }, [allGames, debouncedQuery, filters, fuse]);
+  }, [allGames, debouncedQuery, filters, fuse, bookmarkedIds]);
 
   const totalPages = Math.ceil(filteredGames.length / perPage);
   const currentPage = Math.min(filters.page, totalPages || 1);
@@ -220,6 +225,8 @@ export function GameClient({
     const params = new URLSearchParams();
     const trimmedQuery = filters.query.trim();
     if (trimmedQuery) params.set("q", trimmedQuery);
+
+    if (filters.bookmarkedOnly) params.set("bookmarked", "1");
 
     facetKeys.forEach((key) => {
       filters[key].forEach((value) => {
@@ -303,6 +310,24 @@ export function GameClient({
       return { ...prev, [key]: [], page: DEFAULT_PAGE };
     });
     setFilterSearches((prev) => ({ ...prev, [key]: "" }));
+  };
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem("iafg-bookmarks");
+    if (!stored) return;
+    try {
+      const parsed = JSON.parse(stored) as string[];
+      setBookmarkedIds(new Set(parsed));
+    } catch {}
+  }, []);
+
+  const toggleBookmark = (id: string) => {
+    setBookmarkedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      window.localStorage.setItem("iafg-bookmarks", JSON.stringify(Array.from(next)));
+      return next;
+    });
   };
 
   const resetFilters = () => {
@@ -446,6 +471,7 @@ export function GameClient({
 
           <div className="rounded-3xl border border-brand-sprout/20 bg-surface-raised/90 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
+              <Button type="button" variant={filters.bookmarkedOnly ? "default" : "outline"} className="rounded-full" onClick={() => setFilters((p) => ({...p, bookmarkedOnly: !p.bookmarkedOnly, page: DEFAULT_PAGE}))}>Bookmarked only</Button>
               <div>
                 <h1 className="font-heading text-2xl font-semibold text-text-brand sm:text-3xl">
                   {heading}
@@ -496,7 +522,7 @@ export function GameClient({
             </div>
           )}
 
-          <GameGrid games={paginatedGames} resetFilters={resetFilters} />
+          <GameGrid games={paginatedGames} resetFilters={resetFilters} bookmarkedIds={bookmarkedIds} onToggleBookmark={toggleBookmark} onTagToggle={(value, include) => updateFilterValue("tags", value, include)} activeTags={new Set(filters.tags)} />
 
           <PaginationControl
             currentPage={currentPage}
