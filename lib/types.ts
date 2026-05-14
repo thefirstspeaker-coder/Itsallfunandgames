@@ -4,6 +4,7 @@ import { z } from 'zod';
 export const GameSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1, 'Name is required'),
+  image: z.string().nullable().optional(),
   description: z.string().nullable().optional(),
   category: z.string().nullable().optional(),
   ageMin: z.number().int().nullable().optional(),
