@@ -23,6 +23,20 @@ const toRange = (min?: number | null, max?: number | null) => {
 };
 
 export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, activeTags }: GameCardProps) {
+  const imageSrc = (() => {
+    if (!game.image) return null;
+    if (game.image.startsWith("http://") || game.image.startsWith("https://")) {
+      return game.image;
+    }
+    if (game.image.startsWith("/Itsallfunandgames/")) {
+      return game.image;
+    }
+    if (game.image.startsWith("/")) {
+      return `/Itsallfunandgames${game.image}`;
+    }
+    return `/Itsallfunandgames/${game.image}`;
+  })();
+
   const metadata = [
     toRange(game.playersMin, game.playersMax) && { label: "Players", value: toRange(game.playersMin, game.playersMax) as string },
     toRange(game.ageMin, game.ageMax) && { label: "Age", value: toRange(game.ageMin, game.ageMax) as string },
@@ -38,8 +52,8 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
   return (
     <Card className="overflow-hidden rounded-3xl border border-brand-sprout/25 bg-surface-raised shadow-md transition hover:-translate-y-1 hover:shadow-xl">
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-brand-sprout/15 via-brand-marigold/15 to-brand-coral/20">
-        {game.image ? (
-          <Image src={game.image} alt={game.name} fill className="object-cover" />
+        {imageSrc ? (
+          <Image src={imageSrc} alt={game.name} fill className="object-cover" />
         ) : (
           <div className="flex h-full w-full items-center justify-center text-center">
             <div>
