@@ -54,6 +54,9 @@
       radial-gradient(circle at 80% 12%, rgba(217, 70, 239, 0.16), transparent 30%),
       linear-gradient(180deg, #0b1120 0%, #131b33 50%, #0b1020 100%);
 
+    --font-inter: "Inter", "Avenir Next", "Segoe UI", sans-serif;
+    --font-outfit: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+
     /* Semantic Tokens */
     --surface-sunken: rgba(15, 23, 42, 0.72);
     --surface-raised: rgba(30, 41, 59, 0.72);
