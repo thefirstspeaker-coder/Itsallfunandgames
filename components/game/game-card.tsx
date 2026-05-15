@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { prettifyFilterValue } from "@/lib/utils";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Link from "next/link";
+import type { CSSProperties, PointerEvent } from "react";
 
 interface GameCardProps {
   game: Game;
@@ -23,6 +24,38 @@ const toRange = (min?: number | null, max?: number | null) => {
 };
 
 export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, activeTags }: GameCardProps) {
+  const card3dStyle = {
+    "--rotate-x": "0deg",
+    "--rotate-y": "0deg",
+    "--glare-x": "50%",
+    "--glare-y": "50%",
+  } as CSSProperties;
+
+  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return;
+
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const px = x / rect.width;
+    const py = y / rect.height;
+    const rotateX = (0.5 - py) * 8;
+    const rotateY = (px - 0.5) * 8;
+
+    card.style.setProperty("--rotate-x", `${rotateX.toFixed(2)}deg`);
+    card.style.setProperty("--rotate-y", `${rotateY.toFixed(2)}deg`);
+    card.style.setProperty("--glare-x", `${(px * 100).toFixed(1)}%`);
+    card.style.setProperty("--glare-y", `${(py * 100).toFixed(1)}%`);
+  };
+
+  const resetPointerState = (card: HTMLElement) => {
+    card.style.setProperty("--rotate-x", "0deg");
+    card.style.setProperty("--rotate-y", "0deg");
+    card.style.setProperty("--glare-x", "50%");
+    card.style.setProperty("--glare-y", "50%");
+  };
+
   const imageSrc = (() => {
     if (!game.image) return null;
     if (game.image.startsWith("http://") || game.image.startsWith("https://")) {
@@ -50,7 +83,17 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
   ].filter(Boolean) as { label: string; value: string; rawValue?: string }[];
 
   return (
-    <Card className="overflow-hidden rounded-3xl border border-brand-sprout/25 bg-surface-raised shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+    <Card
+      style={card3dStyle}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={(event) => resetPointerState(event.currentTarget)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          resetPointerState(event.currentTarget);
+        }
+      }}
+      className="game-card-3d overflow-hidden rounded-3xl border border-brand-sprout/25 bg-surface-raised"
+    >
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-brand-sprout/15 via-brand-marigold/15 to-brand-coral/20">
         {imageSrc ? (
           <Image src={imageSrc} alt={game.name} fill className="object-cover" />
