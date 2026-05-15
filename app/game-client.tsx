@@ -43,6 +43,12 @@ type FiltersState = {
 };
 
 const DEFAULT_PAGE = 1;
+const toRange = (min?: number | null, max?: number | null) => {
+  if (typeof min === "number" && typeof max === "number") return `${min}–${max}`;
+  if (typeof min === "number") return `${min}+`;
+  if (typeof max === "number") return `Up to ${max}`;
+  return null;
+};
 
 const createEmptySelections = (): Record<FacetKey, string[]> =>
   facetKeys.reduce((acc, key) => {
@@ -157,10 +163,11 @@ export function GameClient({
       const {
         category: selectedCategories,
         tags: selectedTags,
-        traditionality: selectedTraditionality,
         prepLevel: selectedPrepLevels,
+        playersRange: selectedPlayers,
+        ageRange: selectedAges,
+        equipmentNeeded: selectedEquipment,
         skillsDeveloped: selectedSkills,
-        regionalPopularity: selectedRegions,
       } = filters;
 
       if (
@@ -178,17 +185,20 @@ export function GameClient({
       }
 
       if (
-        selectedTraditionality.length > 0 &&
-        (!game.traditionality ||
-          !selectedTraditionality.includes(game.traditionality))
-      ) {
-        return false;
-      }
-
-      if (
         selectedPrepLevels.length > 0 &&
         (!game.prepLevel || !selectedPrepLevels.includes(game.prepLevel))
       ) {
+        return false;
+      }
+      const playersRange = toRange(game.playersMin, game.playersMax);
+      if (selectedPlayers.length > 0 && (!playersRange || !selectedPlayers.includes(playersRange))) {
+        return false;
+      }
+      const ageRange = toRange(game.ageMin, game.ageMax);
+      if (selectedAges.length > 0 && (!ageRange || !selectedAges.includes(ageRange))) {
+        return false;
+      }
+      if (selectedEquipment.length > 0 && !game.equipment) {
         return false;
       }
 
@@ -196,15 +206,6 @@ export function GameClient({
         selectedSkills.length > 0 &&
         !(game.skillsDeveloped || []).some((skill) =>
           selectedSkills.includes(skill)
-        )
-      ) {
-        return false;
-      }
-
-      if (
-        selectedRegions.length > 0 &&
-        !(game.regionalPopularity || []).some((region) =>
-          selectedRegions.includes(region)
         )
       ) {
         return false;
@@ -522,7 +523,16 @@ export function GameClient({
             </div>
           )}
 
-          <GameGrid games={paginatedGames} resetFilters={resetFilters} bookmarkedIds={bookmarkedIds} onToggleBookmark={toggleBookmark} onTagToggle={(value, include) => updateFilterValue("tags", value, include)} activeTags={new Set(filters.tags)} />
+          <GameGrid
+            games={paginatedGames}
+            resetFilters={resetFilters}
+            bookmarkedIds={bookmarkedIds}
+            onToggleBookmark={toggleBookmark}
+            onMetaToggle={updateFilterValue}
+            activeFilters={Object.fromEntries(
+              facetKeys.map((key) => [key, new Set(filters[key])])
+            )}
+          />
 
           <PaginationControl
             currentPage={currentPage}

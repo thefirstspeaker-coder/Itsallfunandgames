@@ -19,6 +19,13 @@ const getUniqueValues = (games: Game[], key: keyof Game) => {
   return Array.from(values).sort();
 };
 
+const toRange = (min?: number | null, max?: number | null) => {
+  if (typeof min === 'number' && typeof max === 'number') return `${min}–${max}`;
+  if (typeof min === 'number') return `${min}+`;
+  if (typeof max === 'number') return `Up to ${max}`;
+  return null;
+};
+
 export default function HomePage() {
   const sortedGames = [...games].sort((a, b) =>
     a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
@@ -27,10 +34,11 @@ export default function HomePage() {
   const facets = {
     category: getUniqueValues(sortedGames, 'category'),
     tags: getUniqueValues(sortedGames, 'tags'),
-    traditionality: getUniqueValues(sortedGames, 'traditionality'),
     prepLevel: getUniqueValues(sortedGames, 'prepLevel'),
+    playersRange: Array.from(new Set(sortedGames.map((g) => toRange(g.playersMin, g.playersMax)).filter(Boolean) as string[])).sort(),
+    ageRange: Array.from(new Set(sortedGames.map((g) => toRange(g.ageMin, g.ageMax)).filter(Boolean) as string[])).sort(),
+    equipmentNeeded: Array.from(new Set(sortedGames.map((g) => (g.equipment ? 'Equipment needed' : null)).filter(Boolean) as string[])).sort(),
     skillsDeveloped: getUniqueValues(sortedGames, 'skillsDeveloped'),
-    regionalPopularity: getUniqueValues(sortedGames, 'regionalPopularity'),
   };
 
   return (
