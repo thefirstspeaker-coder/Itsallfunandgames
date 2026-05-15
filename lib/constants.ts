@@ -2,7 +2,6 @@ import {
     Activity,
     Brain,
     CircleDashed,
-    Globe2,
     Handshake,
     Map,
     MapPinned,
@@ -11,7 +10,6 @@ import {
     PartyPopper,
     School,
     Scissors,
-    ScrollText,
     Search as SearchIcon,
     Sparkles,
     Tag,
@@ -25,10 +23,11 @@ import {
 export const facetKeys = [
     "category",
     "tags",
-    "traditionality",
     "prepLevel",
+    "playersRange",
+    "ageRange",
+    "equipmentNeeded",
     "skillsDeveloped",
-    "regionalPopularity",
 ] as const;
 
 export type FacetKey = (typeof facetKeys)[number];
@@ -76,14 +75,24 @@ export const filterMeta: Record<
         icon: Tag,
         optionIcons: tagIcons,
     },
-    traditionality: {
-        label: "Traditionality",
-        description: "Explore classics or contemporary twists.",
-        icon: ScrollText,
-    },
     prepLevel: {
         label: "Prep Level",
         description: "How much setup time do you have?",
+        icon: Wrench,
+    },
+    playersRange: {
+        label: "Players",
+        description: "Filter by group size.",
+        icon: UsersRound,
+    },
+    ageRange: {
+        label: "Ages",
+        description: "Filter by age range.",
+        icon: Users,
+    },
+    equipmentNeeded: {
+        label: "Equipment",
+        description: "Filter by required equipment.",
         icon: Wrench,
     },
     skillsDeveloped: {
@@ -91,10 +100,5 @@ export const filterMeta: Record<
         description: "Focus on the skills you want to encourage.",
         icon: Sparkles,
         emphasizedSearch: true,
-    },
-    regionalPopularity: {
-        label: "Region",
-        description: "See what's popular in different places.",
-        icon: Globe2,
     },
 };

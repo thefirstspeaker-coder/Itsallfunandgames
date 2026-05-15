@@ -6,13 +6,15 @@ import { Button } from "@/components/ui/button";
 import { prettifyFilterValue } from "@/lib/utils";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Link from "next/link";
+import type { CSSProperties, PointerEvent } from "react";
+import { FacetKey } from "@/lib/constants";
 
 interface GameCardProps {
   game: Game;
   isBookmarked: boolean;
   onToggleBookmark: (id: string) => void;
-  onTagToggle: (value: string, include: boolean) => void;
-  activeTags: Set<string>;
+  onMetaToggle: (facet: FacetKey, value: string, include: boolean) => void;
+  activeFilters: Partial<Record<FacetKey, Set<string>>>;
 }
 
 const toRange = (min?: number | null, max?: number | null) => {
@@ -22,7 +24,39 @@ const toRange = (min?: number | null, max?: number | null) => {
   return null;
 };
 
-export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, activeTags }: GameCardProps) {
+export function GameCard({ game, isBookmarked, onToggleBookmark, onMetaToggle, activeFilters }: GameCardProps) {
+  const card3dStyle = {
+    "--rotate-x": "0deg",
+    "--rotate-y": "0deg",
+    "--glare-x": "50%",
+    "--glare-y": "50%",
+  } as CSSProperties;
+
+  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse") return;
+
+    const card = event.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const px = x / rect.width;
+    const py = y / rect.height;
+    const rotateX = (0.5 - py) * 8;
+    const rotateY = (px - 0.5) * 8;
+
+    card.style.setProperty("--rotate-x", `${rotateX.toFixed(2)}deg`);
+    card.style.setProperty("--rotate-y", `${rotateY.toFixed(2)}deg`);
+    card.style.setProperty("--glare-x", `${(px * 100).toFixed(1)}%`);
+    card.style.setProperty("--glare-y", `${(py * 100).toFixed(1)}%`);
+  };
+
+  const resetPointerState = (card: HTMLElement) => {
+    card.style.setProperty("--rotate-x", "0deg");
+    card.style.setProperty("--rotate-y", "0deg");
+    card.style.setProperty("--glare-x", "50%");
+    card.style.setProperty("--glare-y", "50%");
+  };
+
   const imageSrc = (() => {
     if (!game.image) return null;
     if (game.image.startsWith("http://") || game.image.startsWith("https://")) {
@@ -38,19 +72,27 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
   })();
 
   const metadata = [
-    toRange(game.playersMin, game.playersMax) && { label: "Players", value: toRange(game.playersMin, game.playersMax) as string },
-    toRange(game.ageMin, game.ageMax) && { label: "Age", value: toRange(game.ageMin, game.ageMax) as string },
-    game.category && { label: "Category", value: prettifyFilterValue(game.category) },
-    game.prepLevel && { label: "Prep", value: prettifyFilterValue(game.prepLevel) },
-    game.equipment && { label: "Equipment", value: game.equipment },
-    ...(game.skillsDeveloped || []).map((s) => ({ label: "Skill", value: prettifyFilterValue(s) })),
-    ...(game.tags || []).map((t) => ({ label: "Tag", value: prettifyFilterValue(t), rawValue: t })),
-    ...(game.regionalPopularity || []).map((r) => ({ label: "Region", value: prettifyFilterValue(r) })),
-    game.traditionality && { label: "Type", value: prettifyFilterValue(game.traditionality) },
-  ].filter(Boolean) as { label: string; value: string; rawValue?: string }[];
+    toRange(game.playersMin, game.playersMax) && { facet: "playersRange" as FacetKey, value: toRange(game.playersMin, game.playersMax) as string, tone: "bg-cyan-500/25" },
+    toRange(game.ageMin, game.ageMax) && { facet: "ageRange" as FacetKey, value: toRange(game.ageMin, game.ageMax) as string, tone: "bg-violet-500/25" },
+    game.prepLevel && { facet: "prepLevel" as FacetKey, value: game.prepLevel, displayValue: prettifyFilterValue(game.prepLevel), tone: "bg-amber-500/25" },
+    game.category && { facet: "category" as FacetKey, value: game.category, displayValue: prettifyFilterValue(game.category), tone: "bg-emerald-500/25" },
+    game.equipment && { facet: "equipmentNeeded" as FacetKey, value: "Equipment needed", displayValue: "Equipment needed", tone: "bg-rose-500/25" },
+    ...(game.skillsDeveloped || []).map((s) => ({ facet: "skillsDeveloped" as FacetKey, value: s, displayValue: prettifyFilterValue(s), tone: "bg-indigo-500/25" })),
+    ...(game.tags || []).map((t) => ({ facet: "tags" as FacetKey, value: t, displayValue: prettifyFilterValue(t), tone: "bg-teal-500/25" })),
+  ].filter(Boolean) as { facet: FacetKey; value: string; displayValue?: string; tone: string }[];
 
   return (
-    <Card className="overflow-hidden rounded-3xl border border-brand-sprout/25 bg-surface-raised shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+    <Card
+      style={card3dStyle}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={(event) => resetPointerState(event.currentTarget)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          resetPointerState(event.currentTarget);
+        }
+      }}
+      className="game-card-3d w-full max-w-[400px] overflow-hidden rounded-3xl border border-brand-sprout/25 bg-surface-raised"
+    >
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-brand-sprout/15 via-brand-marigold/15 to-brand-coral/20">
         {imageSrc ? (
           <Image src={imageSrc} alt={game.name} fill className="object-cover" />
@@ -73,7 +115,7 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
           {isBookmarked ? <BookmarkCheck className="h-4 w-4 text-brand-sprout" /> : <Bookmark className="h-4 w-4" />}
         </Button>
       </div>
-      <div className="space-y-4 p-5">
+      <div className="flex min-h-[360px] flex-col space-y-4 p-5">
         <h2 className="text-2xl font-bold text-text-brand">
           <Link href={`/game/${game.id}`} className="hover:underline focus-visible:underline">
             {game.name}
@@ -82,19 +124,16 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onTagToggle, ac
         <p className="line-clamp-3 text-sm text-text-brand/75">{game.description || "A playful activity for your next group session."}</p>
         <div className="flex flex-wrap gap-2">
           {metadata.map((item, index) => {
-            const key = `${item.label}-${item.value}-${index}`;
-            const raw = item.rawValue;
-            const selected = raw ? activeTags.has(raw) : false;
+            const key = `${item.facet}-${item.value}-${index}`;
+            const selected = activeFilters[item.facet]?.has(item.value) ?? false;
             return (
               <button
                 key={key}
                 type="button"
-                onClick={() => raw && onTagToggle(raw, !selected)}
-                disabled={!raw}
-                className="disabled:cursor-default"
+                onClick={() => onMetaToggle(item.facet, item.value, !selected)}
               >
-                <Badge className={`rounded-full px-3 py-1 text-xs font-semibold ${selected ? "bg-brand-sprout text-white" : "bg-surface-highlight text-text-brand"}`}>
-                  <span className="mr-1 opacity-75">{item.label}:</span>{item.value}
+                <Badge className={`rounded-full px-3 py-1 text-xs font-semibold text-text-brand ${selected ? "bg-brand-sprout text-white" : item.tone}`}>
+                  {item.displayValue ?? item.value}
                 </Badge>
               </button>
             );

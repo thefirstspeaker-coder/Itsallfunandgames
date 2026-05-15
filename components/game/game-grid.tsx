@@ -10,11 +10,11 @@ interface GameGridProps {
   resetFilters: () => void;
   bookmarkedIds: Set<string>;
   onToggleBookmark: (id: string) => void;
-  onTagToggle: (value: string, include: boolean) => void;
-  activeTags: Set<string>;
+  onMetaToggle: (facet: FacetKey, value: string, include: boolean) => void;
+  activeFilters: Partial<Record<FacetKey, Set<string>>>;
 }
 
-export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark, onTagToggle, activeTags }: GameGridProps) {
+export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark, onMetaToggle, activeFilters }: GameGridProps) {
   if (games.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-brand-sprout/40 bg-surface-raised p-12 text-center shadow-inner">
@@ -26,17 +26,18 @@ export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark,
   }
 
   return (
-    <div className={cn(styles.gameGrid, "grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3")}>
+    <div className={cn(styles.gameGrid, "grid gap-8 grid-cols-1 justify-items-center md:grid-cols-2 xl:grid-cols-3")}>
       {games.map((game) => (
         <GameCard
           key={game.id}
           game={game}
           isBookmarked={bookmarkedIds.has(game.id)}
           onToggleBookmark={onToggleBookmark}
-          onTagToggle={onTagToggle}
-          activeTags={activeTags}
+          onMetaToggle={onMetaToggle}
+          activeFilters={activeFilters}
         />
       ))}
     </div>
   );
 }
+import { FacetKey } from "@/lib/constants";
