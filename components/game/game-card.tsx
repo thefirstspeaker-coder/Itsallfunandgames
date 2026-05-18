@@ -76,7 +76,7 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, activeMetadataI
         }
       }}
       id={`game-card-${game.id}`}
-      className={`game-card-3d w-full max-w-[400px] overflow-hidden rounded-3xl border bg-surface-raised transition-shadow ${isHighlighted ? "border-cyan-300 shadow-[0_0_0_2px_rgba(103,232,249,0.7),0_25px_40px_rgba(0,0,0,0.35)]" : "border-brand-sprout/25"}` }
+      className={`game-card-3d m-[10px] w-full max-w-[400px] overflow-hidden rounded-3xl border bg-surface-raised transition-shadow ${isHighlighted ? "border-cyan-300 shadow-[0_0_0_2px_rgba(103,232,249,0.7),0_25px_40px_rgba(0,0,0,0.35)]" : "border-brand-sprout/25"}` }
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-brand-sprout/15 via-brand-marigold/15 to-brand-coral/20">
         {imageSrc ? (
