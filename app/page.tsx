@@ -20,17 +20,6 @@ export default function HomePage() {
             🎲 Game inspiration
           </span>
           <h1 className="font-heading text-4xl font-extrabold tracking-tight text-[#dce1fb] md:text-6xl">Find Your Next Favourite Game</h1>
-          <p className="mt-4 text-lg text-[#94A3B8]">
-            Browse curated activities, filter in seconds, and plan unforgettable sessions for any group, age, or space.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <button className="rounded-full bg-[#f0abfc] px-6 py-3 text-sm font-semibold text-black transition hover:shadow-[0_0_24px_rgba(240,171,252,0.5)] active:scale-95">
-              Explore Collection
-            </button>
-            <button className="rounded-full border-2 border-[#54d8e8] px-6 py-3 text-sm font-semibold text-[#54d8e8] transition hover:bg-[#54d8e8]/10 active:scale-95">
-              Surprise Me
-            </button>
-          </div>
         </div>
       </div>
 
