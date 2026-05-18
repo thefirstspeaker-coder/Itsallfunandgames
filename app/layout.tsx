@@ -16,9 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
+          enableSystem={false}
+          themes={["dark"]}
           disableTransitionOnChange
-          storageKey="itsallfunandgames-theme"
         >
           <Header />
           <main className="mx-auto w-full max-w-[1280px] px-4 py-8 md:px-8 md:py-12">{children}</main>

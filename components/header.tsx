@@ -1,12 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Bell, Menu, Moon, Sun, UserCircle2 } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import { Bell, Menu, UserCircle2 } from 'lucide-react';
 
 export function Header() {
-  const { setTheme, theme } = useTheme();
-
   return (
     <header className="sticky top-0 z-50 border-b border-[#1E293B] bg-[#0c1324]/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-[1280px] items-center justify-between px-4 md:px-8">
@@ -21,15 +18,6 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <button
-            type="button"
-            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            aria-label="Toggle theme"
-            className="rounded-full p-2 text-[#fbd2ff] transition hover:bg-white/10"
-          >
-            <Sun className="h-4 w-4 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
-          </button>
           <button type="button" className="hidden rounded-full p-2 text-[#fbd2ff] transition hover:bg-white/10 md:inline-flex"><Bell className="h-4 w-4" /></button>
           <button type="button" className="hidden rounded-full p-2 text-[#fbd2ff] transition hover:bg-white/10 md:inline-flex"><UserCircle2 className="h-4 w-4" /></button>
           <button type="button" className="inline-flex rounded-full p-2 text-[#fbd2ff] transition hover:bg-white/10 md:hidden"><Menu className="h-4 w-4" /></button>
