@@ -1,43 +1,14 @@
 import { games } from '@/lib/loadGames';
 import { GameClient } from './game-client';
-import { Game } from '@/lib/types';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 
-const getUniqueValues = (games: Game[], key: keyof Game) => {
-  const values = new Set<string>();
-  games.forEach(game => {
-    const value = game[key];
-    if (typeof value === 'string' && value) {
-      values.add(value);
-    } else if (Array.isArray(value)) {
-      value.forEach(v => typeof v === 'string' && v && values.add(v));
-    }
-  });
-  return Array.from(values).sort();
-};
-
-const toRange = (min?: number | null, max?: number | null) => {
-  if (typeof min === 'number' && typeof max === 'number') return `${min}–${max}`;
-  if (typeof min === 'number') return `${min}+`;
-  if (typeof max === 'number') return `Up to ${max}`;
-  return null;
-};
 
 export default function HomePage() {
   const sortedGames = [...games].sort((a, b) =>
     a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
   );
 
-  const facets = {
-    category: getUniqueValues(sortedGames, 'category'),
-    tags: getUniqueValues(sortedGames, 'tags'),
-    prepLevel: getUniqueValues(sortedGames, 'prepLevel'),
-    playersRange: Array.from(new Set(sortedGames.map((g) => toRange(g.playersMin, g.playersMax)).filter(Boolean) as string[])).sort(),
-    ageRange: Array.from(new Set(sortedGames.map((g) => toRange(g.ageMin, g.ageMax)).filter(Boolean) as string[])).sort(),
-    equipmentNeeded: Array.from(new Set(sortedGames.map((g) => (g.equipment ? 'Equipment needed' : null)).filter(Boolean) as string[])).sort(),
-    skillsDeveloped: getUniqueValues(sortedGames, 'skillsDeveloped'),
-  };
 
   return (
     <section className="space-y-12 md:space-y-16">
@@ -72,7 +43,7 @@ export default function HomePage() {
           </div>
         }
       >
-        <GameClient allGames={sortedGames} facets={facets} />
+        <GameClient allGames={sortedGames} />
       </Suspense>
 
       <footer className="rounded-3xl border border-[#1E293B] bg-[#070d1f] px-6 py-10 text-[#94A3B8] md:px-10">

@@ -7,14 +7,11 @@ import { prettifyFilterValue } from "@/lib/utils";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Link from "next/link";
 import type { CSSProperties, PointerEvent } from "react";
-import { FacetKey } from "@/lib/constants";
 
 interface GameCardProps {
   game: Game;
   isBookmarked: boolean;
   onToggleBookmark: (id: string) => void;
-  onMetaToggle: (facet: FacetKey, value: string, include: boolean) => void;
-  activeFilters: Partial<Record<FacetKey, Set<string>>>;
 }
 
 const toRange = (min?: number | null, max?: number | null) => {
@@ -24,7 +21,7 @@ const toRange = (min?: number | null, max?: number | null) => {
   return null;
 };
 
-export function GameCard({ game, isBookmarked, onToggleBookmark, onMetaToggle, activeFilters }: GameCardProps) {
+export function GameCard({ game, isBookmarked, onToggleBookmark }: GameCardProps) {
   const card3dStyle = {
     "--rotate-x": "0deg",
     "--rotate-y": "0deg",
@@ -72,14 +69,14 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onMetaToggle, a
   })();
 
   const metadata = [
-    toRange(game.playersMin, game.playersMax) && { facet: "playersRange" as FacetKey, value: toRange(game.playersMin, game.playersMax) as string, tone: "bg-cyan-500/25" },
-    toRange(game.ageMin, game.ageMax) && { facet: "ageRange" as FacetKey, value: toRange(game.ageMin, game.ageMax) as string, tone: "bg-violet-500/25" },
-    game.prepLevel && { facet: "prepLevel" as FacetKey, value: game.prepLevel, displayValue: prettifyFilterValue(game.prepLevel), tone: "bg-amber-500/25" },
-    game.category && { facet: "category" as FacetKey, value: game.category, displayValue: prettifyFilterValue(game.category), tone: "bg-emerald-500/25" },
-    game.equipment && { facet: "equipmentNeeded" as FacetKey, value: "Equipment needed", displayValue: "Equipment needed", tone: "bg-rose-500/25" },
-    ...(game.skillsDeveloped || []).map((s) => ({ facet: "skillsDeveloped" as FacetKey, value: s, displayValue: prettifyFilterValue(s), tone: "bg-indigo-500/25" })),
-    ...(game.tags || []).map((t) => ({ facet: "tags" as FacetKey, value: t, displayValue: prettifyFilterValue(t), tone: "bg-teal-500/25" })),
-  ].filter(Boolean) as { facet: FacetKey; value: string; displayValue?: string; tone: string }[];
+    toRange(game.playersMin, game.playersMax) && { value: toRange(game.playersMin, game.playersMax) as string, tone: "bg-cyan-500/25" },
+    toRange(game.ageMin, game.ageMax) && { value: toRange(game.ageMin, game.ageMax) as string, tone: "bg-violet-500/25" },
+    game.prepLevel && { value: game.prepLevel, displayValue: prettifyFilterValue(game.prepLevel), tone: "bg-amber-500/25" },
+    game.category && { value: game.category, displayValue: prettifyFilterValue(game.category), tone: "bg-emerald-500/25" },
+    game.equipment && { value: "Equipment needed", displayValue: "Equipment needed", tone: "bg-rose-500/25" },
+    ...(game.skillsDeveloped || []).map((s) => ({ value: s, displayValue: prettifyFilterValue(s), tone: "bg-indigo-500/25" })),
+    ...(game.tags || []).map((t) => ({ value: t, displayValue: prettifyFilterValue(t), tone: "bg-teal-500/25" })),
+  ].filter(Boolean) as { value: string; displayValue?: string; tone: string }[];
 
   return (
     <Card
@@ -124,18 +121,11 @@ export function GameCard({ game, isBookmarked, onToggleBookmark, onMetaToggle, a
         <p className="line-clamp-3 text-sm text-text-brand/75">{game.description || "A playful activity for your next group session."}</p>
         <div className="flex flex-wrap gap-2">
           {metadata.map((item, index) => {
-            const key = `${item.facet}-${item.value}-${index}`;
-            const selected = activeFilters[item.facet]?.has(item.value) ?? false;
+            const key = `${item.value}-${index}`;
             return (
-              <button
-                key={key}
-                type="button"
-                onClick={() => onMetaToggle(item.facet, item.value, !selected)}
-              >
-                <Badge className={`rounded-full px-3 py-1 text-xs font-semibold text-text-brand ${selected ? "bg-brand-sprout text-white" : item.tone}`}>
-                  {item.displayValue ?? item.value}
-                </Badge>
-              </button>
+              <Badge key={key} className={`rounded-full px-3 py-1 text-xs font-semibold text-text-brand ${item.tone}`}>
+                {item.displayValue ?? item.value}
+              </Badge>
             );
           })}
         </div>
