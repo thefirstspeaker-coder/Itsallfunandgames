@@ -15,6 +15,7 @@ import { SearchBar } from "@/components/game/search-bar";
 import { GameGrid } from "@/components/game/game-grid";
 import { PaginationControl } from "@/components/game/pagination-control";
 import { getGameMetadataTokens } from "@/lib/game-metadata";
+import { Bookmark, Compass, Dices } from "lucide-react";
 
 const fuseOptions = {
   keys: ["name", "description", "keywords"],
@@ -238,7 +239,7 @@ export function GameClient({
     <div className="relative min-h-screen bg-surface-sunken text-text-brand">
       <div className="mx-auto flex max-w-7xl flex-wrap gap-6 px-4 py-10 lg:flex-nowrap lg:gap-10">
         <main className="flex min-w-0 flex-1 flex-col gap-8">
-          <header className="flex flex-wrap items-center gap-3 rounded-3xl border border-brand-sprout/20 bg-surface-raised p-4 shadow-sm backdrop-blur">
+          <header className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-[0_20px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-5">
             <SearchBar
               query={filters.query}
               setQuery={(q) => setFilters(prev => ({ ...prev, query: q, page: DEFAULT_PAGE }))}
@@ -253,18 +254,34 @@ export function GameClient({
 
           </header>
 
-          <div className="rounded-3xl border border-brand-sprout/20 bg-surface-raised/90 p-6 shadow-sm backdrop-blur">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <Button type="button" variant={filters.bookmarkedOnly ? "default" : "outline"} className="rounded-full" onClick={() => setFilters((p) => ({...p, bookmarkedOnly: !p.bookmarkedOnly, page: DEFAULT_PAGE}))}>
-                Bookmarked only
-              </Button>
-              <button className="rounded-full bg-[#f0abfc] px-6 py-3 text-sm font-semibold text-black transition hover:shadow-[0_0_24px_rgba(240,171,252,0.5)] active:scale-95">
-                Explore Collection
-              </button>
-              <button className="rounded-full border-2 border-[#54d8e8] px-6 py-3 text-sm font-semibold text-[#54d8e8] transition hover:bg-[#54d8e8]/10 active:scale-95">
-                Surprise Me
-              </button>
-              <div className="flex flex-wrap gap-2">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-[0_20px_45px_rgba(0,0,0,0.2)] backdrop-blur-xl sm:p-6">
+            <div className="space-y-5">
+              <div className="flex flex-wrap items-center gap-3">
+                <Button
+                  type="button"
+                  variant={filters.bookmarkedOnly ? "default" : "outline"}
+                  className="h-11 gap-2 rounded-xl border-white/20 bg-brand-marigold px-4 text-sm font-semibold text-brand-ink hover:bg-brand-marigold-dark"
+                  onClick={() => setFilters((p) => ({ ...p, bookmarkedOnly: !p.bookmarkedOnly, page: DEFAULT_PAGE }))}
+                >
+                  <Bookmark className="h-4 w-4" />
+                  Bookmark only
+                </Button>
+                <button
+                  type="button"
+                  className="inline-flex h-11 items-center gap-2 rounded-xl border border-fuchsia-300/40 bg-fuchsia-400/20 px-4 text-sm font-semibold text-fuchsia-100 transition hover:bg-fuchsia-400/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-300/70"
+                >
+                  <Compass className="h-4 w-4" />
+                  Explore Collection
+                </button>
+                <button
+                  type="button"
+                  className="inline-flex h-11 items-center gap-2 rounded-xl border border-cyan-300/40 bg-cyan-400/15 px-4 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+                >
+                  <Dices className="h-4 w-4" />
+                  Surprise Me
+                </button>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
                 {availableMetadata.map((item) => {
                   const isActive = filters.metadata.includes(item.id);
                   return (
@@ -272,16 +289,20 @@ export function GameClient({
                       key={item.id}
                       type="button"
                       onClick={() => toggleMetadataFilter(item.id)}
-                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${item.tone} ${isActive ? "ring-2 ring-brand-sprout" : "opacity-90 hover:opacity-100"}`}
+                      className={`inline-flex h-9 items-center gap-2 rounded-full border px-3.5 text-xs font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-marigold/70 ${
+                        isActive
+                          ? "border-brand-sprout/70 bg-brand-sprout/20 text-text-brand shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
+                          : "border-white/20 bg-black/25 text-text-brand/85 hover:border-brand-sprout/45 hover:bg-black/35"
+                      }`}
                       aria-pressed={isActive}
                     >
-                      <item.Icon className="h-3.5 w-3.5" />
+                      <item.Icon className="h-3.5 w-3.5 shrink-0 text-text-brand/80" />
                       {item.label}
                     </button>
                   );
                 })}
               </div>
-              <div>
+              <div className="pt-1">
                 <h1 className="font-heading text-2xl font-semibold text-text-brand sm:text-3xl">
                   {heading}
                 </h1>
