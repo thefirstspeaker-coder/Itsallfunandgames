@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { Game } from "@/lib/types";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { prettifyFilterValue } from "@/lib/utils";
+import { getGameMetadataTokens } from "@/lib/game-metadata";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import Link from "next/link";
 import type { CSSProperties, PointerEvent } from "react";
@@ -12,16 +11,11 @@ interface GameCardProps {
   game: Game;
   isBookmarked: boolean;
   onToggleBookmark: (id: string) => void;
+  activeMetadataIds: string[];
+  onMetadataFilter: (metadataId: string) => void;
 }
 
-const toRange = (min?: number | null, max?: number | null) => {
-  if (typeof min === "number" && typeof max === "number") return `${min}–${max}`;
-  if (typeof min === "number") return `${min}+`;
-  if (typeof max === "number") return `Up to ${max}`;
-  return null;
-};
-
-export function GameCard({ game, isBookmarked, onToggleBookmark }: GameCardProps) {
+export function GameCard({ game, isBookmarked, onToggleBookmark, activeMetadataIds, onMetadataFilter }: GameCardProps) {
   const card3dStyle = {
     "--rotate-x": "0deg",
     "--rotate-y": "0deg",
@@ -68,15 +62,7 @@ export function GameCard({ game, isBookmarked, onToggleBookmark }: GameCardProps
     return `/Itsallfunandgames/${game.image}`;
   })();
 
-  const metadata = [
-    toRange(game.playersMin, game.playersMax) && { value: toRange(game.playersMin, game.playersMax) as string, tone: "bg-cyan-500/25" },
-    toRange(game.ageMin, game.ageMax) && { value: toRange(game.ageMin, game.ageMax) as string, tone: "bg-violet-500/25" },
-    game.prepLevel && { value: game.prepLevel, displayValue: prettifyFilterValue(game.prepLevel), tone: "bg-amber-500/25" },
-    game.category && { value: game.category, displayValue: prettifyFilterValue(game.category), tone: "bg-emerald-500/25" },
-    game.equipment && { value: "Equipment needed", displayValue: "Equipment needed", tone: "bg-rose-500/25" },
-    ...(game.skillsDeveloped || []).map((s) => ({ value: s, displayValue: prettifyFilterValue(s), tone: "bg-indigo-500/25" })),
-    ...(game.tags || []).map((t) => ({ value: t, displayValue: prettifyFilterValue(t), tone: "bg-teal-500/25" })),
-  ].filter(Boolean) as { value: string; displayValue?: string; tone: string }[];
+  const metadata = getGameMetadataTokens(game);
 
   return (
     <Card
@@ -120,12 +106,19 @@ export function GameCard({ game, isBookmarked, onToggleBookmark }: GameCardProps
         </h2>
         <p className="line-clamp-3 text-sm text-text-brand/75">{game.description || "A playful activity for your next group session."}</p>
         <div className="flex flex-wrap gap-2">
-          {metadata.map((item, index) => {
-            const key = `${item.value}-${index}`;
+          {metadata.map((item) => {
+            const isActive = activeMetadataIds.includes(item.id);
             return (
-              <Badge key={key} className={`rounded-full px-3 py-1 text-xs font-semibold text-text-brand ${item.tone}`}>
-                {item.displayValue ?? item.value}
-              </Badge>
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => onMetadataFilter(item.id)}
+                className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${item.tone} ${isActive ? "ring-2 ring-brand-sprout" : "opacity-90 hover:opacity-100"}`}
+                aria-pressed={isActive}
+              >
+                <item.Icon className="h-3.5 w-3.5" />
+                {item.label}
+              </button>
             );
           })}
         </div>

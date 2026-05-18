@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { SearchBar } from "@/components/game/search-bar";
 import { GameGrid } from "@/components/game/game-grid";
 import { PaginationControl } from "@/components/game/pagination-control";
+import { getGameMetadataTokens } from "@/lib/game-metadata";
 
 const fuseOptions = {
   keys: ["name", "description", "keywords"],
@@ -26,6 +27,7 @@ type FiltersState = {
   query: string;
   page: number;
   bookmarkedOnly: boolean;
+  metadata: string[];
 };
 
 const DEFAULT_PAGE = 1;
@@ -33,6 +35,7 @@ const createDefaultFilters = (): FiltersState => ({
   query: "",
   page: DEFAULT_PAGE,
   bookmarkedOnly: false,
+  metadata: [],
 });
 
 const parsePageParam = (value: string | null) => {
@@ -53,13 +56,13 @@ const buildFiltersFromParams = (
   next.query = params.get("q") ?? "";
   next.page = parsePageParam(params.get("page"));
   next.bookmarkedOnly = params.get("bookmarked") === "1";
-
+  next.metadata = params.getAll("meta").filter(Boolean);
 
   return next;
 };
 
 const areFiltersEqual = (a: FiltersState, b: FiltersState) =>
-  a.query === b.query && a.page === b.page && a.bookmarkedOnly === b.bookmarkedOnly;
+  a.query === b.query && a.page === b.page && a.bookmarkedOnly === b.bookmarkedOnly && a.metadata.join("|") === b.metadata.join("|");
 
 export function GameClient({
   allGames,
@@ -91,8 +94,10 @@ export function GameClient({
     return searchResults.filter((game) => {
       if (filters.bookmarkedOnly && !bookmarkedIds.has(game.id)) return false;
 
-
-
+      if (filters.metadata.length > 0) {
+        const tokenIds = new Set(getGameMetadataTokens(game).map((token) => token.id));
+        if (!filters.metadata.every((selected) => tokenIds.has(selected))) return false;
+      }
 
       return true;
     });
@@ -111,7 +116,7 @@ export function GameClient({
     if (trimmedQuery) params.set("q", trimmedQuery);
 
     if (filters.bookmarkedOnly) params.set("bookmarked", "1");
-
+    filters.metadata.forEach((metadataId) => params.append("meta", metadataId));
 
     if (currentPage > 1) params.set("page", String(currentPage));
 
@@ -198,6 +203,26 @@ export function GameClient({
     }));
   };
 
+  const availableMetadata = useMemo(() => {
+    const map = new Map<string, ReturnType<typeof getGameMetadataTokens>[number]>();
+    filteredGames.forEach((game) => {
+      getGameMetadataTokens(game).forEach((token) => {
+        if (!map.has(token.id)) map.set(token.id, token);
+      });
+    });
+    return Array.from(map.values()).slice(0, 18);
+  }, [filteredGames]);
+
+  const toggleMetadataFilter = (metadataId: string) => {
+    setFilters((current) => ({
+      ...current,
+      metadata: current.metadata.includes(metadataId)
+        ? current.metadata.filter((id) => id !== metadataId)
+        : [...current.metadata, metadataId],
+      page: DEFAULT_PAGE,
+    }));
+  };
+
   const handleSuggestionSelect = (game: Game) => {
     setFilters((current) => ({
       ...current,
@@ -239,6 +264,23 @@ export function GameClient({
               <button className="rounded-full border-2 border-[#54d8e8] px-6 py-3 text-sm font-semibold text-[#54d8e8] transition hover:bg-[#54d8e8]/10 active:scale-95">
                 Surprise Me
               </button>
+              <div className="flex flex-wrap gap-2">
+                {availableMetadata.map((item) => {
+                  const isActive = filters.metadata.includes(item.id);
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => toggleMetadataFilter(item.id)}
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition ${item.tone} ${isActive ? "ring-2 ring-brand-sprout" : "opacity-90 hover:opacity-100"}`}
+                      aria-pressed={isActive}
+                    >
+                      <item.Icon className="h-3.5 w-3.5" />
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </div>
               <div>
                 <h1 className="font-heading text-2xl font-semibold text-text-brand sm:text-3xl">
                   {heading}
@@ -257,6 +299,8 @@ export function GameClient({
             resetFilters={resetFilters}
             bookmarkedIds={bookmarkedIds}
             onToggleBookmark={toggleBookmark}
+            activeMetadataIds={filters.metadata}
+            onMetadataFilter={toggleMetadataFilter}
           />
 
           <PaginationControl
