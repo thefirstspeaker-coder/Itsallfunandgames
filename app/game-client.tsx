@@ -230,7 +230,15 @@ export function GameClient({
 
           <div className="rounded-3xl border border-brand-sprout/20 bg-surface-raised/90 p-6 shadow-sm backdrop-blur">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <Button type="button" variant={filters.bookmarkedOnly ? "default" : "outline"} className="rounded-full" onClick={() => setFilters((p) => ({...p, bookmarkedOnly: !p.bookmarkedOnly, page: DEFAULT_PAGE}))}>Bookmarked only</Button>
+              <Button type="button" variant={filters.bookmarkedOnly ? "default" : "outline"} className="rounded-full" onClick={() => setFilters((p) => ({...p, bookmarkedOnly: !p.bookmarkedOnly, page: DEFAULT_PAGE}))}>
+                Bookmarked only
+              </Button>
+              <button className="rounded-full bg-[#f0abfc] px-6 py-3 text-sm font-semibold text-black transition hover:shadow-[0_0_24px_rgba(240,171,252,0.5)] active:scale-95">
+                Explore Collection
+              </button>
+              <button className="rounded-full border-2 border-[#54d8e8] px-6 py-3 text-sm font-semibold text-[#54d8e8] transition hover:bg-[#54d8e8]/10 active:scale-95">
+                Surprise Me
+              </button>
               <div>
                 <h1 className="font-heading text-2xl font-semibold text-text-brand sm:text-3xl">
                   {heading}
