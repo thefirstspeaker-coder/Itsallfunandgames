@@ -6,6 +6,7 @@ import styles from "@/app/game-client.module.css";
 import { cn } from "@/lib/utils";
 
 interface GameGridProps {
+  highlightedGameId?: string | null;
   games: Game[];
   resetFilters: () => void;
   bookmarkedIds: Set<string>;
@@ -14,7 +15,7 @@ interface GameGridProps {
   onMetadataFilter: (metadataId: string) => void;
 }
 
-export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark, activeMetadataIds, onMetadataFilter }: GameGridProps) {
+export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark, activeMetadataIds, onMetadataFilter, highlightedGameId }: GameGridProps) {
   if (games.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-brand-sprout/40 bg-surface-raised p-12 text-center shadow-inner">
@@ -35,6 +36,7 @@ export function GameGrid({ games, resetFilters, bookmarkedIds, onToggleBookmark,
           onToggleBookmark={onToggleBookmark}
           activeMetadataIds={activeMetadataIds}
           onMetadataFilter={onMetadataFilter}
+          isHighlighted={highlightedGameId === game.id}
         />
       ))}
     </div>
