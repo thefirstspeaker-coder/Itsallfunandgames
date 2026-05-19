@@ -2,7 +2,7 @@
   {
     "id": "traffic-lights",
     "name": "Traffic Lights",
-    "image": "/images/games/traffic-lights.jpeg",
+    "image": "/images/games/traffic-lights.jpg",
     "category": "Physical Activity",
     "ageMin": 5,
     "ageMax": 11,
@@ -103,6 +103,7 @@
   {
     "id": "balancing-act",
     "name": "Balancing Act",
+    "image": "/images/games/balancing-act.jpg",
     "description": "A team balance challenge where four players form a table with their feet and try to remove their shoes without tipping a bucket on top.",
     "category": "Wide",
     "ageMin": 8,
@@ -154,6 +155,7 @@
   {
     "id": "blind-man-s-buff",
     "name": "Blind Man’s Buff",
+    "image": "/images/games/blind-man-s-buff.jpg",
     "description": "Find and tag another player while blindfolded.",
     "category": "Party",
     "ageMin": 8,
@@ -212,6 +214,7 @@
   {
     "id": "blindmans-prize",
     "name": "Blindmans Prize",
+    "image": "/images/games/blindmans-prize.jpg",
     "description": "Be the first team to successfully guide your blindfolded partner to the prize.",
     "category": "Wide",
     "ageMin": 8,
@@ -4031,50 +4034,6 @@
     "relatedGames": [],
     "links": [],
     "prepLevel": "A lot but worth it!"
-  },
-  {
-    "id": "traffic-lights",
-    "name": "Traffic Lights",
-    "description": "Stop\u2013start running game controlled by verbal traffic commands.",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 11,
-    "playersMin": 4,
-    "playersMax": null,
-    "recommendedPlayersText": "4\u002B",
-    "equipment": "None",
-    "generalRules": [
-      "Leader calls green/amber/red (run/walk/stop). mistakes cause elimination or restart"
-    ],
-    "variations": [],
-    "skillsDeveloped": [
-      "Reaction Time",
-      "Listening"
-    ],
-    "tags": [
-      "active"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "commands",
-      "controlled",
-      "game",
-      "lights",
-      "running",
-      "start",
-      "stop",
-      "traffic",
-      "verbal"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "Add fun commands.",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "Unknown"
   },
   {
     "id": "true-or-false",
