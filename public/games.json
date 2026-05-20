@@ -408,54 +408,79 @@
     "links": [],
     "prepLevel": "Unknown"
   },
-  {
-    "id": "buzz-fizz",
-    "name": "Buzz Fizz",
-    "description": "Concentration Game",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 11,
-    "playersMin": null,
-    "playersMax": null,
-    "recommendedPlayersText": "",
-    "equipment": "None",
-    "generalRules": [
-      "Separate your entire group into three teams and assign a \u0027child leader\u0027 to each group ask each group to all count from 1 to 40",
-      "But when they reach a multiple of 5 e.g",
-      "5, 10 15 etc",
-      "They must say the word \u201Cbuzz\u201D also when they reach multiples of 7 e.g",
-      "7, 14, 21 etc",
-      "They must say the word \u201Cfizz\u201D at this stage each leader has to keep an eye on what the children are saying",
-      "If anyone in the group messes up the entire group have to start from number 1 again once each group achieve the task i.e",
-      "To get to number 40 ask them to sit on the floor the first group to sit on the floor is the winner",
-      "Note: if this is taking too long you can put a time limit on it or just use 5\u00B4s"
-    ],
-    "variations": [],
-    "skillsDeveloped": [
-      "Agility",
-      "Memory"
-    ],
-    "tags": [
-      "memory",
-      "wide-area"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "buzz",
-      "concentration",
-      "fizz",
-      "game"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "For younger kids just use Buzz and the number 5.",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "None"
-  },
+{
+  "id": "buzz-fizz",
+  "name": "Buzz Fizz",
+  "description": "A fast-paced mental math and concentration game of sequential counting.",
+  "category": "Brain/Circle",
+  "ageMin": 8,
+  "ageMax": 11,
+  "playersMin": 6,
+  "playersMax": 30,
+  "recommendedPlayersText": "Works best with groups of 15 to 20 split into teams.",
+  "equipment": "None",
+  "generalRules": [
+    "### **Setup**",
+    "1. **Split the Group:** Divide the players into three equal teams.",
+    "2. **Appoint a Judge:** Assign a youth leader or assistant to each team to act as the judge and monitor the counting closely.",
+    "",
+    "### **How to Play**",
+    "3. **The Challenge:** On the leader's signal, each team must attempt to count collectively from 1 up to 40 in a steady sequence.",
+    "4. **The Number Substitutions:** Players must replace specific numbers with code words according to these mathematical rules:",
+    "   * **Multiples of 5** (5, 10, 15, etc.) must be replaced with the word *\"Buzz\"*.",
+    "   * **Multiples of 7** (7, 14, 21, etc.) must be replaced with the word *\"Fizz\"*.",
+    "   * **Multiples of both 5 and 7** (such as 35) must be replaced with the combined word *\"Fizz Buzz\"*.",
+    "5. **The Penalty:** If any player calls out the wrong number, forgets a word, or hesitates too long, the judge stops them. The entire team must reset and start over from number 1.",
+    "",
+    "### **How to Win**",
+    "6. **The Race to Sit:** As soon as a team successfully reaches 40 without making a mistake, they must immediately sit down on the floor. The first team to be completely seated wins the game."
+  ],
+  "variations": [
+    "### **Simplified Version (Just Buzz)**",
+    "For younger players or groups struggling with the sequence, drop the 'Fizz' rule entirely. Only count up to 20 or 30, replacing multiples of 5 with the word *\"Buzz\"*.",
+    "",
+    "### **The Ultimate Test (Reverse Counting)**",
+    "For an advanced challenge, have older groups attempt to count backwards from 40 down to 1 using the exact same 'Buzz' and 'Fizz' substitution rules."
+  ],
+  "skillsDeveloped": [
+    "Mental mathematics and numeracy",
+    "Concentration and focus under pressure",
+    "Active listening",
+    "Team resilience and patience"
+  ],
+  "tags": [
+    "Circle game",
+    "Indoor game",
+    "Low prep",
+    "No equipment",
+    "Mental math",
+    "Team challenge"
+  ],
+  "regionalPopularity": [
+    "UK-wide"
+  ],
+  "regionalNames": [
+    "Fizz Buzz"
+  ],
+  "keywords": [
+    "fizz buzz",
+    "buzz fizz",
+    "counting game",
+    "mental math",
+    "concentration",
+    "times tables",
+    "no prep"
+  ],
+  "traditionality": "Traditional",
+  "historicalNotes": "Originally a traditional spoken parlour game used to teach children division and multiplication tables, it has famously been adopted in the modern digital era as a classic introductory coding logic test.",
+  "notes": "If the game is taking too long or causing frustration, you can enforce a 2-minute time limit per attempt, awarding the victory to whoever reached the highest number.",
+  "relatedGames": [
+    "fizz-buzz",
+    "bang"
+  ],
+  "links": [],
+  "prepLevel": "None"
+},
   {
     "id": "can-you-follow-instruction",
     "name": "Can You Follow Instruction?",
