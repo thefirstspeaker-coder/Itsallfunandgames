@@ -16,6 +16,12 @@
     "description": "Traffic Lights is an energetic warm-up and reaction game where a leader calls out traffic-related commands, and players respond with the matching physical action. It helps children develop listening, coordination, and teamwork skills while being active and having fun.",
     "generalRules": [
       "**Objective:** Follow each command quickly and correctly based on the traffic-related cue announced by the leader.",
+      "**Setup:** Choose one leader to call out commands. Players spread out in a safe open space.",
+      "**How to play:** The leader calls out commands in any order, and players must react as quickly as they can.",
+      "**Optional elimination:** A player is out if they do the wrong action, move on red, or react too slowly.",
+      "**Non-elimination option:** Instead of going out, players do a quick reset action, such as three star jumps, then rejoin.",
+       "**Winning:** Play until one player remains, or play for a set time and focus on quick reactions rather than winning."
+
       "**Commands:**",
       "- **Red:** Stop completely.",
       "- **Yellow:** Run on the spot.",
@@ -40,6 +46,7 @@
       "- **Traffic warden:** Pretend to check a watch and wag finger saying “tut tut tut.”",
       "- **Police Car:** Sit and spin while shouting “nee naw.”",
       "- **Fire Engine:** Run pretending to hold a hose.",
+      
       "**Optional Variations:**",
       "- Use gears for speed changes: 1st = walk, 2nd = jog, 3rd = run, 4th = sprint.",
       "- Add a football or basketball for extra challenge: e.g., 'Park' = sit on the ball, 'New Car' = run to a new ball.",
@@ -50,7 +57,7 @@
       "Add new themed commands over time.",
       "Introduce a driver’s license system or tickets for incorrect actions."
     ],
-    "skillsDeveloped": ["listening skills", "reaction time", "coordination", "teamwork"],
+    "skillsDeveloped": ["listening", "reaction", "coordination"],
     "tags": ["movement", "warm-up", "listening", "reaction", "coordination", "teamwork", "classroom", "PE", "UK"],
     "keywords": ["traffic", "game", "commands", "movement", "reaction", "listening", "warm-up", "children", "PE", "school"],
     "relatedGames": [],
@@ -61,6 +68,7 @@
   {
     "id": "the-bean-game",
     "name": "The Bean Game",
+    "image": "/images/games/the-bean-game.jpg",
     "category": "physical activity",
     "ageMin": 5,
     "ageMax": 14,
@@ -165,16 +173,16 @@
     "recommendedPlayersText": "4+",
     "equipment": "Soft blindfold",
     "generalRules": [
-      "**How to Play:**",
-      "1. Pick one player to be 'it' and blindfold them.",
-      "2. The other players move around and make noise to avoid being caught.",
-      "3. 'It' tries to tag someone.",
+      "### **How to Play**",
+      "1. **Assign the Seeker:** Choose one player to be 'it' and securely blindfold them.",
+      "2. **Evade and Distract:** The remaining players move quietly around the designated area, making occasional noises to tantalise the seeker while trying to avoid being caught.",
+      "3. **The Tag:** The blindfolded player uses their hearing to navigate the space and attempt to tag another participant.",
       "",
-      "**How to Win:**",
-      "When 'it' tags a person, that person becomes the new 'it' for the next round.",
+      "### **How to Win**",
+      "The game is continuous. As soon as 'it' successfully tags a player, that person becomes the new 'it' for the subsequent round.",
       "",
-      "**Important:**",
-      "Play in a safe, clear area with no obstacles."
+      "### **Crucial Safety**",
+      "> **Important:** Ensure the game is played exclusively in a spacious, flat area that is entirely clear of hazards, sharp edges, and obstacles."
     ],
     "variations": [
       "In a variant, the blindfolded player must correctly identify the person they catch before swapping roles"
@@ -281,14 +289,22 @@
     "recommendedPlayersText": "",
     "equipment": "None",
     "generalRules": [
-      "1 you need an even amount of people if you have an odd one out use a leader or get them to take it in turns to help you judge 2 get everyone to team up in two\u0027s 3 one stands in a circle and the other stands next to their partner outside of the circle 4 when the music starts, the inner circle walk clockwise and the outer circle walk anti-clockwise",
-      "When the music stops the leader yells out two body parts e.g\u2026 a",
-      "Foot to ear!\u0022 b",
-      "Nose to the inside of the elbow!\u0022 c",
-      "Top of the head to the back of the knee!\u0022 d",
-      "Elbow to elbow\u0022 e",
-      "\u201Cdon\u0027t yell \u0022chest to head!\u0022 5 partners scramble to get to each other and put those designated body parts together"
-    ],
+      "### **Setup**",
+      "1. **Form Pairs:** Players must team up in pairs. An even number of players is required. If you have an odd number, the extra player can act as a judge or take turns with a leader.",
+      "2. **Create the Rings:** Partners split up to form two concentric circles. One partner stands in the inner circle, and the other stands directly next to them in the outer circle.",
+      "",
+      "### **How to Play**",
+      "3. **Movement:** When the music starts, the inner circle walks clockwise while the outer circle walks anti-clockwise.",
+      "4. **The Command:** When the music stops, the leader calls out two body parts for partners to connect. Examples include:",
+      "   * *\"Foot to ear!\"*",
+      "   * *\"Nose to the inside of the elbow!\"*",
+      "   * *\"Top of the head to the back of the knee!\"*",
+      "   * *\"Elbow to elbow!\"*",
+      "5. **The Scramble:** Partners must quickly find each other across the circles and match the designated body parts together. The last pair to successfully connect is eliminated.",
+      "",
+      "### **Leader Tip**",
+      "> **Note:** Keep the instructions fun but safe; avoid calling out awkward or unsafe combinations like *\"chest to head\"*."
+    ]
     "variations": [],
     "skillsDeveloped": [
       "Agility"
@@ -316,7 +332,7 @@
   },
   {
     "id": "button-button-who-s-got-the-button",
-    "name": "Button, Button, Who\u2019s Got the Button?",
+    "name": "Button, Button, Who's Got the Button?",
     "description": "Deception circle game with a hidden small token.",
     "category": "Party",
     "ageMin": 8,
@@ -326,37 +342,61 @@
     "recommendedPlayersText": "5\u002B",
     "equipment": "Small token (button/coin)",
     "generalRules": [
-      "Players cup hands; leader feigns dropping the token around, leaving it once; after the chant, guess who holds it; correct guesser becomes leader"
-    ],
+      "### **Setup**",
+      "1. **The Circle:** All players sit in a circle and cup their hands together, keeping a small gap between their palms.",
+      "2. **The Leader:** One player is chosen as the leader (or 'it') and holds a button or a small token between their own cupped hands.",
+      "",
+      "### **How to Play**",
+      "3. **Passing the Button:** The leader walks around the inside of the circle, sliding their hands through each player's cupped hands. The leader subtly drops the token into only one player's hands, but continues feigning the motion for everyone else to keep it a secret.",
+      "4. **The Chant:** Once the leader has visited everyone, the entire group recites the chant:",
+      "   * *\"Button, button, who's got the button?\"*",
+      "5. **The Guessing:** The remaining players then take turns guessing who holds the hidden token.",
+      "",
+      "### **How to Win**",
+      "The player who correctly guesses who has the token wins the round and becomes the leader for the next game."
+    ]
     "variations": [
-      "Two tokens",
-      "Timer for guesses"
-    ],
-    "skillsDeveloped": [
-      "Deception",
-      "Attention"
+      "### **Multi-Tasking (Two Tokens)**",
+      "Introduce a second button or small token into the game. The leader secretly drops tokens into the hands of two different players, meaning guessers have to find both holders to win.",
+      "",
+      "### **Beat the Clock (Timer for Guesses)**",
+      "Add a countdown timer (e.g., 10 to 15 seconds) once the chant ends. The group must make their guesses quickly, adding an extra layer of tension and pace to the round."
+    ]
+     "skillsDeveloped": [
+      "Observation and attentiveness",
+      "Body language interpretation (poker face)",
+      "Active listening",
+      "Social intuition and empathy",
+      "Honesty and fair play"
     ],
     "tags": [
-      "circle"
-    ],
+      "Circle game",
+      "Indoor game",
+      "Low prep",
+      "No equipment",
+      "Icebreaker",
+      "Shorter activity (under 15 mins)",
+      "All ages"
+    ]
     "regionalPopularity": [
       "UK-wide"
     ],
     "regionalNames": [
-      "Who\u2019s Got the Button?"
+      "Who's Got the Button?"
     ],
     "keywords": [
       "button",
-      "circle",
+      "circle game",
       "deception",
-      "game",
-      "got",
-      "hidden",
-      "s",
-      "small",
-      "token",
-      "who"
-    ],
+      "parlour game",
+      "guessing game",
+      "hidden object",
+      "sleight of hand",
+      "traditional games",
+      "icebreaker",
+      "party game",
+      "low prep"
+    ]
     "traditionality": "Traditional",
     "historicalNotes": "Victorian/Edwardian parlour game.",
     "notes": "Use a coloured counter for safety.",
