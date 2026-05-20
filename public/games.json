@@ -333,6 +333,7 @@
   {
     "id": "button-button-who-s-got-the-button",
     "name": "Button, Button, Who's Got the Button?",
+    "image": "/images/games/button-button-who-s-got-the-button.jpg",
     "description": "Deception circle game with a hidden small token.",
     "category": "Party",
     "ageMin": 8,
