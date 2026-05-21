@@ -4399,6 +4399,68 @@
     "relatedGames": [],
     "links": [],
     "prepLevel": "None"
-  }
+  },
+  {
+  "id": "british-bulldog",
+  "name": "British Bulldog",
+  "image": "/images/games/british-bulldog.jpg",
+  "description": "A thrilling, high-energy chasing game where players attempt to run from one side of the area to the other without being caught by the designated bulldogs.",
+  "category": "Physical Activity",
+  "ageMin": 8,
+  "ageMax": 16,
+  "playersMin": 8,
+  "playersMax": null,
+  "recommendedPlayersText": "8-30 players",
+  "equipment": "Cones to mark the boundary lines.",
+  "generalRules": [
+    "**Objective:** Run across the playing area from one safe zone to the other without being caught by the 'Bulldogs' in the middle.",
+    "**Setup:** Define a large rectangular playing area outdoors or in a sports hall using cones. Mark two clear end lines as safe zones. One or two players start in the center as the initial Bulldogs, whilst all other players stand behind one of the end lines.",
+    "**How to Play:** When the Bulldogs shout 'British Bulldog!', all players must run across the central area to the opposite safe zone. The Bulldogs attempt to catch the runners. A runner is caught if they are held and tagged by a Bulldog (or lifted safely off the ground, depending on local rules). Once caught, that player also becomes a Bulldog for the next round.",
+    "**Winning / End condition:** The game continues with players running back and forth. The last remaining runner who has not been caught is declared the winner.",
+    "> **Safety:** This is a high-contact game. Players must not use excessive force, tackling, or tripping. Ensure the surface is non-slip and free from obstacles."
+  ],
+  "variations": [
+    "**Whale and the Minnows:** A lower-contact variation where the catchers tag players instead of holding them, making it safer for younger children.",
+    "**Two-Legged Bulldog:** Caught players must link arms or hold hands with other Bulldogs to form a chain, restricting their movement but creating a larger barrier."
+  ],
+  "skillsDeveloped": [
+    "agility",
+    "strategic thinking",
+    "reaction speed",
+    "spatial awareness"
+  ],
+  "tags": [
+    "movement",
+    "outdoor",
+    "high-energy"
+  ],
+  "regionalPopularity": [
+    "United Kingdom",
+    "Commonwealth nations"
+  ],
+  "regionalNames": [
+    "Bullrush",
+    "Red Rover"
+  ],
+  "keywords": [
+    "chasing",
+    "running",
+    "tag",
+    "playground",
+    "warm-up",
+    "traditional game",
+    "bulldog",
+    "active"
+  ],
+  "traditionality": "Traditional",
+  "historicalNotes": "A classic playground game popular in British schools for generations, often played in various forms across the Commonwealth since the early twentieth century.",
+  "notes": "Always remind players to keep their heads up to avoid accidental collisions while sprinting across the area.",
+  "relatedGames": [
+    "sharks-and-minnows",
+    "stuck-in-the-mud"
+  ],
+  "links": [],
+  "prepLevel": "Little"
+}
 
 ]
