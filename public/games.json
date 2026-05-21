@@ -278,58 +278,66 @@
     "playingImageUrl": ""
   },
   {
-    "id": "body-parts",
-    "name": "Body Parts",
-    "description": "Funny Coordination Game",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 11,
-    "playersMin": null,
-    "playersMax": null,
-    "recommendedPlayersText": "",
-    "equipment": "None",
-    "generalRules": [
-      "### **Setup**",
-      "1. **Form Pairs:** Players must team up in pairs. An even number of players is required. If you have an odd number, the extra player can act as a judge or take turns with a leader.",
-      "2. **Create the Rings:** Partners split up to form two concentric circles. One partner stands in the inner circle, and the other stands directly next to them in the outer circle.",
-      "",
-      "### **How to Play**",
-      "3. **Movement:** When the music starts, the inner circle walks clockwise while the outer circle walks anti-clockwise.",
-      "4. **The Command:** When the music stops, the leader calls out two body parts for partners to connect. Examples include:",
-      "   * *\"Foot to ear!\"*",
-      "   * *\"Nose to the inside of the elbow!\"*",
-      "   * *\"Top of the head to the back of the knee!\"*",
-      "   * *\"Elbow to elbow!\"*",
-      "5. **The Scramble:** Partners must quickly find each other across the circles and match the designated body parts together. The last pair to successfully connect is eliminated.",
-      "",
-      "### **Leader Tip**",
-      "> **Note:** Keep the instructions fun but safe; avoid calling out awkward or unsafe combinations like *\"chest to head\"*."
-    ]
-    "variations": [],
-    "skillsDeveloped": [
-      "Agility"
-    ],
-    "tags": [
-      "wide-area"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "body",
-      "coordination",
-      "funny",
-      "game",
-      "parts"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "None"
-  },
+  "id": "body-parts",
+  "name": "Body Parts",
+  "image": "/images/games/body-parts.jpg",
+  "description": "A high-energy, humorous coordination game where players move in concentric circles and rush to connect specific body parts with their partner when the music stops.",
+  "category": "Party",
+  "ageMin": 8,
+  "ageMax": 11,
+  "playersMin": 8,
+  "playersMax": null,
+  "recommendedPlayersText": "8+ players (even numbers preferred)",
+  "equipment": "A music player or speaker.",
+  "generalRules": [
+    "**Objective:** Find your partner quickly when the music stops and touch the designated body parts together without being the last pair to do so.",
+    "**Setup:** Divide players into pairs. Partners split up to form two concentric circles: one partner stands in the inner circle, and the other stands directly opposite them in the outer circle.",
+    "**How to Play:** When the music starts, the inner circle walks clockwise while the outer circle walks anti-clockwise. When the leader stops the music, they shout out a combination of two body parts (e.g., 'Elbow to knee!' or 'Left foot to right hand!'). Partners must quickly find each other across the circles and connect those exact body parts.",
+    "**Winning / End condition:** The last pair to successfully connect the required body parts is eliminated. Restart the music for the next round. The game continues until only one winning pair remains.",
+    "> **Safety:** Ensure the playing area is completely clear of trips and hazards. Remind players to look up while scrambling to find their partners to prevent accidental head-on collisions."
+  ],
+  "variations": [
+    "**Three-Way Connections:** Play in trios rather than pairs, requiring all three players to link the specified body parts together in a chain.",
+    "**Whistle Commands:** If a music player is unavailable, the leader can blow a whistle to signal players to freeze, then shout out the body parts."
+  ],
+  "skillsDeveloped": [
+    "listening",
+    "reaction speed",
+    "coordination",
+    "spatial awareness"
+  ],
+  "tags": [
+    "movement",
+    "listening",
+    "high-energy"
+  ],
+  "regionalPopularity": [
+    "United Kingdom"
+  ],
+  "regionalNames": [
+    "Body Organiser",
+    "Anatomy Scramble"
+  ],
+  "keywords": [
+    "body parts",
+    "coordination",
+    "funny",
+    "circle game",
+    "partners",
+    "musical games",
+    "warm-up",
+    "elimination"
+  ],
+  "traditionality": "Traditional",
+  "historicalNotes": null,
+  "notes": "Keep the instructions lighthearted but sensible; avoid calling out awkward or unsafe combinations.",
+  "relatedGames": [
+    "musical-statues",
+    "stuck-in-the-mud"
+  ],
+  "links": [],
+  "prepLevel": "None"
+},
   {
     "id": "button-button-who-s-got-the-button",
     "name": "Button, Button, Who's Got the Button?",
@@ -411,240 +419,187 @@
 {
   "id": "buzz-fizz",
   "name": "Buzz Fizz",
-  "description": "A fast-paced mental math and concentration game of sequential counting.",
-  "category": "Brain/Circle",
+  "image": "/images/games/buzz-fizz.jpg",
+  "description": "A fast-paced mental maths and concentration game where teams race to count sequentially while replacing specific multiples with secret code words.",
+  "category": "Quiet",
   "ageMin": 8,
   "ageMax": 11,
   "playersMin": 6,
   "playersMax": 30,
-  "recommendedPlayersText": "Works best with groups of 15 to 20 split into teams.",
+  "recommendedPlayersText": "Best for 15-20 players split into teams",
   "equipment": "None",
   "generalRules": [
-    "### **Setup**",
-    "1. **Split the Group:** Divide the players into three equal teams.",
-    "2. **Appoint a Judge:** Assign a youth leader or assistant to each team to act as the judge and monitor the counting closely.",
-    "",
-    "### **How to Play**",
-    "3. **The Challenge:** On the leader's signal, each team must attempt to count collectively from 1 up to 40 in a steady sequence.",
-    "4. **The Number Substitutions:** Players must replace specific numbers with code words according to these mathematical rules:",
-    "   * **Multiples of 5** (5, 10, 15, etc.) must be replaced with the word *\"Buzz\"*.",
-    "   * **Multiples of 7** (7, 14, 21, etc.) must be replaced with the word *\"Fizz\"*.",
-    "   * **Multiples of both 5 and 7** (such as 35) must be replaced with the combined word *\"Fizz Buzz\"*.",
-    "5. **The Penalty:** If any player calls out the wrong number, forgets a word, or hesitates too long, the judge stops them. The entire team must reset and start over from number 1.",
-    "",
-    "### **How to Win**",
-    "6. **The Race to Sit:** As soon as a team successfully reaches 40 without making a mistake, they must immediately sit down on the floor. The first team to be completely seated wins the game."
+    "**Objective:** Be the first team to collectively count from 1 up to 40 without making a numerical or substitution error.",
+    "**Setup:** Divide the players into equal teams. Assign a leader or assistant to each team to act as a judge to monitor the sequence closely.",
+    "**How to Play:** On the leader's signal, players within each team take turns calling out the next consecutive number in a steady sequence. However, they must replace specific numbers with code words: multiples of 5 are replaced with 'Buzz', multiples of 7 are replaced with 'Fizz', and numbers that are multiples of both (like 35) must be replaced with 'Fizz Buzz'. If a player hesitates, misses a substitution, or says the wrong number, the judge stops them, and that team must reset their count back to 1.",
+    "**Winning / End condition:** As soon as a team successfully reaches 40, all team members must immediately sit down on the floor. The first team to be completely seated wins."
   ],
   "variations": [
-    "### **Simplified Version (Just Buzz)**",
-    "For younger players or groups struggling with the sequence, drop the 'Fizz' rule entirely. Only count up to 20 or 30, replacing multiples of 5 with the word *\"Buzz\"*.",
-    "",
-    "### **The Ultimate Test (Reverse Counting)**",
-    "For an advanced challenge, have older groups attempt to count backwards from 40 down to 1 using the exact same 'Buzz' and 'Fizz' substitution rules."
+    "Drop the 'Fizz' rule entirely for younger groups, only replacing multiples of 5 with 'Buzz' while counting up to 20.",
+    "Have older groups attempt to count backwards from 40 down to 1 using the exact same substitution rules for an advanced challenge."
   ],
   "skillsDeveloped": [
-    "Mental mathematics and numeracy",
-    "Concentration and focus under pressure",
-    "Active listening",
-    "Team resilience and patience"
+    "numeracy",
+    "concentration",
+    "listening",
+    "teamwork"
   ],
   "tags": [
-    "Circle game",
-    "Indoor game",
-    "Low prep",
-    "No equipment",
-    "Mental math",
-    "Team challenge"
+    "circle",
+    "quiet",
+    "listening"
   ],
   "regionalPopularity": [
-    "UK-wide"
+    "United Kingdom"
   ],
   "regionalNames": [
     "Fizz Buzz"
   ],
   "keywords": [
     "fizz buzz",
-    "buzz fizz",
     "counting game",
-    "mental math",
+    "mental maths",
     "concentration",
     "times tables",
-    "no prep"
+    "no prep",
+    "maths game",
+    "classroom"
   ],
   "traditionality": "Traditional",
   "historicalNotes": "Originally a traditional spoken parlour game used to teach children division and multiplication tables, it has famously been adopted in the modern digital era as a classic introductory coding logic test.",
-  "notes": "If the game is taking too long or causing frustration, you can enforce a 2-minute time limit per attempt, awarding the victory to whoever reached the highest number.",
+  "notes": "If teams are getting frustrated, enforce a strict 2-minute time limit and award the victory to the group that reached the highest number.",
   "relatedGames": [
-    "fizz-buzz",
-    "bang"
+    "bang",
+    "twenty-one"
   ],
   "links": [],
   "prepLevel": "None"
 },
   {
-    "id": "can-you-follow-instruction",
-    "name": "Can You Follow Instruction?",
-    "description": "A little brainteaser for the end of your meeting",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 12,
-    "playersMin": null,
-    "playersMax": null,
-    "recommendedPlayersText": "",
-    "equipment": "Print out this text for each child",
-    "generalRules": [
-      "Find a pen and paper",
-      "Write your name at the top of the paper",
-      "Write the numbers 1 to 5, one per line",
-      "Draw five small circles beside #1",
-      "Put an \u0022x\u0022 in the second and fourth circles next to #1",
-      "Write the word \u0027encyclopedia\u0027 beside #3",
-      "On the back of the paper multiply 7 x 9",
-      "Put an x in the lower right-hand corner of the paper",
-      "Draw a circle around the x you just made",
-      "Underline your name",
-      "Say your name out loud",
-      "Draw a circle around #4",
-      "Count the number of words in this sentence and write the answer beside #2 on your paper",
-      "Put a square around #1 and #5",
-      "Put 3 small dots anywhere in the paper 16",
-      "Write your first name beside #4",
-      "Write today\u0027s date beside #5 on your paper",
-      "Circle every letter \u0027e\u0027 you have written",
-      "Stand up and say \u0027i have finished\u0027 out loud, then sit down",
-      "Now that you read all of the instructions, skip all of them except the first two! if you have followed the instructions correctly, you should only have your name on the paper! keep quite until sombodys says your done"
-    ],
-    "variations": [],
-    "skillsDeveloped": [
-      "Agility"
-    ],
-    "tags": [
-      "wide-area"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "brainteaser",
-      "can",
-      "end",
-      "follow",
-      "instruction",
-      "little",
-      "meeting"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "Little"
-  },
+  "id": "capture-the-flag",
+  "name": "Capture the Flag",
+  "image": "/images/games/capture-the-flag.jpg",
+  "description": "An iconic, fast-paced outdoor strategy game where two teams compete to infiltrate enemy territory, sneak away with their flag, and carry it safely home.",
+  "category": "Wide",
+  "ageMin": 8,
+  "ageMax": 11,
+  "playersMin": 10,
+  "playersMax": null,
+  "recommendedPlayersText": "10+ players split into two teams",
+  "equipment": "Two flags, brightly coloured bibs or rags; cones to mark boundaries and jail zones.",
+  "generalRules": [
+    "**Objective:** Infiltrate the opposing team's territory, grab their flag, and bring it back across the centre line into your own territory without being tagged.",
+    "**Setup:** Divide a large outdoor field or woodland area into two equal halves using cones or natural landmarks. Each team chooses a base location in their half to hide or plant their flag, and sets up a designated 'jail' zone nearby. Divide the players evenly into two teams.",
+    "**How to Play:** Players are safe on their own half of the field but can be tagged by opponents as soon as they cross the centre line into enemy territory. If a player is tagged in enemy territory, they must go directly to that team's jail. A player can be rescued from jail if a teammate successfully runs into the enemy zone, tags them in the jail, and runs back with them (both get a free walk back to the centre line).",
+    "**Winning / End condition:** To win, a player must successfully grab the enemy flag and carry it completely back across the centre line without being tagged. If the flag-carrier is tagged, they drop the flag where they stood and go to jail, and the defending team returns the flag to its original base.",
+    "> **Safety:** Ensure the boundary lines are clear of hazards like hidden holes or sharp low branches. Players must use light touch tags rather than rough tackling or pushing."
+  ],
+  "variations": [
+    "**Air Mail:** Allow the player who grabbed the flag to throw or pass it to a teammate, who must then catch it and race across the centre line.",
+    "**Jail Chain:** Captive players in jail can hold hands and extend out into the playing field, making it easier for a sprinting teammate to tag and rescue the whole group at once.",
+    "**Multiple Flags:** Give each team three smaller flags to protect instead of one. The first team to successfully steal all three enemy flags wins."
+  ],
+  "skillsDeveloped": [
+    "teamwork",
+    "strategy",
+    "agility",
+    "communication"
+  ],
+  "tags": [
+    "movement",
+    "team",
+    "outdoor"
+  ],
+  "regionalPopularity": [
+    "United Kingdom",
+    "Worldwide"
+  ],
+  "regionalNames": [
+    "Flag Raiding"
+  ],
+  "keywords": [
+    "capture the flag",
+    "tagging",
+    "outdoor game",
+    "wide game",
+    "scouting",
+    "jail",
+    "stealing",
+    "strategy",
+    "running",
+    "team challenge"
+  ],
+  "traditionality": "Traditional",
+  "historicalNotes": "Originally played as a traditional outdoor military training exercise and civilian recreation game for over a century, it has become a staple wide game for youth groups and summer camps globally.",
+  "notes": "Defenders are not allowed to guard the immediate area right next to their own flag or jail; they must maintain a protective boundary of at least two metres to give attackers a fair chance.",
+  "relatedGames": [
+    "british-bulldog",
+    "smugglers-and-customs"
+  ],
+  "links": [],
+  "prepLevel": "Moderate"
+},
   {
-    "id": "capture-the-flag",
-    "name": "Capture the Flag",
-    "description": "Two teams each try to steal the opposing team\u2019s flag and return it to their base without being tagged.",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 11,
-    "playersMin": 10,
-    "playersMax": null,
-    "recommendedPlayersText": "10\u002B (2 teams)",
-    "equipment": "Two flags or markers",
-    "generalRules": [
-      "Divide the group into two teams and mark clear boundaries on a large playing field",
-      "Each team places a flag in a designated zone on their side",
-      "Players cross into the opponent\u2019s territory to try to capture the flag and return to their own side without being tagged",
-      "Tagged players go to a holding zone on the opponent\u2019s side until freed by a teammate who crosses the centre line and tags them",
-      "Defenders must stay at least two feet away from the flag and holding zone boundaries"
-    ],
-    "variations": [
-      "Limit the number of players allowed in the flag zone at one time",
-      "Allow a player in the flag zone to throw the flag to a teammate, who must still carry it across the centre line",
-      "Let tagged players in the holding zone join hands to make it easier to be freed",
-      "Free all players in the holding zone when a single player is rescued",
-      "In extended games, allow teams to hide their flags in plain sight in a designated area"
-    ],
-    "skillsDeveloped": [
-      "Teamwork",
-      "Strategy",
-      "Agility",
-      "Communication"
-    ],
-    "tags": [
-      "tag",
-      "wide-area"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "base",
-      "being",
-      "capture",
-      "each",
-      "flag",
-      "opposing",
-      "return",
-      "s",
-      "steal",
-      "tagged",
-      "team",
-      "teams",
-      "try",
-      "two",
-      "without"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "Add jails and safe zones for variety.",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "Unknown"
-  },
-  {
-    "id": "chain-tag",
-    "name": "Chain Tag",
-    "description": "This gets quite funny towards the end",
-    "category": "Wide",
-    "ageMin": 8,
-    "ageMax": 11,
-    "playersMin": null,
-    "playersMax": null,
-    "recommendedPlayersText": "",
-    "equipment": "None",
-    "generalRules": [
-      "1 choose an \u0027it\u0027 person that person tags another and when they do they have to join hands 2 now they both with hands joined tag another person who also has to join hands with them and so on creating a chain"
-    ],
-    "variations": [],
-    "skillsDeveloped": [
-      "Agility"
-    ],
-    "tags": [
-      "wide-area"
-    ],
-    "regionalPopularity": [
-      "UK-wide"
-    ],
-    "regionalNames": [],
-    "keywords": [
-      "chain",
-      "end",
-      "funny",
-      "gets",
-      "quite",
-      "tag",
-      "towards"
-    ],
-    "traditionality": "Traditional",
-    "historicalNotes": "",
-    "notes": "",
-    "relatedGames": [],
-    "links": [],
-    "prepLevel": "None"
-  },
+  "id": "chain-tag",
+  "name": "Chain Tag",
+  "image": "/images/games/chain-tag.jpg",
+  "description": "A classic chasing game that gets increasingly chaotic and funny as tagged players link hands to form an ever-growing human chain.",
+  "category": "Physical Activity",
+  "ageMin": 8,
+  "ageMax": 11,
+  "playersMin": 8,
+  "playersMax": null,
+  "recommendedPlayersText": "8+ players",
+  "equipment": "None",
+  "generalRules": [
+    "**Objective:** Avoid being tagged by the expanding human chain for as long as possible.",
+    "**Setup:** Clearly define the boundaries of the playing field using cones or existing lines. Choose one player to be 'It' and have everyone else scatter across the designated area.",
+    "**How to Play:** The 'It' player chases the others and attempts to tag them. When a runner is tagged, they must immediately link hands with the 'It' player. They are now both 'It' and must run together to tag the remaining players. Every subsequent person tagged joins hands at either end of the chain, causing it to grow longer.",
+    "**Winning / End condition:** The game continues until only one runner is left untagged. That final player is declared the winner and usually starts as the first 'It' for the next round.",
+    "> **Safety:** As the chain grows longer, the players on the outer ends can be whipped around quite quickly. Remind players not to pull or jerk their teammates aggressively, and ensure everyone watches their footing to prevent trips."
+  ],
+  "variations": [
+    "**Splitting Chains:** To prevent the chain from becoming too unwieldy or unsafe, allow the chain to split into two independent chasing pairs once it reaches four or six players.",
+    "**End Catchers Only:** To make escaping easier for runners, rule that only the two players at the very ends of the chain are allowed to tag people with their free hands."
+  ],
+  "skillsDeveloped": [
+    "agility",
+    "coordination",
+    "teamwork",
+    "spatial awareness"
+  ],
+  "tags": [
+    "movement",
+    "high-energy",
+    "outdoor"
+  ],
+  "regionalPopularity": [
+    "United Kingdom"
+  ],
+  "regionalNames": [
+    "Blob Tag",
+    "Link Tag"
+  ],
+  "keywords": [
+    "chain tag",
+    "blob tag",
+    "chasing",
+    "running",
+    "playground",
+    "warm-up",
+    "linking hands",
+    "cooperative catching"
+  ],
+  "traditionality": "Traditional",
+  "historicalNotes": null,
+  "notes": "This game works best in a space large enough to run around, but with clear boundaries so the runners cannot simply outrun a clumsy, long chain forever.",
+  "relatedGames": [
+    "british-bulldog",
+    "stuck-in-the-mud"
+  ],
+  "links": [],
+  "prepLevel": "None"
+},
   {
     "id": "chariot-race",
     "name": "Chariot Race",
